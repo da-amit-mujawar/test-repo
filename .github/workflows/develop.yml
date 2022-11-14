@@ -20,5 +20,5 @@ jobs:
     - run: ls /home/runner/airflow/dags
     - run: sleep 15
     - run: airflow db init
-    - run: airflow dags report > /tmp/reports.txt
+    - run: airflow dags report -v > /tmp/reports.txt
     - run: cat /tmp/reports.txt
