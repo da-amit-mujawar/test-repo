@@ -16,8 +16,8 @@ jobs:
     - run: pip install "apache-airflow==2.4.2" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.4.2/constraints-no-providers-3.8.txt"
     - run: airflow info
     - run: ls
-    - run: cp *.py ~/airflow/dags
-    - run: ls ~/airflow/dags
+    - run: cp *.py /home/runner/airflow/dags
+    - run: ls /home/runner/airflow/dags
     - run: sleep 15
     - run: airflow db init
     - run: airflow dags report > /tmp/reports.txt
