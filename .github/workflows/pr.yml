@@ -1,1 +1,28 @@
 
+name: PR
+on:
+  push:
+    branches: [ develop ]
+jobs:
+  container-test-job:
+    runs-on: ubuntu-latest
+    container:
+      image: apache/airflow:2.4.2
+      entrypoint: [""]
+      env:
+        NODE_ENV: development
+      ports:
+        - 8080
+      volumes:
+        - airflow:/opt/airflow
+    steps:
+      - name: Copy DAGs
+        run: cp *.py /opt/airflow/dags
+      - name: Start Airflow standalone
+        run: airflow standalone &> airflow.log 2>&1 &
+      - name: Sleep 30s
+        run: sleep 30
+      - name: Run Airflow DAG report
+        run: airflow dags report -v > report.log
+      - name: Print report
+        run: cat report.log
