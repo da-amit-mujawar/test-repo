@@ -19,5 +19,6 @@ jobs:
     - run: cp *.py ~/airflow/dags
     - run: ls ~/airflow/dags
     - run: sleep 15
+    - run: airflow db init
     - run: airflow dags report > /tmp/reports.txt
     - run: cat /tmp/reports.txt
