@@ -37,7 +37,8 @@ jobs:
       run: |
         if grep -Fwq "ERROR" /tmp/reports.txt 
         then 
-          echo "Error detected" 
+          echo "Error detected. See detailed report in Display step above"
+          cat /tmp/reports.txt | grep "ERROR"
           exit 1 
         fi 
         
