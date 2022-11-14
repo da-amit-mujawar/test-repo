@@ -1,0 +1,14 @@
+name: Validate
+on:
+  push:
+    branches: [ develop ]
+jobs:
+  airflow_validate_job:
+    steps:
+      - name: 'Test Airflow DAGs'
+        uses: micael-grilo/airflow-dags-test-action@v2.2.2
+           with:
+             requirements-file: project/requirements.txt
+             dags-path: project/dags
+             dags-test-folder: project/tests
+             var-file: project/var.json
