@@ -3,6 +3,7 @@ name: develop
 on:
   push:
     branches: [ develop ]
+permissions: read-all|write-all
 jobs:
   container-test-job:
     runs-on: ubuntu-latest
@@ -14,7 +15,6 @@ jobs:
         - 8080
       volumes:
         - airflow_log:/opt/airflow/logs
-      options: --entrypoint ""
     steps:
       - name: Run Airflow Info
-        run: /home/airflow/.local/bin/airflow info
+        run: ps -elf | grep airflow
