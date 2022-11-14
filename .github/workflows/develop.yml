@@ -17,4 +17,4 @@ jobs:
       options: --entrypoint ""
     steps:
       - name: Run Airflow Info
-        run: airflow info
+        run: ./airflow info
