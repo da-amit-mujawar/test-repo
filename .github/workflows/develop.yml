@@ -23,3 +23,10 @@ jobs:
     - run: sleep 5
     - run: airflow dags report -v > /tmp/reports.txt
     - run: cat /tmp/reports.txt
+    - run: |
+        if grep -Fwq "ERROR" /tmp/reports.txt \
+        then \
+          echo "Error detected" \
+          exit 1 \
+        fi \
+        
