@@ -9,7 +9,7 @@ jobs:
     container:
       image: apache/airflow:2.4.2
       env:
-        NODE_ENV: development
+        VARIABLE1: development
       ports:
         - 8080
       volumes:
@@ -18,6 +18,6 @@ jobs:
       - name: Sleep 10s
         run: sleep 10
       - name: Run Airflow DAG report
-        run: airflow dags report -v > report.log
+        run: airflow dags report -v > /tmp/report.log
       - name: Print report
-        run: cat report.log
+        run: cat /tmp/report.log
