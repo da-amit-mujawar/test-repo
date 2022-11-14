@@ -13,11 +13,7 @@ jobs:
       ports:
         - 8080
       volumes:
-        - airflow:/opt/airflow
+        - airflow_log:/opt/airflow/logs
     steps:
-      - name: Sleep 10s
-        run: sleep 10
       - name: Run Airflow DAG report
-        run: airflow dags report -v > /tmp/report.log
-      - name: Print report
-        run: cat /tmp/report.log
+        run: ls /opt/airflow
