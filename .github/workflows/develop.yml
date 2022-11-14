@@ -3,18 +3,14 @@ name: develop
 on:
   push:
     branches: [ develop ]
-permissions: write-all
 jobs:
-  container-test-job:
+  my_validation_job:
     runs-on: ubuntu-latest
-    container:
-      image: apache/airflow:2.4.2-python3.8
-      env:
-        AIRFLOW_GID: 0
-      ports:
-        - 8080
-      volumes:
-        - airflow_log:/opt/airflow/logs
     steps:
-      - name: Run Airflow Info
-        run: airflow info
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+        cache: 'pip'
+    - run: python --version
+    - run: pip --version
