@@ -14,6 +14,7 @@ jobs:
         - 8080
       volumes:
         - airflow_log:/opt/airflow/logs
+      options: --entrypoint ""
     steps:
       - name: Run Airflow DAG report
-        run: which airlow
+        run: which python
