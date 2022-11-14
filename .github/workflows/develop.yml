@@ -16,4 +16,4 @@ jobs:
         - airflow_log:/opt/airflow/logs
     steps:
       - name: Run Airflow DAG report
-        run: ls /opt/airflow
+        run: which airlow
