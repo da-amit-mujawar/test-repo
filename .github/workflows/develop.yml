@@ -16,5 +16,5 @@ jobs:
         - airflow_log:/opt/airflow/logs
       options: --entrypoint ""
     steps:
-      - name: Run Airflow DAG report
-        run: which airflow
+      - name: Run Airflow Info
+        run: airflow info
