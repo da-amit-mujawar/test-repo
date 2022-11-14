@@ -15,10 +15,8 @@ jobs:
       volumes:
         - airflow:/opt/airflow
     steps:
-      - name: Start Airflow standalone
-        run: airflow standalone &> airflow.log 2>&1 &
-      - name: Sleep 30s
-        run: sleep 30
+      - name: Sleep 10s
+        run: sleep 10
       - name: Run Airflow DAG report
         run: airflow dags report -v > report.log
       - name: Print report
