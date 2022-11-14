@@ -21,7 +21,6 @@ from __future__ import annotations
 import datetime
 
 import pendulum
-import boto3
 
 from airflow import DAG
 from airflow.operators.bash import BashOperator
