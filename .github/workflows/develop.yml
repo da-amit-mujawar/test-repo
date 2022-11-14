@@ -3,6 +3,10 @@ name: develop
 on:
   push:
     branches: [ develop ]
+  pull_request:
+    branches:
+      - develop
+      - main
 jobs:
   my_validation_job:
     runs-on: ubuntu-latest
