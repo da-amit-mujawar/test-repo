@@ -17,4 +17,4 @@ jobs:
       options: --entrypoint ""
     steps:
       - name: Run Airflow DAG report
-        run: which python
+        run: which airflow
