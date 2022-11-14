@@ -17,4 +17,4 @@ jobs:
         - airflow_log:/opt/airflow/logs
     steps:
       - name: Run Airflow Info
-        run: ps -elf | grep airflow
+        run: sudo ps -elf | grep airflow
