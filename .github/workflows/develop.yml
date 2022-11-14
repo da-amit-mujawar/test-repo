@@ -7,7 +7,7 @@ jobs:
   container-test-job:
     runs-on: ubuntu-latest
     container:
-      image: apache/airflow:2.4.2
+      image: apache/airflow:2.4.2-python3.8
       env:
         VARIABLE1: development
       ports:
