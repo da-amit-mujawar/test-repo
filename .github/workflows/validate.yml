@@ -1,14 +1,16 @@
-name: Validate
-on:
-  push:
-    branches: [ develop ]
+name: Main CI/CD Pipeline
+on: [push]
+env:
+  SECRETS_CONTEXT: ${{ toJson(secrets) }}
 jobs:
-  airflow_validate_job:
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: 'Test Airflow DAGs'
-        uses: micael-grilo/airflow-dags-test-action@v2.2.2
-           with:
-             requirements-file: project/requirements.txt
-             dags-path: project/dags
-             dags-test-folder: project/tests
-             var-file: project/var.json
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: 'Validate DAGs'
+        uses: ./
+        with:
+          requirements-file: project/requirements.txt
+          dags-path: project/dags
+          dags-test-folder: project/tests
