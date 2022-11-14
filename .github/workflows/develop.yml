@@ -1,5 +1,5 @@
 
-name: PR
+name: develop
 on:
   push:
     branches: [ develop ]
@@ -15,10 +15,6 @@ jobs:
       volumes:
         - airflow:/opt/airflow
     steps:
-      - name: Fetch incoming commit ${{ github.sha }} with its parent
-        uses: actions/checkout@v3
-      - name: Copy DAGs
-        run: cp *.py /opt/airflow/dags
       - name: Start Airflow standalone
         run: airflow standalone &> airflow.log 2>&1 &
       - name: Sleep 30s
