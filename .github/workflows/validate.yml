@@ -1,5 +1,8 @@
-name: Main CI/CD Pipeline
-on: [push]
+name: Third party airflow validate action (not working yet)
+on: 
+  push:
+    branches:
+      - main
 env:
   SECRETS_CONTEXT: ${{ toJson(secrets) }}
 jobs:
