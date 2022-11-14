@@ -14,7 +14,7 @@ jobs:
         - 8080
       volumes:
         - airflow_log:/opt/airflow/logs
-      options: --entrypoint ""
+      options: --entrypoint "airflow info"
     steps:
       - name: Run Airflow Info
         run: ./airflow info
