@@ -41,7 +41,7 @@ jobs:
     - name: Sleep
       run: sleep 5
     - name: Set PATH
-      run: export PYTHONPATH=/home/runner/airflow/dags:/home/runner/airflow/helpers:/home/runner/airflow/operators:$PYTHONPATH
+      run: export PYTHONPATH=/home/runner/airflow/dags:/home/runner/airflow/dags/helpers:/home/runner/airflow/dags/operators:$PYTHONPATH
     - name: Run Dags report
       run: airflow dags report -v > /tmp/reports.txt
     - name: Run linting
