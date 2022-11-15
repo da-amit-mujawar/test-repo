@@ -23,15 +23,15 @@ jobs:
     - run: ls
     - name: Install dependencies
       run: pip install --no-cache-dir -r idms-requirements.txt
-    - name: Set airflow env variables
-      run: export AIRFLOW__CORE__LOAD_EXAMPLES=False
+#    - name: Set airflow env variables (did not work)
+#      run: export AIRFLOW__CORE__LOAD_EXAMPLES=False
     - name: Run DB Init
       run: airflow db init
     - name: Sleep
       run: sleep 5
     - name: Import variables
       run: airflow variables import dev_variables_export.json
-#    - name: Import connections
+#    - name: Import connections (causes delays in CI pipeline)
 #      run: airflow connections import dev_connections_export.json
     - name: List variables
       run: airflow variables list
