@@ -40,6 +40,10 @@ jobs:
       run: sleep 5
     - name: Run Dags report
       run: airflow dags report -v > /tmp/reports.txt
+    - name: Run linting
+      run: |
+        pip install pylint-airflow
+        pylint --load-plugins=pylint_airflow /home/runner/airflow/dags
     - name: Display report
       run: cat /tmp/reports.txt
     - name: Display Module errors
