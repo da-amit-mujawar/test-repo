@@ -38,6 +38,8 @@ jobs:
       run: airflow dags report -v > /tmp/reports.txt
     - name: Display report
       run: cat /tmp/reports.txt
+    - name: Display Module errors
+      run: grep ModuleNotFoundError /tmp/reports.txt
     - name: Check report for errors
       run: |
         if grep -Fwq "ERROR" /tmp/reports.txt 
