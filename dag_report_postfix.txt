@@ -1,0 +1,691 @@
+[2022-11-15 10:31:39,362] {dagbag.py:537} INFO - Filling up the DagBag from /home/runner/airflow/dags
+path list is :: ['tmp/1267_RoyaltyOutput_Weekly_20221114.csv', 'tmp/992_RoyaltyOutput_Weekly_20221114.csv', 'tmp/1150_RoyaltyOutput_Weekly_20221114.csv']
+[2022-11-15 10:31:40,910] {dagbag.py:505} ERROR - Exception bagging dag: imports-business-digital-sapphire-qtr-02
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 496, in _bag_dag
+    raise AirflowDagDuplicatedIdException(
+airflow.exceptions.AirflowDagDuplicatedIdException: Ignoring DAG imports-business-digital-sapphire-qtr-02 from /home/runner/airflow/dags/imports/business-digital-sapphire-qtr-02/business-digital-sapphire-qtr-02.py - also found in /home/runner/airflow/dags/imports/business-digital-sapphire-monthly/business-digital-sapphire-qtr-02.py
+[2022-11-15 10:31:40,911] {dagbag.py:449} ERROR - Failed to bag_dag: /home/runner/airflow/dags/imports/business-digital-sapphire-qtr-02/business-digital-sapphire-qtr-02.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 437, in _process_modules
+    self.bag_dag(dag=dag, root_dag=dag)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 464, in bag_dag
+    self._bag_dag(dag=dag, root_dag=root_dag, recursive=True)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 496, in _bag_dag
+    raise AirflowDagDuplicatedIdException(
+airflow.exceptions.AirflowDagDuplicatedIdException: Ignoring DAG imports-business-digital-sapphire-qtr-02 from /home/runner/airflow/dags/imports/business-digital-sapphire-qtr-02/business-digital-sapphire-qtr-02.py - also found in /home/runner/airflow/dags/imports/business-digital-sapphire-monthly/business-digital-sapphire-qtr-02.py
+[2022-11-15 10:31:41,280] {dagbag.py:505} ERROR - Exception bagging dag: z-cb-testing
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 496, in _bag_dag
+    raise AirflowDagDuplicatedIdException(
+airflow.exceptions.AirflowDagDuplicatedIdException: Ignoring DAG z-cb-testing from /home/runner/airflow/dags/z-cb-testing/z-cb-testing2.py - also found in /home/runner/airflow/dags/z-cb-testing/z-cb-testing.py
+[2022-11-15 10:31:41,280] {dagbag.py:449} ERROR - Failed to bag_dag: /home/runner/airflow/dags/z-cb-testing/z-cb-testing2.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 437, in _process_modules
+    self.bag_dag(dag=dag, root_dag=dag)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 464, in bag_dag
+    self._bag_dag(dag=dag, root_dag=root_dag, recursive=True)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 496, in _bag_dag
+    raise AirflowDagDuplicatedIdException(
+airflow.exceptions.AirflowDagDuplicatedIdException: Ignoring DAG z-cb-testing from /home/runner/airflow/dags/z-cb-testing/z-cb-testing2.py - also found in /home/runner/airflow/dags/z-cb-testing/z-cb-testing.py
+[2022-11-15 10:31:41,632] {dagbag.py:342} ERROR - Failed to import: /home/runner/airflow/dags/builds/DBBuild_Fill_Rate_Report/DBBuild_Fill_Rate_Report.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 338, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/runner/airflow/dags/builds/DBBuild_Fill_Rate_Report/DBBuild_Fill_Rate_Report.py", line 23, in <module>
+    sql_conn = sqlhook.get_conn()
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/microsoft/mssql/hooks/mssql.py", line 97, in get_conn
+    conn = self.get_connection(self.mssql_conn_id)  # type: ignore[attr-defined]
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/hooks/base.py", line 70, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/connection.py", line 432, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `sql-dev` isn't defined
+[2022-11-15 10:31:41,735] {dagbag.py:342} ERROR - Failed to import: /home/runner/airflow/dags/builds/np-dataprep/dataprep_glue_dag.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 338, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/runner/airflow/dags/builds/np-dataprep/dataprep_glue_dag.py", line 5, in <module>
+    from airflow.providers.amazon.aws.operators.glue import (
+ImportError: cannot import name 'AwsGlueJobOperator' from 'airflow.providers.amazon.aws.operators.glue' (/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/amazon/aws/operators/glue.py)
+[2022-11-15 10:31:41,761] {dagbag.py:342} ERROR - Failed to import: /home/runner/airflow/dags/builds/nonprofit/bi-weekly/create-child-tables/biweekly-child-tables.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 338, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/runner/airflow/dags/builds/nonprofit/bi-weekly/create-child-tables/biweekly-child-tables.py", line 121, in <module>
+    create_child_tables_dag = pipeline()
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dag.py", line 3454, in factory
+    f(**f_kwargs)
+  File "/home/runner/airflow/dags/builds/nonprofit/bi-weekly/create-child-tables/biweekly-child-tables.py", line 40, in pipeline
+    fetch_buildinfo_df = get_build_df(databaseid=dbid, active_flag=0)
+  File "/home/runner/airflow/dags/helpers/sqlserver.py", line 63, in get_build_df
+    build_info_df = sqlhook.get_pandas_df(sp_sql)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 175, in get_pandas_df
+    with closing(self.get_conn()) as conn:
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/microsoft/mssql/hooks/mssql.py", line 97, in get_conn
+    conn = self.get_connection(self.mssql_conn_id)  # type: ignore[attr-defined]
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/hooks/base.py", line 70, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/connection.py", line 432, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `sql-dev` isn't defined
+[2022-11-15 10:31:41,777] {dagbag.py:342} ERROR - Failed to import: /home/runner/airflow/dags/builds/nonprofit/monthly/step-2-load-donors/nonprofit-load-donors.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 338, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/runner/airflow/dags/builds/nonprofit/monthly/step-2-load-donors/nonprofit-load-donors.py", line 167, in <module>
+    nonprofit_dag = pipeline()
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dag.py", line 3454, in factory
+    f(**f_kwargs)
+  File "/home/runner/airflow/dags/builds/nonprofit/monthly/step-2-load-donors/nonprofit-load-donors.py", line 44, in pipeline
+    bdf = get_build_df(databaseid=dbid, active_flag=0)
+  File "/home/runner/airflow/dags/helpers/sqlserver.py", line 63, in get_build_df
+    build_info_df = sqlhook.get_pandas_df(sp_sql)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 175, in get_pandas_df
+    with closing(self.get_conn()) as conn:
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/microsoft/mssql/hooks/mssql.py", line 97, in get_conn
+    conn = self.get_connection(self.mssql_conn_id)  # type: ignore[attr-defined]
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/hooks/base.py", line 70, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/connection.py", line 432, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `sql-dev` isn't defined
+[2022-11-15 10:31:41,810] {dagbag.py:342} ERROR - Failed to import: /home/runner/airflow/dags/builds/nonprofit/monthly/step-1-load-consumer-db/nonprofit-monthly-load-consumer-db.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 338, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/runner/airflow/dags/builds/nonprofit/monthly/step-1-load-consumer-db/nonprofit-monthly-load-consumer-db.py", line 70, in <module>
+    nonprofit_dag = pipeline()
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dag.py", line 3454, in factory
+    f(**f_kwargs)
+  File "/home/runner/airflow/dags/builds/nonprofit/monthly/step-1-load-consumer-db/nonprofit-monthly-load-consumer-db.py", line 43, in pipeline
+    bdf = get_build_df(databaseid=dbid, active_flag=0)
+  File "/home/runner/airflow/dags/helpers/sqlserver.py", line 63, in get_build_df
+    build_info_df = sqlhook.get_pandas_df(sp_sql)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 175, in get_pandas_df
+    with closing(self.get_conn()) as conn:
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/microsoft/mssql/hooks/mssql.py", line 97, in get_conn
+    conn = self.get_connection(self.mssql_conn_id)  # type: ignore[attr-defined]
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/hooks/base.py", line 70, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/connection.py", line 432, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `sql-dev` isn't defined
+[2022-11-15 10:31:41,820] {dagbag.py:342} ERROR - Failed to import: /home/runner/airflow/dags/builds/nonprofit/monthly/step-3-create-child-tables/monthly-child-tables.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 338, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/runner/airflow/dags/builds/nonprofit/monthly/step-3-create-child-tables/monthly-child-tables.py", line 131, in <module>
+    create_child_tables_dag = pipeline()
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dag.py", line 3454, in factory
+    f(**f_kwargs)
+  File "/home/runner/airflow/dags/builds/nonprofit/monthly/step-3-create-child-tables/monthly-child-tables.py", line 38, in pipeline
+    fetch_buildinfo_df = get_build_df(databaseid=dbid, active_flag=0)
+  File "/home/runner/airflow/dags/helpers/sqlserver.py", line 63, in get_build_df
+    build_info_df = sqlhook.get_pandas_df(sp_sql)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 175, in get_pandas_df
+    with closing(self.get_conn()) as conn:
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/microsoft/mssql/hooks/mssql.py", line 97, in get_conn
+    conn = self.get_connection(self.mssql_conn_id)  # type: ignore[attr-defined]
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/hooks/base.py", line 70, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/connection.py", line 432, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `sql-dev` isn't defined
+[2022-11-15 10:31:41,831] {dagbag.py:342} ERROR - Failed to import: /home/runner/airflow/dags/builds/nonprofit/penetration-report/penetration.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 338, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/runner/airflow/dags/builds/nonprofit/penetration-report/penetration.py", line 170, in <module>
+    nonprofit_penetration_dag = pipeline()
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dag.py", line 3454, in factory
+    f(**f_kwargs)
+  File "/home/runner/airflow/dags/builds/nonprofit/penetration-report/penetration.py", line 167, in pipeline
+    (send_report_email(fetch_buildinfo(), generate_excel(fetch_buildinfo())))
+  File "/home/runner/airflow/dags/builds/nonprofit/penetration-report/penetration.py", line 41, in fetch_buildinfo
+    fetch_buildinfo_df = get_build_df(
+  File "/home/runner/airflow/dags/helpers/sqlserver.py", line 63, in get_build_df
+    build_info_df = sqlhook.get_pandas_df(sp_sql)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 175, in get_pandas_df
+    with closing(self.get_conn()) as conn:
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/microsoft/mssql/hooks/mssql.py", line 97, in get_conn
+    conn = self.get_connection(self.mssql_conn_id)  # type: ignore[attr-defined]
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/hooks/base.py", line 70, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/connection.py", line 432, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `sql-dev` isn't defined
+[2022-11-15 10:31:41,917] {dagbag.py:342} ERROR - Failed to import: /home/runner/airflow/dags/builds/aetna/aetna-schema.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 338, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/runner/airflow/dags/builds/aetna/aetna-schema.py", line 225, in <module>
+    aetna_dag = pipeline()
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dag.py", line 3454, in factory
+    f(**f_kwargs)
+  File "/home/runner/airflow/dags/builds/aetna/aetna-schema.py", line 51, in pipeline
+    bdf = get_build_df(databaseid=default_args["databaseid"], active_flag=1)
+  File "/home/runner/airflow/dags/helpers/sqlserver.py", line 63, in get_build_df
+    build_info_df = sqlhook.get_pandas_df(sp_sql)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 175, in get_pandas_df
+    with closing(self.get_conn()) as conn:
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/microsoft/mssql/hooks/mssql.py", line 97, in get_conn
+    conn = self.get_connection(self.mssql_conn_id)  # type: ignore[attr-defined]
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/hooks/base.py", line 70, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/connection.py", line 432, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `sql-dev` isn't defined
+[2022-11-15 10:31:41,989] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/emrconfig.json
+[2022-11-15 10:31:41,989] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/apogee-fec-step-0.json
+[2022-11-15 10:31:41,989] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:41,989] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:41,989] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/config.json
+[2022-11-15 10:31:41,991] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/emrconfig.json
+[2022-11-15 10:31:41,991] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/apogee-fec-step-1.json
+[2022-11-15 10:31:41,991] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:41,991] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:41,991] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/config.json
+[2022-11-15 10:31:41,993] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/emrconfig.json
+[2022-11-15 10:31:41,994] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/apogee-fec-step-2.json
+[2022-11-15 10:31:41,994] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:41,994] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:41,994] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/config.json
+[2022-11-15 10:31:42,001] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/emrconfig.json
+[2022-11-15 10:31:42,001] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/apogee-fec-step-0.json
+[2022-11-15 10:31:42,001] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:42,001] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,001] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/config.json
+[2022-11-15 10:31:42,003] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/emrconfig.json
+[2022-11-15 10:31:42,003] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/apogee-fec-step-1.json
+[2022-11-15 10:31:42,003] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:42,004] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,004] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/config.json
+[2022-11-15 10:31:42,006] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/emrconfig.json
+[2022-11-15 10:31:42,006] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/apogee-fec-step-2.json
+[2022-11-15 10:31:42,006] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:42,006] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,006] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee-fec/config.json
+[2022-11-15 10:31:42,023] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/emrconfig.json
+[2022-11-15 10:31:42,024] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/donorbase-step-0.json
+[2022-11-15 10:31:42,024] {spin_emr_cluster.py:43} INFO - Process Dt. :20220714
+[2022-11-15 10:31:42,024] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,024] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/config.json
+[2022-11-15 10:31:42,026] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/emrconfig.json
+[2022-11-15 10:31:42,026] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/donorbase-step-1.json
+[2022-11-15 10:31:42,026] {spin_emr_cluster.py:43} INFO - Process Dt. :20220714
+[2022-11-15 10:31:42,026] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,026] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/config.json
+[2022-11-15 10:31:42,028] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/emrconfig.json
+[2022-11-15 10:31:42,029] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/donorbase-step-2.json
+[2022-11-15 10:31:42,029] {spin_emr_cluster.py:43} INFO - Process Dt. :20220714
+[2022-11-15 10:31:42,029] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,029] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/config.json
+[2022-11-15 10:31:42,036] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/emrconfig.json
+[2022-11-15 10:31:42,036] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/donorbase-step-0.json
+[2022-11-15 10:31:42,036] {spin_emr_cluster.py:43} INFO - Process Dt. :20220714
+[2022-11-15 10:31:42,036] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,036] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/config.json
+[2022-11-15 10:31:42,038] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/emrconfig.json
+[2022-11-15 10:31:42,038] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/donorbase-step-1.json
+[2022-11-15 10:31:42,038] {spin_emr_cluster.py:43} INFO - Process Dt. :20220714
+[2022-11-15 10:31:42,038] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,038] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/config.json
+[2022-11-15 10:31:42,040] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/emrconfig.json
+[2022-11-15 10:31:42,041] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/donorbase-step-2.json
+[2022-11-15 10:31:42,041] {spin_emr_cluster.py:43} INFO - Process Dt. :20220714
+[2022-11-15 10:31:42,041] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,041] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Donorbase/config.json
+[2022-11-15 10:31:42,062] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/emrconfig.json
+[2022-11-15 10:31:42,062] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/apogee-step-0.json
+[2022-11-15 10:31:42,062] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:42,062] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,062] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/config.json
+[2022-11-15 10:31:42,064] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/emrconfig.json
+[2022-11-15 10:31:42,064] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/apogee-step-1.json
+[2022-11-15 10:31:42,064] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:42,065] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,065] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/config.json
+[2022-11-15 10:31:42,067] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/emrconfig.json
+[2022-11-15 10:31:42,067] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/apogee-step-2.json
+[2022-11-15 10:31:42,067] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:42,067] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,067] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/config.json
+[2022-11-15 10:31:42,069] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/emrconfig.json
+[2022-11-15 10:31:42,069] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/apogee-step-3.json
+[2022-11-15 10:31:42,069] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:42,069] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,070] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/config.json
+[2022-11-15 10:31:42,079] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/emrconfig.json
+[2022-11-15 10:31:42,079] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/apogee-step-0.json
+[2022-11-15 10:31:42,079] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:42,079] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,079] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/config.json
+[2022-11-15 10:31:42,081] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/emrconfig.json
+[2022-11-15 10:31:42,081] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/apogee-step-1.json
+[2022-11-15 10:31:42,081] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:42,081] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,081] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/config.json
+[2022-11-15 10:31:42,083] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/emrconfig.json
+[2022-11-15 10:31:42,083] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/apogee-step-2.json
+[2022-11-15 10:31:42,083] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:42,083] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,084] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/config.json
+[2022-11-15 10:31:42,086] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/emrconfig.json
+[2022-11-15 10:31:42,086] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/apogee-step-3.json
+[2022-11-15 10:31:42,086] {spin_emr_cluster.py:43} INFO - Process Dt. :20220729
+[2022-11-15 10:31:42,086] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,086] {spin_emr_cluster.py:45} INFO - Spark Config:/home/runner/airflow/dags/builds/apogee/apogee-summary/dag/Apogee/config.json
+[2022-11-15 10:31:42,140] {dagbag.py:342} ERROR - Failed to import: /home/runner/airflow/dags/builds/donorbase_load_consumer/load-donors/load-donors.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 338, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/runner/airflow/dags/builds/donorbase_load_consumer/load-donors/load-donors.py", line 153, in <module>
+    donorbase_dag = pipeline()
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dag.py", line 3454, in factory
+    f(**f_kwargs)
+  File "/home/runner/airflow/dags/builds/donorbase_load_consumer/load-donors/load-donors.py", line 37, in pipeline
+    fetch_buildinfo_df = get_build_df(databaseid=databaseid, active_flag=0)
+  File "/home/runner/airflow/dags/helpers/sqlserver.py", line 63, in get_build_df
+    build_info_df = sqlhook.get_pandas_df(sp_sql)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 175, in get_pandas_df
+    with closing(self.get_conn()) as conn:
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/microsoft/mssql/hooks/mssql.py", line 97, in get_conn
+    conn = self.get_connection(self.mssql_conn_id)  # type: ignore[attr-defined]
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/hooks/base.py", line 70, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/connection.py", line 432, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `sql-dev` isn't defined
+[2022-11-15 10:31:42,214] {dagbag.py:342} ERROR - Failed to import: /home/runner/airflow/dags/builds/business-udd/business-udd.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 338, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/runner/airflow/dags/builds/business-udd/business-udd.py", line 130, in <module>
+    udd_dag = pipeline()
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dag.py", line 3454, in factory
+    f(**f_kwargs)
+  File "/home/runner/airflow/dags/builds/business-udd/business-udd.py", line 52, in pipeline
+    bdf = get_build_df(databaseid=dbid, active_flag=0)
+  File "/home/runner/airflow/dags/helpers/sqlserver.py", line 63, in get_build_df
+    build_info_df = sqlhook.get_pandas_df(sp_sql)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 175, in get_pandas_df
+    with closing(self.get_conn()) as conn:
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/microsoft/mssql/hooks/mssql.py", line 97, in get_conn
+    conn = self.get_connection(self.mssql_conn_id)  # type: ignore[attr-defined]
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/hooks/base.py", line 70, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/connection.py", line 432, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `sql-dev` isn't defined
+[2022-11-15 10:31:42,345] {dagbag.py:342} ERROR - Failed to import: /home/runner/airflow/dags/builds/meyer/meyer-step4-aggregations/meyer-step4-aggregations.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 338, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/runner/airflow/dags/builds/meyer/meyer-step4-aggregations/meyer-step4-aggregations.py", line 104, in <module>
+    send_email_without_config(
+  File "/home/runner/airflow/dags/helpers/send_email.py", line 90, in send_email_without_config
+    email.execute(context=kwargs)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/operators/email.py", line 77, in execute
+    send_email(
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/utils/email.py", line 59, in send_email
+    return backend(
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/utils/email.py", line 107, in send_email_smtp
+    msg, recipients = build_mime_message(
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/utils/email.py", line 175, in build_mime_message
+    with open(fname, "rb") as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/meyer_aggregations_summary_listid_20221115000.gz'
+/home/runner/airflow/dags/de-internal/de-internal-DQ/config.json
+[2022-11-15 10:31:42,419] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/z-rr-emr_cluster_automation/emrconfig.json
+[2022-11-15 10:31:42,419] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/z-rr-emr_cluster_automation/apogee-step-0.json
+[2022-11-15 10:31:42,419] {spin_emr_cluster.py:43} INFO - Process Dt. :20221115
+[2022-11-15 10:31:42,420] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,420] {spin_emr_cluster.py:45} INFO - Spark Config:None
+[2022-11-15 10:31:42,420] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/z-rr-emr_cluster_automation/emrconfig.json
+[2022-11-15 10:31:42,420] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/z-rr-emr_cluster_automation/apogee-step-1.json
+[2022-11-15 10:31:42,420] {spin_emr_cluster.py:43} INFO - Process Dt. :20221115
+[2022-11-15 10:31:42,420] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,420] {spin_emr_cluster.py:45} INFO - Spark Config:None
+[2022-11-15 10:31:42,421] {spin_emr_cluster.py:41} INFO - Config File :/home/runner/airflow/dags/z-rr-emr_cluster_automation/emrconfig.json
+[2022-11-15 10:31:42,421] {spin_emr_cluster.py:42} INFO - Base File   :/home/runner/airflow/dags/z-rr-emr_cluster_automation/apogee-step-2.json
+[2022-11-15 10:31:42,421] {spin_emr_cluster.py:43} INFO - Process Dt. :20221115
+[2022-11-15 10:31:42,421] {spin_emr_cluster.py:44} INFO - Region      :
+[2022-11-15 10:31:42,421] {spin_emr_cluster.py:45} INFO - Spark Config:None
+[2022-11-15 10:31:42,568] {dagbag.py:342} ERROR - Failed to import: /home/runner/airflow/dags/de-odbx/dag/odbx_glue_all.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 338, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/runner/airflow/dags/de-odbx/dag/odbx_glue_all.py", line 7, in <module>
+    from airflow.providers.amazon.aws.operators.glue import AwsGlueJobOperator
+ImportError: cannot import name 'AwsGlueJobOperator' from 'airflow.providers.amazon.aws.operators.glue' (/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/amazon/aws/operators/glue.py)
+[2022-11-15 10:31:42,570] {dagbag.py:342} ERROR - Failed to import: /home/runner/airflow/dags/de-odbx/dag/odbx_glue_5k_sample.py
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/models/dagbag.py", line 338, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/runner/airflow/dags/de-odbx/dag/odbx_glue_5k_sample.py", line 6, in <module>
+    from airflow.providers.amazon.aws.operators.glue import AwsGlueJobOperator
+ImportError: cannot import name 'AwsGlueJobOperator' from 'airflow.providers.amazon.aws.operators.glue' (/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/providers/amazon/aws/operators/glue.py)
+[2022-11-15 10:31:42,694] {taskmixin.py:205} WARNING - Dependency <Task(_PythonDecoratedOperator): print_the_context>, log_sql_query already registered for DAG: example_python_operator
+[2022-11-15 10:31:42,695] {taskmixin.py:205} WARNING - Dependency <Task(_PythonDecoratedOperator): log_sql_query>, print_the_context already registered for DAG: example_python_operator
+[2022-11-15 10:31:42,695] {taskmixin.py:205} WARNING - Dependency <Task(_PythonDecoratedOperator): print_the_context>, log_sql_query already registered for DAG: example_python_operator
+[2022-11-15 10:31:42,695] {taskmixin.py:205} WARNING - Dependency <Task(_PythonDecoratedOperator): log_sql_query>, print_the_context already registered for DAG: example_python_operator
+[2022-11-15 10:31:42,696] {taskmixin.py:205} WARNING - Dependency <Task(_PythonDecoratedOperator): print_the_context>, log_sql_query already registered for DAG: example_python_operator
+[2022-11-15 10:31:42,696] {taskmixin.py:205} WARNING - Dependency <Task(_PythonDecoratedOperator): log_sql_query>, print_the_context already registered for DAG: example_python_operator
+[2022-11-15 10:31:42,697] {taskmixin.py:205} WARNING - Dependency <Task(_PythonDecoratedOperator): print_the_context>, log_sql_query already registered for DAG: example_python_operator
+[2022-11-15 10:31:42,697] {taskmixin.py:205} WARNING - Dependency <Task(_PythonDecoratedOperator): log_sql_query>, print_the_context already registered for DAG: example_python_operator
+[2022-11-15 10:31:42,697] {example_python_operator.py:85} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2022-11-15 10:31:42,700] {tutorial_taskflow_api_virtualenv.py:29} WARNING - The tutorial_taskflow_api_virtualenv example DAG requires virtualenv, please install it.
+[2022-11-15 10:31:42,746] {taskmixin.py:205} WARNING - Dependency <Task(BashOperator): create_entry_group>, delete_entry_group already registered for DAG: example_complex
+[2022-11-15 10:31:42,746] {taskmixin.py:205} WARNING - Dependency <Task(BashOperator): delete_entry_group>, create_entry_group already registered for DAG: example_complex
+[2022-11-15 10:31:42,746] {taskmixin.py:205} WARNING - Dependency <Task(BashOperator): create_entry_gcs>, delete_entry already registered for DAG: example_complex
+[2022-11-15 10:31:42,747] {taskmixin.py:205} WARNING - Dependency <Task(BashOperator): delete_entry>, create_entry_gcs already registered for DAG: example_complex
+[2022-11-15 10:31:42,747] {taskmixin.py:205} WARNING - Dependency <Task(BashOperator): create_tag>, delete_tag already registered for DAG: example_complex
+[2022-11-15 10:31:42,747] {taskmixin.py:205} WARNING - Dependency <Task(BashOperator): delete_tag>, create_tag already registered for DAG: example_complex
+[2022-11-15 10:31:42,753] {taskmixin.py:205} WARNING - Dependency <Task(_PythonDecoratedOperator): prepare_email>, send_email already registered for DAG: example_dag_decorator
+[2022-11-15 10:31:42,753] {taskmixin.py:205} WARNING - Dependency <Task(EmailOperator): send_email>, prepare_email already registered for DAG: example_dag_decorator
+file                                                                             | duration       | dag_num | task_num | dags
+=================================================================================+================+=========+==========+================================================================================
+/reports/aws_migration_progress_counts/tasks.py                                  | 0:00:00.362698 | 0       | 0        |
+/z_kr_BusinessDB_test/business_test_dag.py                                       | 0:00:00.332374 | 1       | 1        | z-kr-business-test-dag
+/z-cb-testing/z-cb-testing2.py                                                   | 0:00:00.217430 | 0       | 0        |
+/reports/royalty_report/royalty_report.py                                        | 0:00:00.184367 | 1       | 4        | reports-royalty-report-do-not-run-manually
+/imports/email-hygiene-step2/email-hygiene-step2.py                              | 0:00:00.150077 | 1       | 5        | email-hygiene-step2
+/builds/mgen/mgen.py                                                             | 0:00:00.096432 | 1       | 50       | builds-mgen
+/builds/meyer/meyer-step4-aggregations/meyer-step4-aggregations.py               | 0:00:00.095565 | 0       | 0        |
+/test/z-susan-jdbc-conn-test.py                                                  | 0:00:00.044043 | 1       | 1        | z-susan-jdbc-conn-test
+/z-rr-datasync-queued-alert/datasync-queue-task-alert.py                         | 0:00:00.041447 | 1       | 3        | datasync_alert_notification
+/de-core-business/de_core_business_dag.py                                        | 0:00:00.035880 | 1       | 18       | de-core-business
+/builds/donorbase_opu/donorbase-opu.py                                           | 0:00:00.034486 | 1       | 6        | builds-donorbase-opu
+/builds/nonprofit_validate_export_data/nonprofit.py                              | 0:00:00.033803 | 1       | 4        | nonprofit-validate-export-data
+/z_kr_BusinessDB/core_business_dag.py                                            | 0:00:00.031414 | 1       | 12       | z-kr-core-businessdb-dag
+/SFTP/sftp_to_s3.py                                                              | 0:00:00.028129 | 1       | 3        | sftp_to_s3
+/de-internal/de-databricks/de-internal-databricks-redshift-load.py               | 0:00:00.021104 | 1       | 9        | de-internal-silvertables-load-redshift
+/builds/apogee/apogee-summary/dag/Apogee/apogee_summary_all.py                   | 0:00:00.020436 | 1       | 10       | builds-summary-calc-apogee-All
+/builds/nonprofit/monthly/step-4-exports/build-3-apogee-export.py                | 0:00:00.020257 | 1       | 12       | builds-nonprofit-monthly-step4-exports
+/builds/aetna/aetna-schema.py                                                    | 0:00:00.019202 | 0       | 0        |
+/builds/consumer/consumer.py                                                     | 0:00:00.018430 | 1       | 22       | builds-consumer
+/builds/business/business-usa.py                                                 | 0:00:00.017606 | 1       | 26       | builds-business-usa
+/builds/business/business-canada.py                                              | 0:00:00.017089 | 1       | 27       | builds-business-canada
+/builds/apogee/apogee-summary/dag/Apogee-fec/apogee_fec_summary_all.py           | 0:00:00.016664 | 1       | 9        | builds-summary-calc-Apogee-FEC-All
+/builds/prospector/prospector-load.py                                            | 0:00:00.016493 | 1       | 8        | builds-prospector
+/builds/cigna/cigna.py                                                           | 0:00:00.016327 | 1       | 10       | builds-cigna
+/builds/sapphire/sapphire.py                                                     | 0:00:00.016199 | 1       | 10       | builds-sapphire-redshift-load
+/builds/apogee/apogee-summary/dag/Donorbase/donorbase_summary_all.py             | 0:00:00.016143 | 1       | 9        | builds-donorbase-rollup-all
+/example_amit_operator.py                                                        | 0:00:00.015924 | 2       | 14       | example_amit_operator,example_amit_operator
+/builds/auto-db/auto-db.py                                                       | 0:00:00.015892 | 1       | 10       | builds-auto-db
+/builds/occupation/occupation.py                                                 | 0:00:00.015855 | 1       | 10       | builds-occupation
+/builds/nonprofit/monthly/step-2-load-donors/nonprofit-load-donors.py            | 0:00:00.015707 | 0       | 0        |
+/builds/donorbase-mail-responder/donorbase_mail_responder.py                     | 0:00:00.015442 | 1       | 6        | builds-donorbase-mail-responder
+/imports/email-hygiene-step1/email-hygiene-step1.py                              | 0:00:00.015115 | 1       | 2        | email-hygiene-step1
+/builds/b2c-link/b2c-link.py                                                     | 0:00:00.014845 | 1       | 9        | builds-b2c-link
+/builds/costco/costco.py                                                         | 0:00:00.014818 | 1       | 9        | builds-costco
+/builds/nonprofit_validate_export_data/tasks.py                                  | 0:00:00.014711 | 0       | 0        |
+/builds/donorbase-suppression/donorbase_suppression.py                           | 0:00:00.014605 | 1       | 7        | donorbase-suppression
+/external-link/apogee-l2/apogee-l2.py                                            | 0:00:00.014158 | 1       | 6        | external-link-apogee-L2
+/builds/business-udd/business-udd.py                                             | 0:00:00.013897 | 0       | 0        |
+/z_es_test/athena.py                                                             | 0:00:00.013703 | 1       | 3        | athena-parallel-execution
+/builds/businessemail/businessemail.py                                           | 0:00:00.013666 | 1       | 9        | builds-businessemail
+/reports/ig_consumer_royalty_report/ig_consumer_royalty_report.py                | 0:00:00.013541 | 1       | 9        | reports-ig-consumer-royalty-report-do-not-run-manually
+/imports/marketteam-apogee-export/mtm-apogee.py                                  | 0:00:00.013331 | 1       | 6        | marketteam-apogee-export
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.012953 | 1       | 7        | example_kubernetes_executor
+le_dags/example_kubernetes_executor.py                                           |                |         |          |
+/reports/execureach_royalty_report_monthly/execureach_royalty_monthly.py         | 0:00:00.012789 | 1       | 11       | reports-execureach-royalty-monthly
+/builds/apogee/apogee-summary/dag/Apogee/apogee_summary_emr.py                   | 0:00:00.012112 | 1       | 8        | builds-summary-calc-apogee-EMRProcess
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.011576 | 3       | 15       | example_subdag_operator,example_subdag_operator.section-1,example_subdag_operat
+le_dags/example_subdag_operator.py                                               |                |         |          | or.section-2
+/builds/nonprofit/promo_history/promo_history_mail_responder.py                  | 0:00:00.011320 | 1       | 6        | nonprofit--promo-history-load
+/imports/sic-franchise-tables/sic-franchise.py                                   | 0:00:00.011235 | 1       | 6        | imports-sic-franchise-tables
+/imports/do-not-call/do-not-call.py                                              | 0:00:00.010978 | 1       | 6        | imports-do-not-call
+/external-link/external-link-mgen-dlx_extract_load/mgen-dlx-extract.py           | 0:00:00.010885 | 1       | 7        | external-link-mgen-dlx-extract-load
+/imports/business-digital-sapphire-qtr-02/business-digital-sapphire-qtr-02.py    | 0:00:00.010871 | 0       | 0        |
+/imports/park-multicoding-extract/park-multicoding-extract.py                    | 0:00:00.010859 | 1       | 2        | imports-park-multicoding-extract
+/imports/decode-tables/decode-tables.py                                          | 0:00:00.010678 | 1       | 6        | imports-decode-tables
+/imports/loadengage/loadengage.py                                                | 0:00:00.010633 | 1       | 5        | imports-load-engaged
+/imports/ttlcodeid/ttlcodeid.py                                                  | 0:00:00.010565 | 1       | 6        | imports-ttlcodeid
+/imports/engagers/engagers.py                                                    | 0:00:00.010559 | 1       | 6        | imports-engagers
+/imports/b2c-link-dd/b2c-link-dd.py                                              | 0:00:00.010556 | 1       | 6        | imports-b2c-link-dd
+/external-link/mgen-dlx/mgen-dlx.py                                              | 0:00:00.010556 | 1       | 6        | external-link-mgen-dlx
+/builds/nonprofit/penetration-report/penetration.py                              | 0:00:00.010527 | 0       | 0        |
+/imports/engaged-weekly/engaged.py                                               | 0:00:00.010461 | 1       | 6        | imports-engaged-weekly
+/builds/nonprofit_pivot_listconversion_audit_report/nonprofit_listconversion_rep | 0:00:00.010325 | 1       | 2        | nonprofit-pivot-listconversion-audit-report
+ort.py                                                                           |                |         |          |
+/imports/county-name/county-name.py                                              | 0:00:00.010247 | 1       | 6        | imports-county-name
+/z-rr_parallel_execution/task_parallel_execution_dag.py                          | 0:00:00.010216 | 1       | 6        | z-rr-parallel-execution
+/external-link/experian-with-lems/experian-with-lems.py                          | 0:00:00.010206 | 1       | 6        | external-link-experian-with-lems
+/test/z_test/z-test-build.py                                                     | 0:00:00.010192 | 1       | 3        | z-susan-test-build
+/external-link/haystaq-for-selections/haystaq-for-selections.py                  | 0:00:00.010158 | 1       | 6        | external-link-haystaq-for-selections
+/imports/countystate-decode/countystate-decode.py                                | 0:00:00.010128 | 1       | 6        | imports-countystate-decode
+/builds/nonprofit/bi-weekly/create-child-tables/biweekly-child-tables.py         | 0:00:00.010122 | 0       | 0        |
+/imports/iq-build-sql-tables/iq-build-sql-tables.py                              | 0:00:00.010119 | 1       | 6        | imports-iq-build-sql-tables
+/builds/ucc_combined/ucc_combined.py                                             | 0:00:00.010110 | 1       | 7        | builds-ucc-combined
+/builds/nonprofit/monthly/step-3-create-child-tables/monthly-child-tables.py     | 0:00:00.010055 | 0       | 0        |
+/imports/cbsa-csa-descriptions/cbsa-csa-descriptions.py                          | 0:00:00.010051 | 1       | 6        | imports-cbsa-csa-descriptions
+/external-link/mgen/mgen.py                                                      | 0:00:00.010047 | 1       | 6        | external-link-mgen
+/external-link/publisher2/publisher2.py                                          | 0:00:00.009994 | 1       | 6        | external-link-publisher2
+/imports/business-digital-sapphire-monthly/business-digital-sapphire-qtr-02.py   | 0:00:00.009931 | 1       | 6        | imports-business-digital-sapphire-qtr-02
+/builds/apogee/apogee-fec-notification/apogee-fec-notification.py                | 0:00:00.009930 | 1       | 4        | builds-apogee-fec-notification
+/imports/business-digital-sapphire-01/business-digital-sapphire-01.py            | 0:00:00.009888 | 1       | 7        | imports-business-digital-sapphire-01
+/builds/apogee/apogee-summary/dag/Donorbase/donorbase_summary_emr.py             | 0:00:00.009880 | 1       | 7        | builds-donorbase-rollup-emr-load
+/builds/meyer/meyer-step3-mcd-return/meyer-step3-mcd-return.py                   | 0:00:00.009816 | 1       | 7        | builds-meyer-step3-mcd-return
+/builds/l2-voter/l2-voter.py                                                     | 0:00:00.009746 | 1       | 7        | builds-l2-voter
+/builds/donorbase-previous-ordersfile/donorbase-ordersfiles.py                   | 0:00:00.009745 | 1       | 5        | donorbase-generate-final-opu
+/imports/business-digital-sapphire-qtr-01/business-digital-sapphire-qtr-01.py    | 0:00:00.009652 | 1       | 6        | imports-business-digital-sapphire-qtr-01
+/builds/apogee/apogee-summary/dag/Apogee-fec/apogee_fec_summary_emr.py           | 0:00:00.009635 | 1       | 7        | builds-summary-calc-Apogee-FEC-EMRProcess
+/imports/business-digital/business-digital.py                                    | 0:00:00.009608 | 1       | 6        | imports-business-digital
+/datalake/data-science/databricks-model-scoring/de-databricks-model-scoring.py   | 0:00:00.009549 | 1       | 1        | de-databricks-model-score
+/imports/business-digital-sapphire-02/business-digital-sapphire-02.py            | 0:00:00.009524 | 1       | 6        | imports-business-digital-sapphire-02
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.009407 | 1       | 17       | example_task_group_decorator
+le_dags/example_task_group_decorator.py                                          |                |         |          |
+/reports/all_dbs_external_link_table/all_dbs_external_link_table.py              | 0:00:00.009402 | 1       | 8        | reports-all-dbs-external-link-table
+/builds/DBBuild_Fill_Rate_Report/DBBuild_Fill_Rate_Report.py                     | 0:00:00.009396 | 0       | 0        |
+/de-apogee/apogee-promotion-data/apogee-promotion-load-to-redshift.py            | 0:00:00.009363 | 1       | 6        | de-apogee-promotion-load-to-redshift
+/external-link/igus-link/igus_link.py                                            | 0:00:00.009032 | 1       | 7        | external-link-igus
+/imports/global-email-suppressions/global-email-suppressions_lookup.py           | 0:00:00.008665 | 1       | 5        | imports-global-email-suppressions
+/builds/nonprofit/monthly/step-1-load-consumer-db/nonprofit-monthly-load-consume | 0:00:00.008658 | 0       | 0        |
+r-db.py                                                                          |                |         |          |
+/builds/meyer/meyer-step2-aop-return/meyer-step2-aop-return.py                   | 0:00:00.008629 | 1       | 6        | builds-meyer-step2-aop-return
+/builds/apogee/apogee-summary/dag/Apogee-fec/apogee_fec_summary_db.py            | 0:00:00.008501 | 1       | 5        | builds-summary-calc-Apogee-FEC-DBLoad
+/builds/apogee/apogee-summary/dag/Donorbase/donorbase_summary_db.py              | 0:00:00.008426 | 1       | 5        | builds-donorbase-rollup-db-load
+/builds/meyer/meyer-step5-ehyg-return/meyer-step5-ehyg-return.py                 | 0:00:00.008370 | 1       | 6        | builds-meyer-step5-ehyg-return
+/imports/gst-load-weekly/gst-load-weekly.py                                      | 0:00:00.008346 | 1       | 5        | imports-gst-load-weekly
+/imports/countries-forskipemailvalidation-lookup/countriesforskipemailvalidation | 0:00:00.008288 | 1       | 5        | imports-countries-for-skipemailvalidation
+_lookup.py                                                                       |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.008207 | 1       | 37       | example_complex
+le_dags/example_complex.py                                                       |                |         |          |
+/builds/apogee/apogee-summary/dag/Apogee/apogee_summary_db.py                    | 0:00:00.008110 | 1       | 5        | builds-summary-calc-apogee-DBLoad
+/imports/dw-iusa/imports-dw-iusa.py                                              | 0:00:00.008099 | 1       | 7        | imports-dw-iusa
+/imports/mmdb-data-load/mmdb-data-load.py                                        | 0:00:00.008057 | 1       | 5        | imports-mmdb-data-load
+/imports/global-domain-suppressions/global-domain-suppressions_lookup.py         | 0:00:00.008035 | 1       | 5        | imports-global-domain-suppressions
+/builds/apogee-premover-daily/apogee-premover-daily.py                           | 0:00:00.007997 | 1       | 5        | builds-apogee-premover-daily
+/external-link/apogee/apogee-E2.py                                               | 0:00:00.007927 | 1       | 5        | external-link-apogee
+/builds/cobr_weekly/cobr_weekly.py                                               | 0:00:00.007594 | 1       | 9        | builds-cobr-weekly
+/external-link/intent01-to-aop-taxonomy-load/intent01-to-aop-taxanomy-load.py    | 0:00:00.007590 | 1       | 6        | external-link-intent01-to-aop-taxonomy-load
+/external-link/dqi-individual/dqi-individual.py                                  | 0:00:00.007577 | 1       | 5        | external-link-dqi-individual
+/imports/wireless/wireless.py                                                    | 0:00:00.007459 | 1       | 5        | imports-wireless
+/digital/exports/sapphire-liveramp-qtrly/sapphire-liveramp.py                    | 0:00:00.007443 | 1       | 2        | digital-exports-sapphire-liveramp-qtrly
+/external-link/dqi-household-and-dqi-targetready-combined/dqi-household-and-dqi- | 0:00:00.007361 | 1       | 5        | external-link-dqi-household-and-targetready
+targetready-combined.py                                                          |                |         |          |
+/reports/aws_migration_progress_counts/report-aws-migration-count.py             | 0:00:00.007295 | 1       | 3        | reports-aws-migration-counts
+/builds/donorbase_load_consumer/load-donors/load-donors.py                       | 0:00:00.007294 | 0       | 0        |
+/zz-jp-test/athena_test.py                                                       | 0:00:00.007004 | 1       | 7        | zz-jp-athena-test
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.006879 | 3       | 9        | example_branch_datetime_operator,example_branch_datetime_operator_2,example_bra
+le_dags/example_branch_datetime_operator.py                                      |                |         |          | nch_datetime_operator_3
+/suppress/apply-gst-sapphire/apply-gst-sapphire.py                               | 0:00:00.006735 | 1       | 5        | suppress-apply-gst-sapphire
+/builds/meyer/meyer-step1-aop-send/meyer-step1-aop-send.py                       | 0:00:00.006729 | 1       | 5        | builds-meyer-step1-aop-send
+/builds/apogee/build-step4-activate/build-4-apogee-activate.py                   | 0:00:00.006621 | 1       | 4        | builds-apogee-step4-activate-build
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.006596 | 2       | 14       | example_bash_operator,example_bash_operator
+le_dags/example_bash_operator.py                                                 |                |         |          |
+/builds/ultimate_new_mover/part2_activate/activate.py                            | 0:00:00.006445 | 1       | 4        | builds-ultimate-new-mover-part2-activate
+/bi/tableau-data/bi-redshift-refresh.py                                          | 0:00:00.006397 | 1       | 4        | de-internal-bi-redshfit-refresh
+/external-link/ig-canada/build-igcanada-link.py                                  | 0:00:00.006364 | 1       | 6        | external-link-ig-canada
+/reports/amerimark_shipping_report_daily/amerimark_shipping_report_daily.py      | 0:00:00.006348 | 1       | 5        | reports-amerimark-shipping-report-daily
+/builds/pryor-park-email/pryorpark.py                                            | 0:00:00.006164 | 1       | 5        | pryor-park-email
+/suppress/park-suppression-custom-business-email/park-suppression-custom-busines | 0:00:00.006145 | 1       | 5        | suppress-park-custom-business-email
+s-email.py                                                                       |                |         |          |
+/imports/tblstate/tblstate.py                                                    | 0:00:00.006086 | 1       | 4        | imports-tblstate
+/suppress/apply_engagers/apply-engagers.py                                       | 0:00:00.006056 | 1       | 4        | suppress-apply-engagers
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.006035 | 1       | 7        | example_python_operator
+le_dags/example_python_operator.py                                               |                |         |          |
+/suppress/apply_donotcall/apply_donotcall.py                                     | 0:00:00.006007 | 1       | 5        | suppress-apply-donotcall
+/external-link/DnB-link/DnB_link.py                                              | 0:00:00.005996 | 1       | 4        | external-link-DnB
+/datalake/internal/create-spectrumlinks.py                                       | 0:00:00.005951 | 1       | 4        | datalake-internal-create-spectrumlinks
+/external-link/HarteHanks/HarteHanks_link.py                                     | 0:00:00.005793 | 1       | 4        | external-link-hartehanks
+/external-link/intent02-update-export/intent02-update-export.py                  | 0:00:00.005782 | 1       | 5        | external-link-intent02-update-export
+/external-link/lookup/lookup.py                                                  | 0:00:00.005760 | 1       | 4        | external-link-lookup
+/imports/business-digital-cleanup/business-digital-cleanup.py                    | 0:00:00.005726 | 1       | 5        | imports-business-digital-cleanup
+/de-apogee/apogee-promotion-data/apogee-promotion-update-redshift-output.py      | 0:00:00.005635 | 1       | 4        | de-apogee-promotion-update-redshift-output
+/builds/donorbase_load_consumer/donorbase.py                                     | 0:00:00.005568 | 1       | 5        | builds-donorbase-load-consumer
+/reports/prospector_db_usage/prospector_db_usage.py                              | 0:00:00.005557 | 1       | 4        | reports-prospector-db-usage
+/suppress/Apply_optout_hardbounce/apply-optout-hardbounce.py                     | 0:00:00.005458 | 1       | 4        | suppress-apply-optout-hardbounce
+/maintenance/unzip_s3_file/maintenance-unzip-s3-file.py                          | 0:00:00.005353 | 1       | 3        | maintenance-unzip-s3-file
+/builds/new_business_1334/part2_activate/activate.py                             | 0:00:00.005345 | 1       | 4        | builds-new-business-1334-part2-activate
+/support/setup_b2c_db_in_aws/setup-b2c-db-in-aws.py                              | 0:00:00.005282 | 1       | 3        | support-setup-b2c-db-in-aws
+/reports/l2_royalty_reports/l2_royalty_reports.py                                | 0:00:00.005070 | 1       | 4        | reports-l2-royalty-do-not-run-manually
+/maintenance/delete-old-gluejobs.py                                              | 0:00:00.005048 | 1       | 4        | maintenance-delete-old-glue-jobs
+/builds/Donorbase-CCPA-Supression/Donorbase-CCPA-Supression.py                   | 0:00:00.005030 | 1       | 3        | donorbase-ccpa-suppressions
+/reports/haystaq_royalty_reports_do_not_run_manually/haystaq-royalty-reports-do- | 0:00:00.004974 | 1       | 5        | reports-haystaq-royalty-reports-do-not-run-manually
+not-run-manually.py                                                              |                |         |          |
+/suppress/ccpa-nonprofit-apogee/suppress-ccpa-np-apogee.py                       | 0:00:00.004956 | 1       | 3        | suppress-ccpa-np-apogee
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.004929 | 1       | 3        | example_branch_dop_operator_v3
+le_dags/example_branch_python_dop_operator_3.py                                  |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.004898 | 1       | 11       | example_branch_python_operator_decorator
+le_dags/example_branch_operator_decorator.py                                     |                |         |          |
+/builds/meyer/meyer-step-7-renamed-files/meyer-step-7-renamed-files.py           | 0:00:00.004783 | 1       | 3        | builds-meyer-step7-renamed-files
+/builds/meyer/meyer-step6-mcd-xref-update/meyer-step6-mcd-xref-update.py         | 0:00:00.004773 | 1       | 5        | builds-meyer-step6-mcd-xref-update
+/imports/optout-hardbounce-suppressions/optout-hardbounce-suppressions_lookup.py | 0:00:00.004706 | 1       | 4        | imports-optout-hardbounce-suppressions
+/maintenance/redshift-copy-tables/data_relay.py                                  | 0:00:00.004607 | 1       | 4        | maintenance-redshift-copy-tables
+/maintenance/redshift-house-keeping/rs-old-table-drop.py                         | 0:00:00.004534 | 1       | 4        | maintenance-redshift-housekeeping-old-table-drop
+/builds/consumer_activate/consumer_activate.py                                   | 0:00:00.004529 | 1       | 4        | builds-consumer-activate
+/datalake/internal/Finance/load_finance.py                                       | 0:00:00.004446 | 1       | 4        | datalake-internal-finance
+/datalake/internal/Sales-Variance/load_sales_var.py                              | 0:00:00.004421 | 1       | 2        | datalake-internal-sales-variance
+/builds/ultimate_new_mover/part1_load/setup_listconversion.py                    | 0:00:00.004348 | 1       | 4        | builds-ultimate-new-mover-part1-load
+/builds/nonprofit/monthly/step-5-activate-build/nonprofit_monthly-activate-build | 0:00:00.004334 | 1       | 2        | builds-nonprofit-monthly-step5-activate-build
+.py                                                                              |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.004277 | 1       | 3        | example_passing_params_via_test_command
+le_dags/example_passing_params_via_test_command.py                               |                |         |          |
+/reports/list_updates_mgen_audit_report/list_updates_mgen_report.py              | 0:00:00.004167 | 1       | 4        | reports_list_updates_mgen_audit
+/builds/new_business_1334/part1_load/setup_listconversion.py                     | 0:00:00.004151 | 1       | 4        | builds-new-business-1334-part1-load
+/maintenance/list-conversion-scheduler/list-conversion-scheduler.py              | 0:00:00.004130 | 1       | 3        | maintenance-list-conversion-scheduler
+/reports/alert_missing_amex_ids_file/alert-missing-amex-ids-file.py              | 0:00:00.004117 | 1       | 3        | reports-alert-missing-amex-ids-file
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.004115 | 1       | 9        | example_nested_branch_dag
+le_dags/example_nested_branch_dag.py                                             |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.004101 | 1       | 6        | example_weekday_branch_operator
+le_dags/example_branch_day_of_week_operator.py                                   |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.004064 | 1       | 3        | example_dag_decorator
+le_dags/example_dag_decorator.py                                                 |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.004058 | 1       | 14       | example_short_circuit_decorator
+le_dags/example_short_circuit_decorator.py                                       |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.004057 | 6       | 6        | dataset_consumes_1,dataset_consumes_1_and_2,dataset_consumes_1_never_scheduled,
+le_dags/example_datasets.py                                                      |                |         |          | dataset_consumes_unknown_never_scheduled,dataset_produces_1,dataset_produces_2
+/builds/pre-mover-daily/setup_listconversion.py                                  | 0:00:00.004033 | 1       | 4        | builds-pre-mover-daily-load
+/test/z_test/z-susan.py                                                          | 0:00:00.004013 | 1       | 1        | z-susan-testing
+/de-internal/de-internal-DQ/internal_dq.py                                       | 0:00:00.003965 | 1       | 3        | de-internal-dq
+/SFTP/sftp_dag.py                                                                | 0:00:00.003944 | 1       | 5        | sftp_dag
+/de-lambda/Lyr_Request.zip                                                       | 0:00:00.003928 | 0       | 0        |
+/reports/list_updates_mgen_audit_report/tasks.py                                 | 0:00:00.003892 | 0       | 0        |
+/z_kr_BusinessDB_test/z-kr-python-test.py                                        | 0:00:00.003844 | 1       | 1        | z-kr-python-test
+/z-rr-emr_cluster_automation/start_emr_cluster.py                                | 0:00:00.003838 | 1       | 5        | spin_emr_cluster
+/maintenance/rename-s3-file/maintenance-rename-s3-file.py                        | 0:00:00.003776 | 1       | 3        | maintenance-rename-s3-file
+/reports/ig_consumer_royalty_report/tasks.py                                     | 0:00:00.003719 | 0       | 0        |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.003718 | 1       | 11       | example_branch_operator
+le_dags/example_branch_operator.py                                               |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.003427 | 1       | 2        | example_sla_dag
+le_dags/example_sla_dag.py                                                       |                |         |          |
+/helpers/apogee.py                                                               | 0:00:00.003323 | 0       | 0        |
+/z_kr_BusinessDB_test/z-kr-bash-test.py                                          | 0:00:00.003260 | 1       | 1        | z-kr-bash-runner
+/builds/np-dataprep/dataprep_glue_dag.py                                         | 0:00:00.003251 | 0       | 0        |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.003152 | 1       | 14       | example_short_circuit_operator
+le_dags/example_short_circuit_operator.py                                        |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.003134 | 2       | 4        | example_external_task_marker_child,example_external_task_marker_parent
+le_dags/example_external_task_marker_dag.py                                      |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.003086 | 1       | 7        | example_branch_labels
+le_dags/example_branch_labels.py                                                 |                |         |          |
+/helpers/nonprofit.py                                                            | 0:00:00.003027 | 0       | 0        |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.002860 | 2       | 6        | example_xcom_args,example_xcom_args_with_operators
+le_dags/example_xcomargs.py                                                      |                |         |          |
+/z-kr-dynamic-ddls/z-kr-dynamic-ddl-dag.py                                       | 0:00:00.002818 | 1       | 1        | z-kr-dynamic-ddl-dag
+/helpers/donorbase.py                                                            | 0:00:00.002803 | 0       | 0        |
+/dynamic-ddls/dynamic-ddls.py                                                    | 0:00:00.002776 | 1       | 1        | dynamic-ddls
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.002628 | 1       | 6        | example_xcom
+le_dags/example_xcom.py                                                          |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.002392 | 1       | 9        | example_task_group
+le_dags/example_task_group.py                                                    |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.002264 | 1       | 8        | example_skip_dag
+le_dags/example_skip_dag.py                                                      |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.002198 | 1       | 2        | example_local_kubernetes_executor
+le_dags/example_local_kubernetes_executor.py                                     |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.002186 | 1       | 3        | tutorial_taskflow_api
+le_dags/tutorial_taskflow_api.py                                                 |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.002088 | 1       | 2        | latest_only
+le_dags/example_latest_only.py                                                   |                |         |          |
+/operators/spin_emr_cluster.py                                                   | 0:00:00.002086 | 0       | 0        |
+/de-lambda/s3_airflow_lambda_function.py.zip                                     | 0:00:00.002003 | 0       | 0        |
+/z-cb-testing/z-cb-testing.py                                                    | 0:00:00.001946 | 1       | 3        | z-cb-testing
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.001930 | 1       | 3        | tutorial
+le_dags/tutorial.py                                                              |                |         |          |
+/z_es_test/test.py                                                               | 0:00:00.001823 | 1       | 3        | maxactive-run-test
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.001801 | 1       | 2        | example_time_delta_sensor_async
+le_dags/example_time_delta_sensor_async.py                                       |                |         |          |
+/de-odbx/dag/odbx_glue_all.py                                                    | 0:00:00.001779 | 0       | 0        |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.001671 | 1       | 5        | latest_only_with_trigger
+le_dags/example_latest_only_with_trigger.py                                      |                |         |          |
+/de-lambda/s3_airflow_lambda_function.py                                         | 0:00:00.001550 | 0       | 0        |
+/de-odbx/dag/odbx_glue_5k_sample.py                                              | 0:00:00.001359 | 0       | 0        |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.001325 | 1       | 3        | tutorial_dag
+le_dags/tutorial_dag.py                                                          |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.001248 | 1       | 2        | example_trigger_target_dag
+le_dags/example_trigger_target_dag.py                                            |                |         |          |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.001126 | 1       | 1        | example_trigger_controller_dag
+le_dags/example_trigger_controller_dag.py                                        |                |         |          |
+/reports/alert_missing_amex_ids_file/tasks.py                                    | 0:00:00.001037 | 0       | 0        |
+/suppress/Apply_optout_hardbounce/tasks.py                                       | 0:00:00.001003 | 0       | 0        |
+/helpers/email_test.py                                                           | 0:00:00.000961 | 0       | 0        |
+/suppress/apply_engagers/tasks.py                                                | 0:00:00.000921 | 0       | 0        |
+/de-apogee/apogee-promotion-data/apogee_promo_dataissue_call_notes.docx          | 0:00:00.000671 | 0       | 0        |
+/z_ak_location_linkage/de-location-linkage.py                                    | 0:00:00.000620 | 0       | 0        |
+/z-sr-consumer/createTopics.py                                                   | 0:00:00.000607 | 0       | 0        |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.000603 | 0       | 0        |
+le_dags/tutorial_taskflow_api_virtualenv.py                                      |                |         |          |
+/reports/consumer_selection_report_weekly_mon/consumer_selection_report_weekly_m | 0:00:00.000564 | 0       | 0        |
+on.py                                                                            |                |         |          |
+/z_kr_jarvis/testdags/z-kr-lambda-test.py                                        | 0:00:00.000555 | 0       | 0        |
+/suppress/apply_donotcall/tasks.py                                               | 0:00:00.000546 | 0       | 0        |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.000536 | 0       | 0        |
+le_dags/plugins/workday.py                                                       |                |         |          |
+/support/setup_b2c_db_in_aws/tasks.py                                            | 0:00:00.000498 | 0       | 0        |
+/helpers/common.py                                                               | 0:00:00.000424 | 0       | 0        |
+/helpers/send_email.py                                                           | 0:00:00.000413 | 0       | 0        |
+/de-apogee/apogee-promotion-data/Apogee_Promotion_AIP_process.docx               | 0:00:00.000409 | 0       | 0        |
+/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/site-packages/airflow/examp | 0:00:00.000399 | 0       | 0        |
+le_dags/subdags/subdag.py                                                        |                |         |          |
+/de-internal/de-salesforce/shared-packages/simple_salesforce-1.11.3-py2.py3-none | 0:00:00.000348 | 0       | 0        |
+-any.whl                                                                         |                |         |          |
+/builds/apogee/apogee-summary/config/donorbase/donorbase-config.xlsx             | 0:00:00.000307 | 0       | 0        |
+/de-internal/de-salesforce/shared-packages/salesforce_bulk-2.1.0-py2.py3-none-an | 0:00:00.000243 | 0       | 0        |
+y.whl
