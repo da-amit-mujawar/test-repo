@@ -21,8 +21,8 @@ jobs:
       run: pip install "apache-airflow==2.4.3" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.4.3/constraints-no-providers-3.8.txt"
     - run: airflow info
     - run: ls
-#    - name: Install dependencies
-#      run: pip install --no-cache-dir -r idms-requirements.txt
+    - name: Install dependencies
+      run: pip install --no-cache-dir -r idms-requirements.txt
     - name: Run DB Init
       run: airflow db init
     - name: Sleep
