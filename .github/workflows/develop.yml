@@ -39,7 +39,7 @@ jobs:
     - name: Display report
       run: cat /tmp/reports.txt
     - name: Display Module errors
-      run: grep ModuleNotFoundError /tmp/reports.txt
+      run: grep ModuleNotFoundError /tmp/reports.txt || echo "No ModuleNotFoundErrors"
     - name: Display Key errors
       run: grep KeyError /tmp/reports.txt
     - name: Check report for errors
