@@ -45,7 +45,7 @@ jobs:
     - name: Run linting
       run: |
         pip install pylint-airflow
-        pylint --load-plugins=pylint_airflow --disable=R,C,I /home/runner/airflow/dags || true
+        pylint --load-plugins=pylint_airflow --disable=R,C,I,W /home/runner/airflow/dags || true
     - name: Display report
       run: cat /tmp/reports.txt
     - name: Display Module errors
