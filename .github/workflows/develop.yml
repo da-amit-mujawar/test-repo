@@ -18,13 +18,13 @@ jobs:
     - run: python --version
     - run: pip --version
     - name: Install Airflow
-      run: pip install "apache-airflow==2.4.2" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.4.2/constraints-no-providers-3.8.txt"
+      run: pip install "apache-airflow==2.4.3" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.4.3/constraints-no-providers-3.8.txt"
     - run: airflow info
     - run: ls
     - name: Copy Dags to airflow
       run: cp *.py /home/runner/airflow/dags
     - name: Copy IDMS Dags to airflow
-      run: cp -R idms/dags/* /home/runner/airflow/dags/
+      run: cp -R idms/dag/* /home/runner/airflow/dags/
     - run: ls /home/runner/airflow/dags
     - run: sleep 5
     - name: Run DB Init
