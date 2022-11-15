@@ -1,0 +1,2 @@
+STCDIGSQLP11\DIG11,listbazaar,accounts,D:\Redshift_DataIngestion\Listbazaar
+STCDIGSQLP11\DIG11,listbazaar,orders,D:\Redshift_DataIngestion\Listbazaar

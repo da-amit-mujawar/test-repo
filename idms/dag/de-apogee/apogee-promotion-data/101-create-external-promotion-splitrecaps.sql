@@ -1,0 +1,19 @@
+-- CREATE EXTERNAL TABLE spectrumdb.apogee_splitrecaps_silver (
+--     "package_id" VARCHAR(1000),
+--     "keycode" VARCHAR(1000),
+--     "list_id" VARCHAR(1000),
+--     "list_name" VARCHAR(1000),
+--     "list_name_2" VARCHAR(1000),
+--     "merge_key" VARCHAR(1000),
+--     "quantity" VARCHAR(1000),
+--     "mailing_type" VARCHAR(1000),
+--     "read_timestamp" TIMESTAMP,
+--     "client_id" VARCHAR(1000),
+--     "project_id" VARCHAR(1000)
+--     )
+--     ROW FORMAT SERDE 'org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe'
+--     STORED AS INPUTFORMAT 'org.apache.hadoop.hive.ql.io.SymlinkTextInputFormat'
+--     OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+--     LOCATION '{splitfiles_manifest}';
+-- LOCATION 's3://de-2722-promotions-silver/promotions_splitrecaps/_symlink_format_manifest/';
+select getdate()

@@ -1,0 +1,9 @@
+{
+   "prefix": "redshift-silver-tables-load/ddl_tables/",
+   "alter_table_key" : "redshift-silver-tables-load/ddl_tables/alter_table_statements.sql",
+   "jobid"   : "10148",
+   "count_file_key" : "redshift-silver-tables-load/databricks_count.csv",
+   "email_address" : "var-de-email-dl",
+   "email_subject" : "Airflow Notification: Load Internal DataLake from Databricks to Redshift",
+   "email_message" : "Please find attached validated counts for each table."
+ }

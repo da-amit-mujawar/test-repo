@@ -1,0 +1,129 @@
+{
+  "ClusterName": "apogee-rollups-step2",
+  "Concurrency": "9",
+  "steps": [
+    {
+      "Args": [
+        "spark-submit",
+        "--deploy-mode",
+        "cluster",
+        "--py-files",
+        "s3://{s3_code_bucket}/not-for-profit/commonlib.py",
+        "s3://{s3_code_bucket}/not-for-profit/Not-For-Profit-2.0-ProcessLTD.py",
+        "{spark_config}",
+        "{process_date}"
+      ],
+      "Type": "CUSTOM_JAR",
+      "ActionOnFailure": "CONTINUE",
+      "Jar": "command-runner.jar",
+      "Properties": "",
+      "Name": "LTD Calculation"
+    },
+    {
+      "Args": [
+        "spark-submit",
+        "--deploy-mode",
+        "cluster",
+        "--py-files",
+        "s3://{s3_code_bucket}/not-for-profit/commonlib.py",
+        "s3://{s3_code_bucket}/not-for-profit/Not-For-Profit-2.1-ProcessCategory.py",
+        "{spark_config}",
+        "{process_date}"
+      ],
+      "Type": "CUSTOM_JAR",
+      "ActionOnFailure": "CONTINUE",
+      "Jar": "command-runner.jar",
+      "Properties": "",
+      "Name": "Category Calculation"
+    },
+    {
+      "Args": [
+        "spark-submit",
+        "--deploy-mode",
+        "cluster",
+        "--py-files",
+        "s3://{s3_code_bucket}/not-for-profit/commonlib.py",
+        "s3://{s3_code_bucket}/not-for-profit/Not-For-Profit-2.2-ProcessMonths.py",
+        "{spark_config}",
+        "{process_date}"
+      ],
+      "Type": "CUSTOM_JAR",
+      "ActionOnFailure": "CONTINUE",
+      "Jar": "command-runner.jar",
+      "Properties": "",
+      "Name": "Months Calculation"
+    },
+    {
+      "Args": [
+        "spark-submit",
+        "--deploy-mode",
+        "cluster",
+        "--py-files",
+        "s3://{s3_code_bucket}/not-for-profit/commonlib.py",
+        "s3://{s3_code_bucket}/not-for-profit/Not-For-Profit-2.3-ProcessList.py",
+        "{spark_config}",
+        "{process_date}",
+        "0"
+      ],
+      "Type": "CUSTOM_JAR",
+      "ActionOnFailure": "CONTINUE",
+      "Jar": "command-runner.jar",
+      "Properties": "",
+      "Name": "List-0-AVG_Dollar_Donation"
+    },
+    {
+      "Args": [
+        "spark-submit",
+        "--deploy-mode",
+        "cluster",
+        "--py-files",
+        "s3://{s3_code_bucket}/not-for-profit/commonlib.py",
+        "s3://{s3_code_bucket}/not-for-profit/Not-For-Profit-2.3-ProcessList.py",
+        "{spark_config}",
+        "{process_date}",
+        "1"
+      ],
+      "Type": "CUSTOM_JAR",
+      "ActionOnFailure": "CONTINUE",
+      "Jar": "command-runner.jar",
+      "Properties": "",
+      "Name": "List-1-Dollar_Donation"
+    },
+    {
+      "Args": [
+        "spark-submit",
+        "--deploy-mode",
+        "cluster",
+        "--py-files",
+        "s3://{s3_code_bucket}/not-for-profit/commonlib.py",
+        "s3://{s3_code_bucket}/not-for-profit/Not-For-Profit-2.3-ProcessList.py",
+        "{spark_config}",
+        "{process_date}",
+        "2"
+      ],
+      "Type": "CUSTOM_JAR",
+      "ActionOnFailure": "CONTINUE",
+      "Jar": "command-runner.jar",
+      "Properties": "",
+      "Name": "List-2-Number_Of_Donation"
+    },
+    {
+      "Args": [
+        "spark-submit",
+        "--deploy-mode",
+        "cluster",
+        "--py-files",
+        "s3://{s3_code_bucket}/not-for-profit/commonlib.py",
+        "s3://{s3_code_bucket}/not-for-profit/Not-For-Profit-2.4-ProcessListSLD.py",
+        "{spark_config}",
+        "{process_date}",
+        "3"
+      ],
+      "Type": "CUSTOM_JAR",
+      "ActionOnFailure": "CONTINUE",
+      "Jar": "command-runner.jar",
+      "Properties": "",
+      "Name": "List-3-Since_Last_Donation"
+    }
+  ]
+}

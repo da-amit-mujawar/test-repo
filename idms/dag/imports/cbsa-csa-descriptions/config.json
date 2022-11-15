@@ -1,0 +1,13 @@
+{
+    "table_cbsa_0": "exclude_cbsa_descriptions_temp",
+    "table_cbsa_1": "exclude_cbsa_descriptions_new",
+    "table_cbsa_2": "exclude_cbsa_descriptions",
+    "table_csa_0": "exclude_csa_descriptions_temp",
+    "table_csa_1": "exclude_csa_descriptions_new",
+    "table_csa_2": "exclude_csa_descriptions",
+    "s3-key1": "/monthly_delivery/CBSA",
+    "s3-key2": "/monthly_delivery/CSA",
+    "email_subject": "AWS - Load CBSA CSA from S3-monthly-delivery on redshift",
+    "email_message": "<h3>Airflow DAG: imports-cbsa-csa-descriptions completed successfully..</h3>"
+}
+

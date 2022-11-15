@@ -1,0 +1,20 @@
+{
+    "mailfile_table": "apogee_promotions_mailfiles",
+    "splitrecap_table": "apogee_promotions_splitrecaps",
+    "aop_table": "apogee_promotion_aop",
+    "bucket": "idms-7933-databricks",
+    "prefix": "apogee_promo/redshift-silver-tables-load/ddl_tables/",
+    "alter_table_key": "ddl_tables/alter_table_statements.sql",
+    "domain": "data-axle-idms-dev.cloud.databricks.com",
+    "proddomain": "dbc-cacb962d-262b.cloud.databricks.com",
+    "jobid": "50",
+    "struct_jobid": "",
+    "count_file_key": "redshift-silver-tables-load/databricks_count.csv",
+    "drop_table_key": "redshift-silver-tables-load/drop_tables.sql",
+    "email_address": "var-silver-table-load-email",
+    "email_subject": "Loading of databricks silver tables into Redshift report",
+    "email_message": "This mail has the attached counts from both the databricks and redshift",
+    "mailfiles_manifest": "s3://nessy-apogee/dev/silver/promotions_mailfiles/_symlink_format_manifest/",
+    "splitfiles_manifest": "s3://nessy-apogee/dev/silver/promotions_splitrecaps/_symlink_format_manifest/",
+    "s3_report_location": "s3://idms-7933-apogee/promotions/apogeepromo_final_"
+}

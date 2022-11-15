@@ -1,0 +1,19 @@
+{
+  "Comment": "Category, List ID, or Months",
+  "Records": [
+    {
+      "Code": "C0",
+      "Value": "1"
+    },
+    {
+      "Code": "C1",
+      "Value": "_<CATEGORY>",
+      "Formula": " ListCategory04 = <CATEGORY> "
+    },
+    {
+      "Code": "C2",
+      "Value": "_<LISTID>",
+      "Formula": " ListID = <LISTID> "
+    }
+  ]
+}

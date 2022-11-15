@@ -1,0 +1,8 @@
+{
+    "tablename1": "tblExternal37_191_201206_new",
+    "tablename2": "tblExternal37_191_201206",
+    "reportname1": "/Reports/mgen_dlx_extract_sample_output",
+    "email_address" :"triyanshi.gupta@celebaltech.com,elina.bor@data-axle.com",
+    "email_subject" : "Airflow Notification: Loaded mgen dlx extract file",
+    "email_message" : "PFA sample output"
+}

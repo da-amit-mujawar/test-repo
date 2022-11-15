@@ -1,0 +1,8 @@
+{
+    "tablename1": "county_name_new",
+    "tablename2": "county_name",
+    "table_state": "sql_tblstate",
+    "email_subject": "AWS - Load county-name from sql_tblstate on redshift",
+    "email_message": "<h3>Airflow DAG: imports-county-name completed successfully.</h3>"
+}
+

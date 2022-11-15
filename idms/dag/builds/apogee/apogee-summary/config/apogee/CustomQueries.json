@@ -1,0 +1,34 @@
+{
+  "MetaData": {
+    "Raw Files": {
+      "TableName": "NP_Transactions",
+      "KeyColumnName": "Process_ID"
+    },
+    "TblLTDData": {
+      "TableName": "tblLTD",
+      "KeyColumnName": "Company_ID"
+    }
+  },
+  "Records": [
+    {
+      "Code": "CST01",
+      "ID": "1",
+      "Query": "SELECT DISTINCT Process_ID, (FIRST_VALUE(PaymentMethod) OVER (PARTITION BY Process_ID ORDER BY DonationDate DESC)) LTD_Last_Payment_Method FROM NP_Transactions WHERE length(PaymentMethod) > 0"
+    },
+    {
+      "Code": "CST01",
+      "ID": "2",
+      "Query": "SELECT DISTINCT Process_ID, (FIRST_VALUE(DonationChannel) OVER (PARTITION BY Process_ID ORDER BY DonationDate DESC)) LTD_Last_Response_Channel FROM NP_Transactions WHERE length(DonationChannel) > 0 "
+    },
+    {
+      "Code": "CST01",
+      "ID": "3",
+      "Query": "SELECT Process_ID, CAST(DATEDIFF(MAX(DonationDate), MIN(DonationDate)) / COUNT(1) AS INT) M48_Average_Days_Between_Donations FROM NP_Transactions WHERE MB_DonationDate BETWEEN 0 AND 48 GROUP BY Process_ID"
+    },
+    {
+      "Code": "CST01",
+      "ID": "4",
+      "Query": "SELECT Company_ID as Process_ID, CASE WHEN LTD_Average_Donation_Per_Transaction < 10 THEN 'A'  WHEN LTD_Average_Donation_Per_Transaction < 25 THEN 'B' WHEN LTD_Average_Donation_Per_Transaction < 50 THEN 'C' WHEN LTD_Average_Donation_Per_Transaction < 100 THEN 'D' WHEN LTD_Average_Donation_Per_Transaction < 500 THEN 'E' ELSE 'F' END AS LTD_AVG_Donation_Range FROM tblLTD"
+    }
+  ]
+}

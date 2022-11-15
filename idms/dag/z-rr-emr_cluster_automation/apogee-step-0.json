@@ -1,0 +1,21 @@
+{
+  "ClusterName": "apogee-rollups-step0",
+  "steps": [
+    {
+      "Args": [
+        "spark-submit",
+        "--deploy-mode",
+        "cluster",
+        "s3://idms-2722-code/not-for-profit/Not-For-Profit-0.0-CSV2Parquet.py",
+        "s3://idms-2722-code/not-for-profit/apogee-spark-config.json",
+        "{process_date}"
+      ],
+      "Type": "CUSTOM_JAR",
+      "ActionOnFailure": "CONTINUE",
+      "Jar": "command-runner.jar",
+      "Properties": "",
+      "Name": "Convert CSV 2 Parquet"
+    }
+  ]
+}
+

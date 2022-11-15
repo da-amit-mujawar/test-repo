@@ -1,0 +1,5 @@
+{
+    "email_subject": "DonorBase mail and responder files unload",
+    "email_message": "Airflow : unload mail and responder files successfully for each ownerid .",
+    "email_business_users" : "DL-Data-Ingestion@data-axle.com"
+}

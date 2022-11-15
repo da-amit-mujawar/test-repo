@@ -1,0 +1,407 @@
+DROP TABLE IF EXISTS spectrumdb.dotcompaymentgateway_thinkscheduledpayment; 
+
+  CREATE EXTERNAL TABLE spectrumdb.dotcompaymentgateway_thinkscheduledpayment 
+(
+ThinkScheduledPaymentId VARCHAR(64)
+,ThinkContractLineId VARCHAR(64)
+,ThinkOrderId VARCHAR(64)
+,InvoiceId VARCHAR(64)
+,Timestamp BIGINT
+,InstallmentNo INT
+,PaymentDate TIMESTAMP
+,Recurring VARCHAR(64)
+,LineItemNo INT
+,ProductNo VARCHAR(64)
+,QuantityOrdered DECIMAL(25,13)
+,QuantityInvoiced DECIMAL(25,13)
+,ExtendedAmount DECIMAL(15,4)
+,ThinkOrderItemId VARCHAR(64)
+,PaymentStatus VARCHAR(32)
+,PaymentMode VARCHAR(32)
+,InvoiceOption VARCHAR(32)
+,AccessStartDate TIMESTAMP
+,AccessEndDate TIMESTAMP
+,CustomDescription VARCHAR(2000)
+,BilledMonths INT
+,ShippingAmount DECIMAL(15,4)
+)
+
+
+  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+  WITH SERDEPROPERTIES ( 
+  'separatorChar' = '|', 
+  'quoteChar' = '"', 
+  'escapeChar' = '\\' 
+  ) 
+  STORED AS textfile 
+  LOCATION 's3://axle-internal-sources/raw/oess/dotcompaymentgateway_thinkscheduledpayment/' 
+  TABLE PROPERTIES ('compression_type'='gzip');
+
+DROP VIEW IF EXISTS interna.dotcompg_thinkscheduledpayment; 
+
+CREATE VIEW interna.dotcompg_thinkscheduledpayment AS SELECT * FROM spectrumdb.dotcompaymentgateway_thinkscheduledpayment WITH NO SCHEMA BINDING; 
+
+SELECT COUNT(*) FROM interna.dotcompg_thinkscheduledpayment;
+ 
+SELECT TOP 1000 * FROM interna.dotcompg_thinkscheduledpayment; 
+
+DROP TABLE IF EXISTS spectrumdb.dotcompaymentgateway_thinkorderitem; 
+
+  CREATE EXTERNAL TABLE spectrumdb.dotcompaymentgateway_thinkorderitem 
+(
+ThinkOrderItemId VARCHAR(64)
+,ThinkOrderId VARCHAR(64)
+,ThinkContractLineId VARCHAR(64)
+,ProductNo VARCHAR(16)
+,Description VARCHAR(2000)
+,QuantityOrdered DECIMAL(25,13)
+,QuantityBilled DECIMAL(25,13)
+,Amount DECIMAL(15,4)
+,TaxExempt INT
+,LineItemNo INT
+,LineItemType VARCHAR(32)
+,Recurring VARCHAR(32)
+,FirstPaymentDate TIMESTAMP
+,HoldBilling INT
+,Timestamp BIGINT
+,ListPrice DECIMAL(15,4)
+,UseCustomDescription INT
+,UnitPrice DECIMAL(15,4)
+,UnitOfMeasure VARCHAR(32)
+,CustomDescription VARCHAR(2000)
+,PackageInformation VARCHAR(200)
+)
+
+  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+  WITH SERDEPROPERTIES ( 
+  'separatorChar' = '|', 
+  'quoteChar' = '"', 
+  'escapeChar' = '\\' 
+  ) 
+  STORED AS textfile 
+  LOCATION 's3://axle-internal-sources/raw/oess/dotcompaymentgateway_thinkorderitem/' 
+  TABLE PROPERTIES ('compression_type'='gzip');
+
+DROP VIEW IF EXISTS interna.dotcompg_thinkorderitem; 
+
+CREATE VIEW interna.dotcompg_thinkorderitem AS SELECT * FROM spectrumdb.dotcompaymentgateway_thinkorderitem WITH NO SCHEMA BINDING; 
+
+SELECT COUNT(*) FROM interna.dotcompg_thinkorderitem;
+ 
+SELECT TOP 1000 * FROM interna.dotcompg_thinkorderitem; 
+
+DROP TABLE IF EXISTS spectrumdb.dotcompaymentgateway_thinkorder; 
+
+  CREATE EXTERNAL TABLE spectrumdb.dotcompaymentgateway_thinkorder 
+(
+ThinkOrderId VARCHAR(64)
+,ThinkContractId VARCHAR(64)
+,OrderId VARCHAR(64)
+,Timestamp BIGINT
+,OrderStartDate TIMESTAMP
+,OrderEndDate TIMESTAMP
+,InvoiceOption VARCHAR(32)
+,SalesRepInfo VARCHAR(MAX)
+,ExchangeInfo VARCHAR(MAX)
+,PrepaidNumber VARCHAR(64)
+,CustomerRep VARCHAR(64)
+,EngagementCode VARCHAR(64)
+,ShowDatesOnInvoice INT
+,InvoiceComments VARCHAR(240)
+,IsEvergreen INT
+,RenewalFor INT
+,SecondaryOrderNo VARCHAR(32)
+,TeamNumber VARCHAR(32)
+,BusinessUnit VARCHAR(32)
+,SubscriptionId INT
+,OriginalSubscriptionDate TIMESTAMP
+,InvoicingEmailList VARCHAR(300)
+,WatchEmailList VARCHAR(300)
+)
+  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+  WITH SERDEPROPERTIES ( 
+  'separatorChar' = '|', 
+  'quoteChar' = '"', 
+  'escapeChar' = '\\' 
+  ) 
+  STORED AS textfile 
+  LOCATION 's3://axle-internal-sources/raw/oess/dotcompaymentgateway_thinkorder/'
+  TABLE PROPERTIES ('compression_type'='gzip');
+
+DROP VIEW IF EXISTS interna.dotcompg_thinkorder; 
+
+CREATE VIEW interna.dotcompg_thinkorder AS SELECT * FROM spectrumdb.dotcompaymentgateway_thinkorder WITH NO SCHEMA BINDING; 
+
+SELECT COUNT(*) FROM interna.dotcompg_thinkorder;
+ 
+SELECT TOP 1000 * FROM interna.dotcompg_thinkorder; 
+
+DROP TABLE IF EXISTS spectrumdb.dotcompaymentgateway_scheduledpayment; 
+
+  CREATE EXTERNAL TABLE spectrumdb.dotcompaymentgateway_scheduledpayment 
+(
+ScheduledPaymentId varchar(64)
+,OrderId varchar(64)
+,InvoiceId varchar(64)
+,PaymentDate TIMESTAMP
+,ShippingAmount DECIMAL(15,4)
+,TaxAmount DECIMAL(15,4)
+,Timestamp BIGINT
+,Created TIMESTAMP
+,LastAccessed TIMESTAMP
+,FirstTransaction INT
+,RetailPrice DECIMAL(15,4)
+,FinalPrice DECIMAL(15,4)
+,OrderIdentity INT
+)
+
+  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+  WITH SERDEPROPERTIES ( 
+  'separatorChar' = '|', 
+  'quoteChar' = '"', 
+  'escapeChar' = '\\' 
+  ) 
+  STORED AS textfile 
+  LOCATION 's3://axle-internal-sources/raw/oess/dotcompaymentgateway_scheduledpayment/'
+  TABLE PROPERTIES ('compression_type'='gzip');
+
+DROP VIEW IF EXISTS interna.dotcompg_scheduledpayment; 
+
+CREATE VIEW interna.dotcompg_scheduledpayment AS SELECT * FROM spectrumdb.dotcompaymentgateway_scheduledpayment WITH NO SCHEMA BINDING; 
+
+SELECT COUNT(*) FROM interna.dotcompg_scheduledpayment;
+ 
+SELECT TOP 1000 * FROM interna.dotcompg_scheduledpayment; 
+
+DROP TABLE IF EXISTS spectrumdb.dotcompaymentgateway_product; 
+  CREATE EXTERNAL TABLE spectrumdb.dotcompaymentgateway_product 
+(
+ProductId varchar(64)
+,OrderId varchar(64)
+,ProductNo VARCHAR(16)
+,Description VARCHAR(255)
+,Quantity DECIMAL(25,13)
+,UnitPrice DECIMAL(15,4)
+,Subtotal DECIMAL(15,4)
+,Timestamp BIGINT
+,TaxExempt INT
+,Recurring VARCHAR(16)
+)
+
+  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+  WITH SERDEPROPERTIES ( 
+  'separatorChar' = '|', 
+  'quoteChar' = '"', 
+  'escapeChar' = '\\' 
+  ) 
+  STORED AS textfile 
+  LOCATION 's3://axle-internal-sources/raw/oess/dotcompaymentgateway_product/'
+  TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.dotcompg_product; 
+CREATE VIEW interna.dotcompg_product AS SELECT * FROM spectrumdb.dotcompaymentgateway_product WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.dotcompg_product; 
+SELECT TOP 1000 * FROM interna.dotcompg_product; 
+
+DROP TABLE IF EXISTS spectrumdb.dotcompaymentgateway_order; 
+  CREATE EXTERNAL TABLE spectrumdb.dotcompaymentgateway_order 
+(
+OrderId Varchar(100)
+,CustomerId Varchar(100)
+,OriginApplication VARCHAR(16)
+,SmsOrder VARCHAR(50)
+,DatabaseType VARCHAR(32)
+,PaymentMode VARCHAR(32)
+,FullAuth INT
+,PaymentProfileId Varchar(100)
+,Timestamp Varchar(64)
+,CheckoutState VARCHAR(16)
+,Recurring VARCHAR(16)
+,Quantity DECIMAL(25,13)
+,AuthAmount DECIMAL(15,4)
+,RetailPrice DECIMAL(15,4)
+,FinalPrice DECIMAL(15,4)
+,ShippingAmount DECIMAL(15,4)
+,TaxAmount DECIMAL(15,4)
+,Created TIMESTAMP
+,LastAccessed TIMESTAMP
+,VendorId VARCHAR(16)
+,ParentVendorId VARCHAR(16)
+,AccountSalesRep VARCHAR(64)
+,OracleProductId VARCHAR(32)
+,MediaCode VARCHAR(32)
+,ShipAddress1 VARCHAR(80)
+,ShipAddress2 VARCHAR(80)
+,ShipCity VARCHAR(30)
+,ShipState VARCHAR(30)
+,ShipPostalCode VARCHAR(15)
+,ShipCountry VARCHAR(30)
+,ShippingMethod VARCHAR(32)
+,PurchaseOrder VARCHAR(32)
+,SettlementSystem VARCHAR(32)
+,NumberBillingCycles INT
+,ShipToCompany VARCHAR(80)
+,AnnualShippingAmount DECIMAL(15,4)
+,AnnualTaxAmount DECIMAL(15,4)
+,RetailAnnualAmount DECIMAL(15,4)
+,FinalAnnualAmount DECIMAL(15,4)
+,ShipToContact VARCHAR(80)
+,ThinkOrderNo INT
+,ShipPhone VARCHAR(32)
+,CurrencyCode VARCHAR(3)
+,UpdateVersion INT
+,Canceled INT
+,Held INT
+,TaxExempt INT
+)
+
+
+  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+  WITH SERDEPROPERTIES ( 
+  'separatorChar' = '|', 
+  'quoteChar' = '"', 
+  'escapeChar' = '\\' 
+  ) 
+  STORED AS textfile 
+  LOCATION 's3://axle-internal-sources/raw/oess/dotcompaymentgateway_order/'
+  TABLE PROPERTIES ('compression_type'='gzip');
+DROP VIEW IF EXISTS interna.dotcompg_order; 
+CREATE VIEW interna.dotcompg_order AS SELECT * FROM spectrumdb.dotcompaymentgateway_order WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.dotcompg_order; 
+SELECT TOP 1000 * FROM interna.dotcompg_order;
+
+DROP TABLE IF EXISTS spectrumdb.dotcompaymentgateway_invoicelineitem; 
+
+  CREATE EXTERNAL TABLE spectrumdb.dotcompaymentgateway_invoicelineitem 
+(
+InvoiceLineItemId Varchar(64)
+,InvoiceId Varchar(64)
+,ThinkContractLineId Varchar(64)
+,Timestamp Bigint
+,LineItemType VARCHAR(32)
+,LineItemNo INT
+,ProductNo VARCHAR(16)
+,QuantityOrdered DECIMAL(25,13)
+,QuantityInvoiced DECIMAL(25,13)
+,UnitOfMeasure VARCHAR(16)
+,ExtendedAmount DECIMAL(15,4)
+,SalesRepInfo VARCHAR(MAX)
+,CommentsInfo VARCHAR(MAX)
+,Description VARCHAR(1500)
+,UnitPrice DECIMAL(15,4)
+)
+  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+  WITH SERDEPROPERTIES ( 
+  'separatorChar' = '|', 
+  'quoteChar' = '"', 
+  'escapeChar' = '\\' 
+  ) 
+  STORED AS textfile 
+  LOCATION 's3://axle-internal-sources/raw/oess/dotcompaymentgateway_invoicelineitem/'
+ TABLE PROPERTIES ('compression_type'='gzip');
+
+DROP VIEW IF EXISTS interna.dotcompg_invoicelineitem; 
+
+CREATE VIEW interna.dotcompg_invoicelineitem AS SELECT * FROM spectrumdb.dotcompaymentgateway_invoicelineitem WITH NO SCHEMA BINDING; 
+
+SELECT COUNT(*) FROM interna.dotcompg_invoicelineitem;
+ 
+SELECT TOP 1000 * FROM interna.dotcompg_invoicelineitem; 
+
+DROP TABLE IF EXISTS spectrumdb.dotcompaymentgateway_invoice; 
+  CREATE EXTERNAL TABLE spectrumdb.dotcompaymentgateway_invoice 
+(
+InvoiceId VARCHAR(100)
+,InvoiceDate timestamp
+,CustomerId VARCHAR(100)
+,AuthorizationId VARCHAR(100)
+,OrderId VARCHAR(100)
+,SmsOrder NVARCHAR(160)
+,SmsAccount NVARCHAR(160)
+,CustomerReference VARCHAR(64)
+,InvoiceNumber VARCHAR(64)
+,RetailPrice DECIMAL(15,4)
+,FinalPrice DECIMAL(15,4)
+,Quantity DECIMAL(25,13)
+,UnitPrice DECIMAL(15,4)
+,Freight DECIMAL(15,4)
+,Created timestamp
+,LastAccessed timestamp
+,Assisted INT
+,GhostRep INT
+,PrimarySalesRep VARCHAR(64)
+,SecondarySalesRep VARCHAR(64)
+,OracleProductId VARCHAR(64)
+,PaymentTerms VARCHAR(16)
+,TransactionType VARCHAR(16)
+,SegmentCode VARCHAR(16)
+,LegacyProductCode VARCHAR(16)
+,Text VARCHAR(MAX)
+,Timestamp Varchar(64)
+,InvoiceStatus VARCHAR(32)
+,Recurring VARCHAR(16)
+,SettlementSystem VARCHAR(32)
+,Tax DECIMAL(15,4)
+,BillToCustomerNo DECIMAL(18,0)
+,BillToAddressNo DECIMAL(18,0)
+,ShipToCustomerNo DECIMAL(18,0)
+,ShipToAddressNo DECIMAL(18,0)
+,OrganizationNo VARCHAR(16)
+,FirstTransaction INT
+,InstallmentNo INT
+)
+
+
+  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+  WITH SERDEPROPERTIES ( 
+  'separatorChar' = '|', 
+  'quoteChar' = '"', 
+  'escapeChar' = '\\' 
+  ) 
+  STORED AS textfile 
+  LOCATION 's3://axle-internal-sources/raw/oess/dotcompaymentgateway_invoice/' 
+  TABLE PROPERTIES ('compression_type'='gzip');
+DROP VIEW IF EXISTS interna.dotcompg_invoice; 
+CREATE VIEW interna.dotcompg_invoice AS SELECT * FROM spectrumdb.dotcompaymentgateway_invoice WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.dotcompg_invoice; 
+SELECT TOP 1000 * FROM interna.dotcompg_invoice;
+
+DROP TABLE IF EXISTS spectrumdb.dotcompaymentgateway_customer; 
+  CREATE EXTERNAL TABLE spectrumdb.dotcompaymentgateway_customer 
+(
+CustomerId VARCHAR(100)
+,Timestamp VARCHAR(64)
+,Created TIMESTAMP
+,LastAccessed TIMESTAMP
+,CustomerReference VARCHAR(30)
+,SmsAccount VARCHAR(60)
+,Email VARCHAR(80)
+,Phone VARCHAR(32)
+,Company VARCHAR(80)
+,FirstName VARCHAR(20)
+,LastName VARCHAR(40)
+,Address1 VARCHAR(80)
+,Address2 VARCHAR(80)
+,City VARCHAR(30)
+,StateOrProvince VARCHAR(30)
+,PostalCode VARCHAR(15)
+,Country VARCHAR(30)
+,ThinkCustomerNo INT
+,VatRegistrationNo VARCHAR(50)
+,CustomerNo DECIMAL(18,0)
+,ShipToAddressNo DECIMAL(18,0)
+,BillToAddressNo DECIMAL(18,0)
+)
+
+  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+  WITH SERDEPROPERTIES ( 
+  'separatorChar' = '|', 
+  'quoteChar' = '"', 
+  'escapeChar' = '\\' 
+  ) 
+  STORED AS textfile 
+  LOCATION 's3://axle-internal-sources/raw/oess/dotcompaymentgateway_customer/'
+  TABLE PROPERTIES ('compression_type'='gzip');
+DROP VIEW IF EXISTS interna.dotcompg_customer; 
+CREATE VIEW interna.dotcompg_customer AS SELECT * FROM spectrumdb.dotcompaymentgateway_customer WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.dotcompg_customer; 
+SELECT TOP 1000 * FROM interna.dotcompg_Customer;

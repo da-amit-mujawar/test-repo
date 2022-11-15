@@ -1,0 +1,86 @@
+import os
+import sys
+from os.path import dirname, abspath
+import airflow
+from airflow import DAG
+from airflow.operators.python_operator import PythonOperator
+from airflow.models import Variable
+from airflow.operators.dummy_operator import DummyOperator
+from helpers.send_email import send_email
+import json
+from datetime import datetime
+import logging
+import time
+import shutil
+
+
+
+#jira: 661 CopyToNightlySuppressions Reju Mathew 2021.03.09
+
+default_args = {
+    'owner': 'data-axle',
+    'start_date': airflow.utils.dates.days_ago(2),
+    'depends_on_past': False,
+    'current_path': os.path.abspath(os.path.dirname(__file__)),
+    'retries': 0,
+    'email': Variable.get('var-email-on-failure'),
+    'email_on_failure': True,
+    'email_on_retry': False
+}
+
+
+
+def copyfile(config_file,  **kwargs):
+    with open(config_file) as f:
+        config = json.load(f)
+
+    sourcefilename = config['sourcefilename']
+    sourcefolder = config['sourcefolder']
+    targetfolder = config['targetfolder']
+
+    filename = sourcefilename +'_'+ time.strftime("%Y%m%d") + '.txt'
+    source = str(sourcefolder)  + '\\' + filename
+    target = str(targetfolder) + '\\' +  filename
+
+    logging.info(f"Source file : {source}")
+    logging.info(f"Target : {target}")
+
+    shutil.copy(source, target)
+    logging.info(f"copy completed : {target}")
+
+
+
+
+#Dags from here.
+
+
+dag = DAG('downloads-CopyToNightlySuppressions',
+          default_args=default_args,
+          description='downloads - Copy To Nightly Suppressions',
+          schedule_interval='@once',
+          max_active_runs=1
+          )
+
+
+start_operator = DummyOperator(task_id='Begin_execution', dag=dag)
+
+copyfilejob = PythonOperator(
+    task_id='copyfile',
+    python_callable=copyfile,
+    op_kwargs={'config_file': default_args['current_path'] + '/config.json',
+               'dag': dag
+               },
+     dag=dag,
+)
+
+send_notification = PythonOperator(
+    task_id='email-notification',
+    python_callable=send_email,
+    op_kwargs={'config_file': default_args['current_path'] + '/config.json',
+               'dag': dag
+               },
+    dag=dag)
+
+end_operator = DummyOperator(task_id='Stop_execution', dag=dag)
+
+start_operator >> copyfilejob >> send_notification >> end_operator

@@ -1,0 +1,7 @@
+{
+    "reportname": "/Reports/finance_sample_output",
+    "email_business_users" : "var-email-on-success-datalake",
+    "email_address" :"gary.thompson@data-axle.com",
+    "email_subject" : "Airflow Notification: Loaded finance mothership file[{file_name}]to redshift",
+    "email_message" : "Successfully Copied finance mothership file data from S3 to RedShift.<br/><br/> PFA sample output"
+}

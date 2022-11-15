@@ -1,0 +1,8 @@
+{
+    "tablename1": "tblExternal38_191_201206_NEW",
+    "tablename2":  "tblExternal38_191_201206",
+    "s3-key1": "/neptune/mGen/DQI_IND_LINK.txt",
+    "reportname1": "/Reports/AuditReport_LinkTable_DQI_INDIVIDUAL",
+    "email_subject": "External Link - DQI Individual Update",
+    "email_message": "Please find attached audit report for this update.</br></br> Please review provide your approval so we may proceed. </br></br> Thank you."
+}

@@ -1,0 +1,8 @@
+{
+    "source_s3_bucket": "idms-2722-internalfiles",
+    "source_s3_key":  "transfomer_dev/fromftp/testfile.txt",
+    "local_path": "/home/ubuntu/kritestfile.txt",
+    "target_path_at_sftp": "/kritestfile.txt",
+    "sftp_conn_id": "sftp_igxfer_conn",
+    "s3_conn_id": "s3_conn_id"
+}

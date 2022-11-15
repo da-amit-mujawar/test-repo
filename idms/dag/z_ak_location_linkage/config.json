@@ -1,0 +1,15 @@
+{
+   "bucket": "idms-2722-databricks",
+   "prefix": "ddl_tables/",
+   "alter_table_key" :   "ddl_tables/alter_table_statements.sql",
+   "devdomain"  : "data-axle-idms-dev.cloud.databricks.com",
+   "domain"  : "dbc-cacb962d-262b.cloud.databricks.com",
+   "jobid"   : "10148",
+   "struct_jobid" : "10149",
+   "count_file_key" : "redshift-silver-tables-load/databricks_count_ak.csv",
+   "drop_table_key" : "redshift-silver-tables-load/drop_tables.sql",
+   "email_address" : "var-silver-table-load-email",
+   "email_subject" : "Loading of databricks silver tables into Redshift report",
+   "email_message" : "This mail has the attached counts from both the databricks and redshift"
+
+}

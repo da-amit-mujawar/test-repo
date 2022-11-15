@@ -1,0 +1,9 @@
+{
+    "tablename1": "tblExternal37_191_201206_new",
+    "tablename2":  "tblExternal37_191_201206",
+    "s3-key1": "/neptune/mGen/Mgen_DLX_Link.txt",
+    "reportname1": "/Reports/mgen_dlx_audit_report",
+    "email_address": "var-mgen-dlx-notification",
+    "email_subject": "External Link - mGen dlx update complete",
+    "email_message": "External link - mGen dlx update is completed successfully."
+}

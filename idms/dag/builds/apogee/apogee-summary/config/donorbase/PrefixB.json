@@ -1,0 +1,31 @@
+{
+  "Comment": "Category, and Types",
+  "Records": [
+    {
+      "Code": "B0",
+      "Value": ""
+    },
+    {
+      "Code": "B1",
+      "Value": "_CAT"
+    },
+    {
+      "Code": "B2",
+      "Value": "_CAT_TOT"
+    },
+    {
+      "Code": "B3",
+      "Value": "_PRICAT"
+    },
+    {
+      "Code": "B4",
+      "Value": "_Number_Of_Donation"
+    },
+    {
+      "Code": "B5",
+      "Value": "_LTD_Months_Since_Last_Donation",
+      "Comments": "Used Min since this is used on calculated field -- MB_DonationDate is  Months Between DonationDate",
+      "Formula": "MIN"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS core_bf.{table}_changes CASCADE;

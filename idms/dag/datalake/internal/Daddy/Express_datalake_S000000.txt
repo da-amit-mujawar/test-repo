@@ -1,0 +1,4 @@
+stcexpclust,S000000,t001_global_email_kill_list,D:\Redshift_DataIngestion\Output
+stcexpclust,S000000,t002_global_email_domain_kill_list,D:\Redshift_DataIngestion\Output
+stcexpclust,S000000,t000_clients,D:\Redshift_DataIngestion\Output
+stcexpclust,S000000,t003_brands,D:\Redshift_DataIngestion\Output

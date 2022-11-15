@@ -1,0 +1,5 @@
+{
+    "bucket_name": "axle-gold-sources/people-mmdb-universe",
+    "email_subject": "Airflow Notification: Loaded Consumer Universe Table to RedShift",
+    "email_message": "Loaded Consumer Universe Table to RedShift."
+}

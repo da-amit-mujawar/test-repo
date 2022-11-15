@@ -1,0 +1,1 @@
+SELECT COUNT(*) nTotalCount, COUNT(DISTINCT Individual_ID) nIndividualCount, COUNT(DISTINCT Company_ID) nCompanyCount FROM {0}

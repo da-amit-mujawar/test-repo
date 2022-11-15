@@ -1,0 +1,9 @@
+{
+    "maintable_name" : "tblexternal14_191_201206",
+    "igcanada-stage-table" : "tblexternal14_191_201206_new_stage",
+    "igcanada-raw-table" : "tblexternal14_191_201206_new_raw",
+    "reportname" : "/Reports/AuditReport_LinkTable_igcanada",
+    "email_subject": "InfoGroup -Igcanada Table update for Sapphire Build",
+    "email_message": "<h3>Airflow DAG: igcanada completed successfully.</h3>",
+    "s3-key" : "/neptune/Sapphire/IGCanada.txt"
+}

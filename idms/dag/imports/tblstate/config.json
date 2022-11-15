@@ -1,0 +1,14 @@
+{
+    "table_input1": "citystate_new",
+    "table_input2": "citystate",
+    "tablename1": "tblstate_new",
+    "tablename2": "tblstate",
+    "table_statename": "decode_statecodename",
+    "table_canada": "decode_state_canada",
+    "table_992": "decode_state_992",
+    "table_1267": "decode_state_1267",
+    "s3-key1": "/monthly_delivery/CityState.txt",
+    "reportname1": "/Reports/audit_report_tblstate.txt",
+    "email_subject": "AWS - Load tblstate from s3 to redshift",
+    "email_message": "<h3>Airflow DAG: imports-tblstate completed successfully.</h3>"
+}

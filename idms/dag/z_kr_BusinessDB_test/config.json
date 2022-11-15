@@ -1,0 +1,10 @@
+{
+    "input_bucket": "axle-gold-sources",
+    "input_prefix_full" : "places/full/",
+    "input_prefix_changes" : "places/changes/",
+    "output_bucket": "idms-2722-internalfiles",
+    "output_path": "transfomer_dev/output/",
+    "file_types": "{\"benefit_plans\":\"Benefit_plan_id\",\"contacts\":\"contact_id\",\"happy_hours\":\"Happy_hours_id\",\"images\":\"Images_id\",\"intents\":\"Location_intent_id\",\"operating_hours\":\"Operating_hours_id\",\"places\":\"infogroup_id\",\"tags\":\"id\",\"ucc_filings\":\"id\",\"explains\":\"id\"}",
+    "counts_table": "core_bf.business_counts",
+    "iam_role": "arn:aws:iam::250245842722:role/da-idms-redshift-sts-role,arn:aws:iam::479134617933:role/da-idms-redshift-sts-role"
+}

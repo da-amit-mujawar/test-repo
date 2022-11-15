@@ -1,0 +1,1 @@
+STCDIGSQLP10\DIG10,myinfo,campaigns,E:\Redshift_DataIngestion\MyInfo

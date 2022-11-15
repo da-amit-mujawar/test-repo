@@ -1,0 +1,51 @@
+{
+  "Comment": "Category, and Types",
+  "Records": [
+    {
+      "Code": "B0",
+      "Value": "",
+      "Formula": ""
+    },
+    {
+      "Code": "B1",
+      "Value": "CAT",
+      "Formula": ""
+    },
+    {
+      "Code": "B2",
+      "Value": "CAT_TOT",
+      "Formula": ""
+    },
+    {
+      "Code": "B3",
+      "Value": "PRICAT",
+      "Formula": ""
+    },
+    {
+      "Code": "B4",
+      "Value": "Number_Of_Donation",
+      "Formula": ""
+    },
+    {
+      "Code": "B5",
+      "Value": "LTD_Months_Since_Last_Donation",
+      "Comments": "Used Min since this is used on calculated field -- MB_DonationDate is  Months Between DonationDate",
+      "Formula": "MIN"
+    },
+    {
+      "Code": "B6",
+      "Value": "AVG_Dollar_Donation_Via",
+      "Formula": "AVG"
+    },
+    {
+      "Code": "B7",
+      "Value": "Dollar_Donation_Via",
+      "Formula": "SUM"
+    },
+    {
+      "Code": "B8",
+      "Value": "Number_Of_Donation_Via",
+      "Formula": "COUNT"
+    }
+  ]
+}

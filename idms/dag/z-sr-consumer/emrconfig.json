@@ -1,0 +1,40 @@
+{
+  "LogsBucket": "s3://idms-2722-playground/rohit_rajput/emr_cluster_logs/",
+  "Region": "us-east-1",
+  "EmrLabel": "emr-6.4.0",
+  "Application": [
+    "spark",
+    "hadoop",
+    "Livy",
+    "JupyterEnterpriseGateway"
+  ],
+  "KeyName": "clstrkey-de-rollups",
+  "InstanceProfile": "EMR_EC2_DefaultRole",
+  "ServiceAccessSecurityGroup": "sg-043f1e7c31ad78a92",
+  "SubnetId": "subnet-02f1b0c8c2f536ea4",
+  "EmrManagedSlaveSecurityGroup": "sg-0e99c0a7259e82d0b",
+  "EmrManagedMasterSecurityGroup": "sg-059792b9d06b6db66",
+  "Path": "s3://idms-2722-playground/ram/de-rollups/programs/split/bootstrap.sh",
+  "Bootstrap-Name": "BootStrap-1",
+  "ComputeLimits": {
+    "UnitType": "Instances",
+    "MinimumCapacityUnits": 2,
+    "MaximumCapacityUnits": 12,
+    "MaximumOnDemandCapacityUnits": 12,
+    "MaximumCoreCapacityUnits": 12
+  },
+  "Instance": [
+    {
+      "InstanceCount": 1,
+      "InstanceGroupType": "MASTER",
+      "InstanceType": "i3.xlarge",
+      "Name": "Master-1"
+    },
+    {
+      "InstanceCount": 2,
+      "InstanceGroupType": "CORE",
+      "InstanceType": "i3.xlarge",
+      "Name": "Core-2"
+    }
+  ]
+}

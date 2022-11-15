@@ -1,0 +1,8 @@
+
+{
+    "reportname": "/Reports/ehyg_{dbid}_emailoversight_report",
+    "email_address" :"mohit.khanwale@data-axle.com",
+    "email_subject": "Email Hygiene List for DBID {dbid} sent to Oversight",
+    "email_message": "<h3>Email Hygiene List sent to Oversight</h3>",
+    "emailoversight-prefix": "A10"
+}

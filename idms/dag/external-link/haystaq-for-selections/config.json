@@ -1,0 +1,8 @@
+{
+    "tablename1": "tblExternal44_191_201206_NEW",
+    "tablename2":  "tblExternal44_191_201206",
+    "s3-key1": "/neptune/mGen/Haystaq_link.txt",
+    "reportname1": "/Reports/AuditReport_LinkTable_HaystaqLinkDB_Ext44",
+    "email_subject": "External Link -  HAYSTAQ FOR SELECTIONS update",
+    "email_message": "Please review and activate the Link table via IDMS Task <br><br> You can contact the support team with any questions regarding this update."
+}

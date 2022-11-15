@@ -1,0 +1,1 @@
+This folder contains DAGs built by BI/Analytics team. It mostly communicates with Interna RedShift Schema.

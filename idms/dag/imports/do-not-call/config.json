@@ -1,0 +1,7 @@
+{
+    "tablename1": "exclude_donotcallflag_new",
+    "tablename2": "exclude_donotcallflag",
+    "s3-key1": "/FTC/DNC_",
+    "email_subject": "FTC DNC load to exclude_donotcallflag Daily M-F",
+    "email_message": "<h3>Airflow DAG: imports-do-not-call completed successfully.</h3>"
+}

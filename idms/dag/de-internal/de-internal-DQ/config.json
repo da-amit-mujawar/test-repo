@@ -1,0 +1,12 @@
+{
+
+    "input_bucket": "axle-internal-sources/",
+    "input_prefix_full" : "bronze_nextmark/",
+    "Nordic_FinanceAll": "MGISystemProcess_Finance_Data_Extract_Report_Reduced_Column_Count.csv",
+    "Nordic_ListOrder": "MGISystemProcess_List_Order_Data_Extract_Report_.csv",
+    "output_path": "transfomer_dev/output/",
+    "table_name": "NORDIC_ListOrder,NORDIC_FinanceAll",
+    "database_name": "core_bf",
+    "iam_role": "arn:aws:iam::250245842722:role/da-idms-redshift-sts-role,arn:aws:iam::479134617933:role/da-idms-redshift-sts-role"
+}
+

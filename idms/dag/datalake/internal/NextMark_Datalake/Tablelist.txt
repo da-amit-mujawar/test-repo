@@ -1,0 +1,2 @@
+STCDMMCLUS\dmm01,DMM_Report,Nordic_FinanceAll,E:\awsnextmark\
+STCDMMCLUS\dmm01,DMM_Report,Nordic_ListOrder,E:\awsnextmark\

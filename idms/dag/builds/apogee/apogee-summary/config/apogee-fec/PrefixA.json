@@ -1,0 +1,40 @@
+{
+  "Comment": "Recency in Months [12, 24, 48 and Lifetime]",
+  "Records": [
+    {
+      "Code": "A0",
+      "Value": "",
+      "Formula": ""
+    },
+    {
+      "Code": "A1",
+      "Value": "M12",
+      "Formula": "MB_DonationDate <= 12"
+    },
+    {
+      "Code": "A2",
+      "Value": "M48",
+      "Formula": "MB_DonationDate <= 48"
+    },
+    {
+      "Code": "A3",
+      "Value": "M24",
+      "Formula": "MB_DonationDate <= 24"
+    },
+    {
+      "Code": "A4",
+      "Value": "LTD",
+      "Formula": "MB_DonationDate <= 500"
+    },
+    {
+      "Code": "A5",
+      "Value": "M06",
+      "Formula": "MB_DonationDate <= 6"
+    },
+    {
+      "Code": "A6",
+      "Value": "ActBlue",
+      "Formula": "UPPER(isblueflag) = ''TRUE'' "
+    }
+  ]
+}

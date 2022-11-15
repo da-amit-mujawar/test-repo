@@ -1,0 +1,14 @@
+{
+    "table_job_stats": "mmdb_job_stats",
+    "tablename1": "exclude_mmdb_business",
+    "tablename2": "exclude_mmdb_executive",
+    "tablename3": "exclude_mmdb_sic",
+    "tablename4": "exclude_mmdb_email",
+    "reportname1": "/Reports/mmdb_data_load_count",
+    "s3-key1": "/business-core/analytics/MMDB_Business.gz",
+    "s3-key2": "/business-core/analytics/MMDB_Executive.gz",
+    "s3-key3": "/business-core/analytics/MMDB_SIC.gz",
+    "s3-key4": "/business-core/analytics/MMDB_Email.gz",
+    "email_subject": "AWS - MMDB data Load",
+    "email_message": "<h3>MMDB data is loaded.</h3>"
+}

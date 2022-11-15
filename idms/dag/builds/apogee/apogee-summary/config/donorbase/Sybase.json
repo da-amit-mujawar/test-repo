@@ -1,0 +1,1521 @@
+{
+  "Records": [
+    {
+      "Name": "Company_ID",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_Average_Donation_Per_Transaction",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_Highest_Donation_Amount",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_Lowest_Donation_Amount",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_Number_Of_List_Sources",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_Total_Dollar_Donations",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_Total_Number_Of_Donations",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_AVG_Dollar_Donation_Via_Mail",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_AVG_Dollar_Donation_Via_Mobile",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_AVG_Dollar_Donation_Via_Phone",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_AVG_Dollar_Donation_Via_Web",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Average_Days_Between_Donations",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Average_Donation_Per_Transaction",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Dollar_Donation_Via_Mail",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Dollar_Donation_Via_Mobile",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Dollar_Donation_Via_Phone",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Dollar_Donation_Via_Web",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Highest_Donation_Amount",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Lowest_Donation_Amount",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Number_Of_Donation_Dollar_Check",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Number_Of_Donation_Dollar_Master_Card",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Number_Of_Donation_Dollar_Other",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Number_Of_Donation_Dollar_Visa",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Number_Of_Donation_Via_Mail",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Number_Of_Donation_Via_Mobile",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Number_Of_Donation_Via_Phone",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Number_Of_Donation_Via_Web",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Number_Of_List_Sources",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Total_Dollar_Donations",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_Total_Number_Of_Donations",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M24_Average_Donation_Per_Transaction",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M24_Highest_Donation_Amount",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M24_Lowest_Donation_Amount",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M24_Number_Of_List_Sources",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M24_Total_Dollar_Donations",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M24_Total_Number_Of_Donations",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_AVG_DONATION_RANGE",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Average_Donation_Per_Transaction",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_First_Donation_Date",
+      "Datatype": "String"
+    },
+    {
+      "Name": "LTD_Highest_Donation_Amount_Ever",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Last_Donation_Date",
+      "Datatype": "String"
+    },
+    {
+      "Name": "LTD_Last_Payment_Method",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Last_Response_Channel",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Lowest_Donation_Amount_Ever",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Months_Since_First_Donation_Date",
+      "Datatype": "String"
+    },
+    {
+      "Name": "LTD_Months_Since_Last_Donation_Date",
+      "Datatype": "String"
+    },
+    {
+      "Name": "LTD_Months_Since_Last_Donation_Mail",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Months_Since_Last_Donation_Mobile",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Months_Since_Last_Donation_Phone",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Months_Since_Last_Donation_Web",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Number_Of_Donations_0_12_Months_Ago",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Number_Of_Donations_0_24_Months_Ago",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Number_Of_Donations_0_3_Months_Ago",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Number_Of_Donations_0_6_Months_Ago",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Number_Of_Donations_13_24_Months_Ago",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Number_Of_Donations_2_3_Months_Ago",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Number_Of_List_Sources",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Total_Dollar_Donations",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "LTD_Total_Number_Of_Donations",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_SW_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_SW_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_SW_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_SW_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_SW_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_SW_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_SW_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_SW_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_SW_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_SW_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_SW_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_SW_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_SW_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_SW_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_SW_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_SW_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CG_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CG_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CG_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CG_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CG_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CG_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CG_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CG_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CG_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CG_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CG_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CG_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_NT_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_NT_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_NT_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_NT_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_NT_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_NT_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_NT_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_NT_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_NT_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_NT_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_NT_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_NT_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_NT_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_NT_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_NT_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_NT_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_LI_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_LI_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_LI_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_LI_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_LI_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_LI_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_LI_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_LI_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_LI_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_LI_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_LI_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_LI_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_LI_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_LI_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_LI_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_LI_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RI_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RI_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RI_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RI_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RI_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RI_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RI_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RI_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RI_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RI_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RI_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RI_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RI_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RI_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RI_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RI_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_VT_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_VT_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_VT_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_VT_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_VT_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_VT_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_VT_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_VT_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_VT_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_VT_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_VT_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_VT_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_VT_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_VT_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_VT_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_VT_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RC_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RC_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RC_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RC_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RC_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RC_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RC_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RC_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RC_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RC_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RC_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RC_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RC_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RC_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RC_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RC_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RD_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RD_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RD_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RD_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RD_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RD_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RD_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RD_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RD_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RD_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RD_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RD_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RD_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RD_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RD_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RD_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CH_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CH_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CH_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CH_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CH_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CH_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CH_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CH_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CH_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CH_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CH_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CH_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CH_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CH_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CH_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CH_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_PA_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_PA_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_PA_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_PA_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_PA_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_PA_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_PA_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_PA_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_PA_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_PA_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_PA_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_PA_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_PA_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_PA_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_PA_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_PA_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_HS_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_HS_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_HS_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_HS_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_HS_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_HS_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_HS_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_HS_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_HS_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_HS_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_HS_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_HS_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_HS_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_HS_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_HS_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_HS_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_ET_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_ET_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_ET_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_ET_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_ET_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_ET_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_ET_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_ET_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_ET_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_ET_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_ET_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_ET_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_ET_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_ET_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_ET_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_ET_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CS_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CS_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CS_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CS_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CS_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CS_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CS_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CS_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CS_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CS_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CS_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CS_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CS_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CS_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CS_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CS_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RJ_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RJ_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RJ_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_RJ_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RJ_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RJ_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RJ_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_RJ_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RJ_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RJ_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RJ_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_RJ_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RJ_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RJ_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RJ_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_RJ_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_AC_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_AC_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_AC_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_AC_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_AC_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_AC_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_AC_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_AC_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_AC_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_AC_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_AC_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_AC_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_AC_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_AC_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_AC_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_AC_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_AN_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_AN_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_AN_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_AN_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_AN_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_AN_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_AN_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_AN_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_AN_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_AN_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_AN_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_AN_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_AN_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_AN_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_AN_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_AN_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CO_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CO_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CO_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CO_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CO_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CO_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CO_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CO_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CO_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CO_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CO_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CO_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CO_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CO_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CO_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CO_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_SS_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_SS_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_SS_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_SS_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_SS_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_SS_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_SS_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_SS_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_SS_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_SS_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_SS_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_SS_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_SS_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_SS_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_SS_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_SS_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_HG_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_HG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_HG_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_HG_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_HG_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_HG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_HG_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_HG_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_HG_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_HG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_HG_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_HG_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_HG_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_HG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_HG_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_HG_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CD_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CD_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CD_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_CD_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CD_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CD_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CD_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M12_CAT_TOT_CD_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CD_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CD_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CD_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_CD_Number_Of_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CD_AVG_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CD_Dollar_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CD_Months_Since_Last_Donation",
+      "Datatype": "Long"
+    },
+    {
+      "Name": "M48_CAT_TOT_CD_Number_Of_Donation",
+      "Datatype": "Long"
+    }
+  ]
+}
+

@@ -1,0 +1,244 @@
+{
+  "Comment": "Column Level formula",
+  "Records": [
+    {
+      "Code": "D999",
+      "Value": "Process_ID",
+      "Formula": "ID"
+    },
+    {
+      "Code": "D0",
+      "Value": ""
+    },
+    {
+      "Code": "D1",
+      "Value": "_AVG_Gift_Amount",
+      "Formula": "ROUND(AVG(CASE WHEN <C_FORMULA> AND <A_FORMULA> THEN DonationDollar ELSE null END ),0)"
+    },
+    {
+      "Code": "D2",
+      "Value": "_CUM_Gift_Amount",
+      "Formula": "SUM(CASE WHEN <C_FORMULA> AND <A_FORMULA> THEN DonationDollar ELSE 0 END )"
+    },
+    {
+      "Code": "D3",
+      "Value": "LTD_First_Gift_Date",
+      "Formula": "MIN(DonationDate)"
+    },
+    {
+      "Code": "D4",
+      "Value": "LTD_Last_Gift_Date",
+      "Formula": "MAX(DonationDate)"
+    },
+    {
+      "Code": "D5",
+      "Value": "_Total_Number_Of_Gifts",
+      "Formula": "Count(1)"
+    },
+    {
+      "Code": "D6",
+      "Value": "_Gift_Count",
+      "Formula": "SUM(CASE WHEN <C_FORMULA> AND <A_FORMULA> THEN 1 ELSE 0 END )",
+      "Comments": "Used for List level"
+    },
+    {
+      "Code": "D11",
+      "Value": "Latest_Gift_Date_0_3_M",
+      "Formula": "MAX(CASE WHEN MB_DonationDate BETWEEN  0 AND  3 THEN DonationDate ELSE to_date('01-JAN-2000') END)"
+    },
+    {
+      "Code": "D12",
+      "Value": "Latest_Gift_Date_4_6_M",
+      "Formula": "MAX(CASE WHEN MB_DonationDate BETWEEN  4 AND  6 THEN DonationDate ELSE to_date('01-JAN-2000') END)"
+    },
+    {
+      "Code": "D13",
+      "Value": "Latest_Gift_Date_7_9_M",
+      "Formula": "MAX(CASE WHEN MB_DonationDate BETWEEN  7 AND  9 THEN DonationDate ELSE to_date('01-JAN-2000') END)"
+    },
+    {
+      "Code": "D14",
+      "Value": "Latest_Gift_Date_10_12M",
+      "Formula": "MAX(CASE WHEN MB_DonationDate BETWEEN 10 AND 12 THEN DonationDate ELSE to_date('01-JAN-2000') END)"
+    },
+    {
+      "Code": "D15",
+      "Value": "Latest_Gift_Date_13_15M",
+      "Formula": "MAX(CASE WHEN MB_DonationDate BETWEEN 13 AND 15 THEN DonationDate ELSE to_date('01-JAN-2000') END)"
+    },
+    {
+      "Code": "D16",
+      "Value": "Latest_Gift_Date_16_18M",
+      "Formula": "MAX(CASE WHEN MB_DonationDate BETWEEN 16 AND 18 THEN DonationDate ELSE to_date('01-JAN-2000') END)"
+    },
+    {
+      "Code": "D17",
+      "Value": "Latest_Gift_Date_19_21M",
+      "Formula": "MAX(CASE WHEN MB_DonationDate BETWEEN 19 AND 21 THEN DonationDate ELSE to_date('01-JAN-2000') END)"
+    },
+    {
+      "Code": "D18",
+      "Value": "Latest_Gift_Date_22_24M",
+      "Formula": "MAX(CASE WHEN MB_DonationDate BETWEEN 22 AND 24 THEN DonationDate ELSE to_date('01-JAN-2000') END)"
+    },
+    {
+      "Code": "D19",
+      "Value": "Latest_Gift_Date_25M",
+      "Formula": "MAX(CASE WHEN MB_DonationDate >= 25             THEN DonationDate ELSE to_date('01-JAN-2000') END)"
+    },
+    {
+      "Code": "Dxx003",
+      "Value": "_Months_Since_Last_Donation",
+      "Formula": "CEIL(months_between({ProcessDate}, MAX(DonationDate)))"
+    },
+    {
+      "Code": "D004",
+      "Value": "_Number_Of_Donation",
+      "Formula": "SUM(CASE WHEN <C_FORMULA> THEN 1 ELSE 0 END )"
+    },
+    {
+      "Code": "D005",
+      "Value": "Number_Of_List_Sources",
+      "Formula": "Count(DISTINCT ListID)"
+    },
+    {
+      "Code": "D7",
+      "Value": "Total_Dollar_Donations",
+      "Formula": "SUM(DonationDollar)"
+    },
+    {
+      "Code": "D8",
+      "Value": "Average_Donation_Per_Transaction",
+      "Formula": "ROUND(AVG(DonationDollar),0)"
+    },
+    {
+      "Code": "D9",
+      "Value": "Lowest_Donation_Amount",
+      "Formula": "MIN(DonationDollar)"
+    },
+    {
+      "Code": "D10",
+      "Value": "Highest_Donation_Amount",
+      "Formula": "MAX(DonationDollar)"
+    },
+    {
+      "Code": "D101",
+      "Value": "_Web",
+      "Formula": "replace(ROUND(<B_FORMULA>(CASE WHEN DonationChannel = 3 THEN DonationDollar ELSE null END),0),999999,0)"
+    },
+    {
+      "Code": "D102",
+      "Value": "_Mobile",
+      "Formula": "replace(ROUND(<B_FORMULA>(CASE WHEN DonationChannel = 4 THEN DonationDollar ELSE null END),0),999999,0)"
+    },
+    {
+      "Code": "D103",
+      "Value": "_Phone",
+      "Formula": "replace(ROUND(<B_FORMULA>(CASE WHEN DonationChannel = 2 THEN DonationDollar ELSE null END),0),999999,0)"
+    },
+    {
+      "Code": "D014",
+      "Value": "_Mail",
+      "Formula": "replace(ROUND(<B_FORMULA>(CASE WHEN DonationChannel = 1 THEN DonationDollar ELSE null END),0),999999,0)"
+    },
+    {
+      "Code": "D016",
+      "Value": "ExternalTableFlag"
+    },
+    {
+      "Code": "D107",
+      "Value": "LEMSMatchCode",
+      "Formula": "Count(1)"
+    },
+    {
+      "Code": "D018",
+      "Value": "LTD_AVG_DONATION_RANGE",
+      "Formula": "' '"
+    },
+    {
+      "Code": "D20",
+      "Value": "Months_Since_First_Donation_Date",
+      "Formula": "CEIL(months_between( {ProcessDate}, MIN(DonationDate)))"
+    },
+    {
+      "Code": "D21",
+      "Value": "Months_Since_Last_Donation_Date",
+      "Formula": "CEIL(months_between( {ProcessDate}, MAX(DonationDate)))"
+    },
+    {
+      "Code": "D22",
+      "Value": "Number_Of_Donations_0_12_Months_Ago",
+      "Formula": "SUM(CASE WHEN MB_DonationDate BETWEEN 0 AND 12 THEN 1 ELSE 0 END)"
+    },
+    {
+      "Code": "D23",
+      "Value": "Number_Of_Donations_0_24_Months_Ago",
+      "Formula": "SUM(CASE WHEN MB_DonationDate BETWEEN 0 AND 24 THEN 1 ELSE 0 END)"
+    },
+    {
+      "Code": "D24",
+      "Value": "Number_Of_Donations_0_3_Months_Ago",
+      "Formula": "SUM(CASE WHEN MB_DonationDate BETWEEN 0 AND  3 THEN 1 ELSE 0 END)"
+    },
+    {
+      "Code": "D25",
+      "Value": "Number_Of_Donations_0_6_Months_Ago",
+      "Formula": "SUM(CASE WHEN MB_DonationDate BETWEEN 0 AND  6 THEN 1 ELSE 0 END)"
+    },
+    {
+      "Code": "D26",
+      "Value": "Number_Of_Donations_13_24_Months_Ago",
+      "Formula": "SUM(CASE WHEN MB_DonationDate BETWEEN 13 AND 24 THEN 1 ELSE 0 END)"
+    },
+    {
+      "Code": "D27",
+      "Value": "Number_Of_Donations_2_3_Months_Ago",
+      "Formula": "SUM(CASE WHEN MB_DonationDate BETWEEN  2 AND  3 THEN 1 ELSE 0 END)"
+    },
+    {
+      "Code": "D43",
+      "Value": "Number_Of_Donation_Dollar_Check",
+      "Formula": "Count(1)"
+    },
+    {
+      "Code": "D44",
+      "Value": "Number_Of_Donation_Dollar_Master_Card",
+      "Formula": "Count(1)"
+    },
+    {
+      "Code": "D45",
+      "Value": "Number_Of_Donation_Dollar_Other",
+      "Formula": "Count(1)"
+    },
+    {
+      "Code": "D46",
+      "Value": "Number_Of_Donation_Dollar_Visa",
+      "Formula": "Count(1)"
+    },
+    {
+      "Code": "D48",
+      "Value": "LTD_Last_Payment_Method",
+      "Formula": "' ' "
+    },
+    {
+      "Code": "D49",
+      "Value": "LTD_Last_Response_Channel",
+      "Formula": "' '"
+    },
+    {
+      "Code": "D50",
+      "Value": "Average_Days_Between_Donations",
+      "Formula": "' '"
+    },
+    {
+      "Code": "D51",
+      "Value": "_Since_Last_Donation",
+      "Formula": "MIN(CASE WHEN <C_FORMULA> THEN MB_DonationDate ELSE 0 END) "
+    },
+    {
+      "Code": "D52",
+      "Value": "LTD_Last_Donation_yyyymm",
+      "Formula": "DATE_FORMAT(MAX(DonationDate), 'yyyyMM')"
+    }
+  ]
+}

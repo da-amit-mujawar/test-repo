@@ -1,0 +1,2 @@
+stcexpclust,S007000,t006_message,D:\Redshift_DataIngestion\Output
+stcexpclust,S007000,t151_rpt_delivery_response_message_segment,D:\Redshift_DataIngestion\Output

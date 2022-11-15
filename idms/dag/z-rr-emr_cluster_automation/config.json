@@ -1,0 +1,189 @@
+{
+    "Process_Name": "apogee",
+    "S3Bucket": "s3://idms-2722-playground/rohit_rajput/emr_cluster_logs/",
+    "EmrLabel": "emr-6.4.0",
+    "KeyName": "clstrkey-de-rollups",
+    "InstanceProfile": "EMR_EC2_DefaultRole",
+    "ServiceAccessSecurityGroup": "sg-043f1e7c31ad78a92",
+    "SubnetId": "subnet-02f1b0c8c2f536ea4",
+    "EmrManagedSlaveSecurityGroup": "sg-0e99c0a7259e82d0b",
+    "EmrManagedMasterSecurityGroup": "sg-059792b9d06b6db66",
+    "Path": "s3://idms-2722-playground/ram/de-rollups/programs/split/bootstrap.sh",
+    "Bootstrap-Name": "BootStrap-1",
+    "ComputeLimits": {
+      "UnitType": "Instances",
+      "MinimumCapacityUnits": 2,
+      "MaximumCapacityUnits": 12,
+      "MaximumOnDemandCapacityUnits": 12,
+      "MaximumCoreCapacityUnits": 12
+    },
+    "Instance":[
+      {
+        "InstanceCount": 1,
+        "InstanceGroupType": "MASTER",
+        "InstanceType": "i3.xlarge",
+        "Name": "Master-1"
+      },
+      {
+        "InstanceCount": 2,
+        "InstanceGroupType": "CORE",
+        "InstanceType": "i3.xlarge",
+        "Name": "Core-2"
+      }
+    ],
+    "Instance_large":[
+      {
+        "InstanceCount": 1,
+        "InstanceGroupType": "MASTER",
+        "InstanceType": "i3.xlarge",
+        "Name": "Master-1"
+      },
+      {
+        "InstanceCount": 4,
+        "InstanceGroupType": "CORE",
+        "InstanceType": "i3.8xlarge",
+        "Name": "Core-2"
+      }
+    ],
+    "step":{
+      "custom_step_0":[
+    {
+      "Args": [
+        "spark-submit",
+        "--deploy-mode",
+        "cluster",
+        "s3://idms-2722-code/not-for-profit/Not-For-Profit-0.0-CSV2Parquet.py",
+        "s3://idms-2722-code/not-for-profit/apogee-spark-config.json"
+      ],
+      "Type": "CUSTOM_JAR",
+      "ActionOnFailure": "CONTINUE",
+      "Jar": "command-runner.jar",
+      "Properties": "",
+      "Name": "Convert CSV 2 Parquet"
+    }
+  ],
+      "custom_step_1":[
+        {
+          "Args": [
+            "spark-submit",
+            "--deploy-mode",
+            "cluster",
+            "s3://idms-2722-code/not-for-profit/Not-For-Profit-1.0-PrepInputData.py",
+            "s3://idms-2722-code/not-for-profit/apogee-spark-config.json"          
+          ],
+          "Type": "CUSTOM_JAR",
+          "ActionOnFailure": "CONTINUE",
+          "Jar": "command-runner.jar",
+          "Properties": "",
+          "Name": "Prepare Input Data"
+        }
+      ],
+      "custom_step_2":[
+        {
+          "Args": [
+            "spark-submit",
+            "--deploy-mode",
+            "cluster",
+            "s3://idms-2722-code/not-for-profit/Not-For-Profit-2.0-ProcessLTD.py",
+            "s3://idms-2722-code/not-for-profit/apogee-spark-config.json"
+          ],
+          "Type": "CUSTOM_JAR",
+          "ActionOnFailure": "CONTINUE",
+          "Jar": "command-runner.jar",
+          "Properties": "",
+          "Name": "LTD Calculation"
+        },
+        {
+          "Args": [
+            "spark-submit",
+            "--deploy-mode",
+            "cluster",
+            "s3://idms-2722-code/not-for-profit/Not-For-Profit-2.1-ProcessCategory.py",
+            "s3://idms-2722-code/not-for-profit/apogee-spark-config.json"
+          ],
+          "Type": "CUSTOM_JAR",
+          "ActionOnFailure": "CONTINUE",
+          "Jar": "command-runner.jar",
+          "Properties": "",
+          "Name": "Category Calculation"
+        },
+        {
+          "Args": [
+            "spark-submit",
+            "--deploy-mode",
+            "cluster",
+            "s3://idms-2722-code/not-for-profit/Not-For-Profit-2.2-ProcessMonths.py",
+            "s3://idms-2722-code/not-for-profit/apogee-spark-config.json"
+          ],
+          "Type": "CUSTOM_JAR",
+          "ActionOnFailure": "CONTINUE",
+          "Jar": "command-runner.jar",
+          "Properties": "",
+          "Name": "Months Calculation"
+        },
+        {
+          "Args": [
+            "spark-submit",
+            "--deploy-mode",
+            "cluster",
+            "s3://idms-2722-code/not-for-profit/Not-For-Profit-2.3-ProcessList.py",
+            "s3://idms-2722-code/not-for-profit/apogee-spark-config.json",
+            "0"
+          ],
+          "Type": "CUSTOM_JAR",
+          "ActionOnFailure": "CONTINUE",
+          "Jar": "command-runner.jar",
+          "Properties": "",
+          "Name": "List-AVG_Dollar_Donation"
+        },
+        {
+          "Args": [
+            "spark-submit",
+            "--deploy-mode",
+            "cluster",
+            "s3://idms-2722-code/not-for-profit/Not-For-Profit-2.3-ProcessList.py",
+            "s3://idms-2722-code/not-for-profit/apogee-spark-config.json",
+            "1"
+          ],
+          "Type": "CUSTOM_JAR",
+          "ActionOnFailure": "CONTINUE",
+          "Jar": "command-runner.jar",
+          "Properties": "",
+          "Name": "List-Dollar_Donation"
+        },
+        {
+          "Args": [
+            "spark-submit",
+            "--deploy-mode",
+            "cluster",
+            "s3://idms-2722-code/not-for-profit/Not-For-Profit-2.3-ProcessList.py",
+            "s3://idms-2722-code/not-for-profit/apogee-spark-config.json",
+            "2"
+          ],
+          "Type": "CUSTOM_JAR",
+          "ActionOnFailure": "CONTINUE",
+          "Jar": "command-runner.jar",
+          "Properties": "",
+          "Name": "List-Number_Of_Donation"
+        },
+        {
+          "Args": [
+            "spark-submit",
+            "--deploy-mode",
+            "cluster",
+            "s3://idms-2722-code/not-for-profit/Not-For-Profit-2.3-ProcessList.py",
+            "s3://idms-2722-code/not-for-profit/apogee-spark-config.json",
+            "3"
+          ],
+          "Type": "CUSTOM_JAR",
+          "ActionOnFailure": "CONTINUE",
+          "Jar": "command-runner.jar",
+          "Properties": "",
+          "Name": "List-Since_Last_Donation"
+        }
+      ]
+  
+  
+      }
+  }
+  

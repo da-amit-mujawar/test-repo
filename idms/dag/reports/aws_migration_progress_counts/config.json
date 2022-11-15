@@ -1,0 +1,7 @@
+{
+    "AccountingDivisionCode": "240050",
+    "StartDate": "2020-09-14",
+    "ExcludeDbs": "1369,847,1293,1119,1025,1094",
+    "email_subject": "AWS ETL Migration Progress - Phase 1",
+    "email_message": "Hi ALL,<br /><p>Have a sneak peek at the Daily counts of B2C lists migrated so far.<br /><<StdOut>><br />Thank you<br />IDMS Support Team<br /> </p>"
+}

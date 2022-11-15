@@ -1,0 +1,33 @@
+{
+    "table_job_stats": "digital.sap_job_stats",
+    "table_sap_main": "digital.sap_main",
+    "table_sap_lr_email_append": "/a2sap_",
+    "table_sap_email": "digital.sap_email",
+    "table_sap_listid": "digital.sap_listid",
+    "table_sap_hardware": "digital.sap_hardware",
+    "table_sap_software": "digital.sap_software",
+    "table_sap_industry": "digital.sap_industry",
+    "table_sap_interestarea": "digital.sap_interestarea",
+    "table_sap_jobfunction": "digital.sap_jobfunction",
+    "table_sap_locationtype": "digital.sap_locationtype",
+    "table_sap_productspecified": "digital.sap_productspecified",
+    "table_sap_specialty": "digital.sap_specialty",
+    "s3-key10": "/output/sap_main/DW_Final_1337_20334_18255.parquet",
+    "s3-key11": "/output/sap_email/DW_Final_1337_20334_18254.parquet",
+    "s3-key12": "/output/sap_main/listids.txt",
+    "s3-key13": "/output/sap_hardware/DW_Final_1337_20334_18258.parquet",
+    "s3-key14": "/output/sap_software/DW_Final_1337_20334_18259.parquet",
+    "s3-key15": "/output/sap_industry/DW_Final_1337_20334_18260.parquet",
+    "s3-key16": "/output/sap_interestarea/DW_Final_1337_20334_18261.parquet",
+    "s3-key17": "/output/sap_jobfunction/DW_Final_1337_20334_18262.parquet",
+    "s3-key18": "/output/sap_locationtype/DW_Final_1337_20334_18263.parquet",
+    "s3-key19": "/output/sap_productspecified/DW_Final_1337_20334_18264.parquet",
+    "s3-key20": "/output/sap_specialty/DW_Final_1337_20334_18265.parquet",
+    "email_subject": "business digital sapphire load job",
+    "email_message": "business digital sapphire load is done"
+}
+
+
+
+
+

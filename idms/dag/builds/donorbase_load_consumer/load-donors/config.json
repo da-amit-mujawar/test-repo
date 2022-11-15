@@ -1,0 +1,6 @@
+{
+    "reportname": "/Reports/filename.txt",
+    "s3-key1": "/foldername",
+    "email_subject": "no email necessary",
+    "email_message": "no email necessary"
+}

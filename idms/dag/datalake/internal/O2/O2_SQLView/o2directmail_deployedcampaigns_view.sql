@@ -1,0 +1,1 @@
+Create view View_deployedcampaigns_DSG As Select '"' + RTRIM(LTRIM(Replace(Replace(Replace(Replace(replace(replace(replace(COALESCE(CONVERT(VARCHAR(MAX),CampaignId),''),char(13)+char(10),''),char(44),''),char(36),''),char(10),''),char(13),''),char(34),''),'|',''))) + '"' as cline from [o2directmail].[dbo].[deployedcampaigns]  

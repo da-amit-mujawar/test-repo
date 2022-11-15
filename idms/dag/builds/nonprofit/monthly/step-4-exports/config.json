@@ -1,0 +1,14 @@
+{
+  "export_mmdb_1": "/exports/nonprofit_political/nonprofit_political",
+  "export_mmdb_2": "/exports/nonprofit_hh_summary/nonprofit_hh_summary",
+  "export_mmdb_3": "/exports/nonprofit_hh_summary_nodedupe/nonprofit_hh_summary_nodedupe",
+  "export_mmdb_4": "/exports/fec_hh_summary/fec_hh_summary",
+  "export_mmdb_5": "/exports/comb_np_fec_summary/comb_np_fec_summary",
+  "export_mmdb_6": "/exports/nonprofit_mgen/nonprofit_mgen",
+  "export_mmdb_7": "/exports/voter_data/voter_data",
+  "export_mgen_8": "/exports/neptune_apogee/apogee_linked_file",
+  "reportname1": "/Reports/apogee_export_counts_{yyyy}{mm}{dd}",
+  "email_business_users": "MFD-P17-Analytics-Load-Team@data-axle.com, MFDAlterianLoadGroup@data-axle.com, IDMSAdminConsumerPearl@data-axle.com",
+  "email_subject": "IDMS APOGEE Monthly Export file counts: {yyyy}-{mm}-{dd}",
+  "email_message": "APOGEE Monthly Export files have been posted. Please refer to attached file counts. </br>--IDMS Support"
+}

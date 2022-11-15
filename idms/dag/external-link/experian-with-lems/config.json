@@ -1,0 +1,8 @@
+{
+    "tablename1": "tblExternal2_191_201206_NEW",
+    "tablename2": "tblExternal2_191_201206",
+    "s3-key1": "/neptune/mGen/experian_link.txt",
+    "reportname1": "/Reports/AuditReport_LinkTable_EXPERIAN",
+    "email_subject": "External Link -  EXPERIAN WITH LEMS update",
+    "email_message": "Please find attached audit report for this update.  Please review and activate the Link table."
+}

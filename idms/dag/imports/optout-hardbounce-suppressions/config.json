@@ -1,0 +1,7 @@
+{
+    "s3-key1": "/FilesExportedFromIQ/suppressions/OOHBExport_{DATABASEID}.txt",
+    "listconversionbucket": "{s3-listcoversion}",
+    "filename-activeb2b": "data/ETL_AWS_activeb2bdatabases.txt",
+    "email_subject": "AWS - Load Optout-hardbounce suppressions",
+    "email_message": "<h3>Optout and hardbounce suppressions lookup table is updated in Redshift.</h3>"
+ }

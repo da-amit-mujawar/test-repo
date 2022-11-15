@@ -1,0 +1,8 @@
+{
+    "iam_role": "arn:aws:iam::250245842722:role/da-idms-redshift-role",
+    "s3_base_path": "s3://idms-2722-playground/abhishek/redshift-copy",
+    "tbl_owner": "awsuser",
+    "email_address" : "var-de-email-dl",
+    "email_subject" : "Airflow Notification: Table Migration in Redshift",
+    "email_message" : "Redshift Table Migration - Completed"
+}

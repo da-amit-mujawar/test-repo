@@ -1,0 +1,138 @@
+{
+  "Records": [
+    {
+      "Name": "Table_ID",
+      "Datatype": "Long",
+      "ColNo": 1
+    },
+    {
+      "Name": "ListID",
+      "Datatype": "String",
+      "ColNo": 2
+    },
+    {
+      "Name": "Individual_ID",
+      "Datatype": "String",
+      "ColNo": 3
+    },
+    {
+      "Name": "Process_ID",
+      "Datatype": "String",
+      "ColNo": 4,
+      "Original_Column_Name": "HH_ID"
+    },
+    {
+      "Name": "AccountNo",
+      "Datatype": "String",
+      "ColNo": 5
+    },
+    {
+      "Name": "ListCategory01",
+      "Datatype": "String",
+      "ColNo": 6
+    },
+    {
+      "Name": "ListCategory02",
+      "Datatype": "String",
+      "ColNo": 7
+    },
+    {
+      "Name": "ListCategory03",
+      "Datatype": "String",
+      "ColNo": 8
+    },
+    {
+      "Name": "ListCategory04",
+      "Datatype": "String",
+      "ColNo": 9
+    },
+    {
+      "Name": "ListCategory05",
+      "Datatype": "String",
+      "ColNo": 10
+    },
+    {
+      "Name": "Party_Name",
+      "Datatype": "String",
+      "ColNo": 11
+    },
+    {
+      "Name": "IsBlueFlag",
+      "Datatype": "String",
+      "ColNo": 12
+    },
+    {
+      "Name": "CommitteeID",
+      "Datatype": "String",
+      "ColNo": 13
+    },
+    {
+      "Name": "Raw_Field04",
+      "Datatype": "String",
+      "ColNo": 14
+    },
+    {
+      "Name": "Raw_Field05",
+      "Datatype": "String",
+      "ColNo": 15
+    },
+    {
+      "Name": "Raw_Field06",
+      "Datatype": "String",
+      "ColNo": 16
+    },
+    {
+      "Name": "Raw_Field07",
+      "Datatype": "String",
+      "ColNo": 17
+    },
+    {
+      "Name": "Raw_Field08",
+      "Datatype": "String",
+      "ColNo": 18
+    },
+    {
+      "Name": "Raw_Field09",
+      "Datatype": "String",
+      "ColNo": 19
+    },
+    {
+      "Name": "Raw_Field10",
+      "Datatype": "String",
+      "ColNo": 20
+    },
+    {
+      "Name": "DonationDollar",
+      "Datatype": "Float",
+      "ColNo": 21,
+      "Original_Column_Name": "Detail_DonationDollar"
+    },
+    {
+      "Name": "DonationDate",
+      "Datatype": "Date",
+      "ColNo": 22,
+      "Original_Column_Name": "Detail_DonationDate"
+    },
+    {
+      "Name": "PaymentMethod",
+      "Datatype": "String",
+      "ColNo": 23
+    },
+    {
+      "Name": "DonationChannel",
+      "Datatype": "String",
+      "ColNo": 24,
+      "Original_Column_Name": "Detail_DonationChannel"
+    }
+  ],
+  "Filter": [
+    {
+      "Name": "Dlr_G_0",
+      "Formula": " AND DonationDollar > 0"
+    },
+    {
+      "Name": "DtValid",
+      "Formula": " AND ( DonationDate between '1950-01-01' and '{RunDate}')"
+    }
+  ]
+}

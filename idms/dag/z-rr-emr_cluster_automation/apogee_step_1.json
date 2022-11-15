@@ -1,0 +1,27 @@
+{
+  "ClusterName": "apogee-rollups-step1",
+  "ComputeLimits": {
+    "UnitType": "Instances",
+    "MinimumCapacityUnits": 2,
+    "MaximumCapacityUnits": 6,
+    "MaximumOnDemandCapacityUnits": 6,
+    "MaximumCoreCapacityUnits": 6
+  },
+  "steps": [
+    {
+      "Args": [
+        "spark-submit",
+        "--deploy-mode",
+        "cluster",
+        "s3://idms-2722-code/not-for-profit/Not-For-Profit-1.0-PrepInputData.py",
+        "s3://idms-2722-code/not-for-profit/apogee-spark-config.json"
+      ],
+      "Type": "CUSTOM_JAR",
+      "ActionOnFailure": "CONTINUE",
+      "Jar": "command-runner.jar",
+      "Properties": "",
+      "Name": "Prepare Input Data"
+    }
+  ]
+}
+

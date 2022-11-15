@@ -1,0 +1,13 @@
+{
+    "cigna": "cigna_new",
+    "cigna-stg": "cigna_stg",
+    "databaseid": "1119",
+    "s3-key1":"/internaltransfer/Cigna/execureach_MultiMatches",
+    "s3-key2":"/internaltransfer/Cigna/execureach_SingleMatches",
+    "email_subject": "IDMS DATABASE UPDATE NOTIFICATION FOR CIGNA - 1119",
+    "email_message": "Hello IDMS-Admin Team,<br/><br/> Cigna Database is loaded",
+    "reportname1": "/Reports/Cigna_load_total_count",
+    "reportname2": "/Reports/Cigna_load_sample",
+    "email_address": "Chris.Dowd@infogroup.com,DL-IDMSAdmin@data-axle.com",
+    "email_business_users": "DL-IDMSAdminInfogroup@data-axle.com"
+}

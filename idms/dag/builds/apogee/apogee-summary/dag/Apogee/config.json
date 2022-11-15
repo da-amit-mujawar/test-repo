@@ -1,0 +1,33 @@
+{
+  "spark_config": {
+    "app_name": "apogee",
+    "code_base": "{s3_code_location}",
+    "input_file_base": "{s3_input_location}",
+    "input_file_name": "[~{s3_input_location}/*/*.gz~]",
+    "base_location": "{s3_output_base_location}",
+    "process_location": "{yyyy}{mm}{dd}/process/",
+    "reject_location": "{yyyy}{mm}{dd}/reject/badRecords-{yyyy}-{mm}-{dd}.csv",
+    "discard_location": "{yyyy}{mm}{dd}/discard/rejectRecords-{yyyy}-{mm}-{dd}.csv",
+    "config_location": "config/",
+    "temp_location": "{yyyy}{mm}{dd}/temp/",
+    "output_location": "{yyyy}{mm}{dd}/output/",
+    "tblRaw": "exclude_trans_np",
+    "tblLTD": "exclude_sum_ltd_np",
+    "tblMonths": "tblChild17_apogee_months",
+    "tblCategory": "exclude_sum_cat_np",
+    "tblList-0": "exclude_sum_avg_list_np",
+    "tblList-1": "exclude_sum_amt_list_np",
+    "tblList-2": "exclude_sum_nbr_list_np",
+    "tblList-3": "exclude_sum_mos_list_np",
+    "tblCustom": "tblChild18_apogee_custom",
+    "ExtraColumns-Trans": "",
+    "ExtraColumns-Category": "",
+    "ExtraColumns-List": "",
+    "KeyColumnName": "Company_ID",
+    "KeyColumnType": "VARCHAR(25)",
+    "CatColumnList": "ListCategory01, ListCategory02",
+    "ColumnPrefix": "",
+    "ColumnSuffix": ""
+  },
+  "email_address": "dl-dataengineering@data-axle.com"
+}

@@ -1,0 +1,62 @@
+{
+  "Comment": "Recency in Months [12, 24, 48 and Lifetime]",
+  "Records": [
+    {
+      "Code": "A0",
+      "Value": "ALL"
+    },
+    {
+      "Code": "A03",
+      "Value": "M03",
+      "Formula": "MB_DonationDate  BETWEEN 0 AND 3"
+    },
+    {
+      "Code": "A06",
+      "Value": "M06",
+      "Formula": "MB_DonationDate  BETWEEN 0 AND 6"
+    },
+    {
+      "Code": "A09",
+      "Value": "M09",
+      "Formula": "MB_DonationDate  BETWEEN 0 AND 9"
+    },
+    {
+      "Code": "A12",
+      "Value": "M12",
+      "Formula": "MB_DonationDate  BETWEEN 0 AND 12"
+    },
+    {
+      "Code": "A24",
+      "Value": "M24",
+      "Formula": "MB_DonationDate  BETWEEN 0 AND 24"
+    },
+    {
+      "Code": "A48",
+      "Value": "M48",
+      "Formula": "MB_DonationDate  BETWEEN 0 AND 48"
+    },
+    {
+      "Code": "A50",
+      "Value": "LTD",
+      "Formula": "MB_DonationDate  BETWEEN 0 AND 500"
+    },
+    {
+      "Code": "APY",
+      "Value": "MPY",
+      "Formula": "year(DonationDate) = YEAR(current_date()) - 1",
+      "Comments": "Pull Previous Year Data"
+    },
+    {
+      "Code": "A2Y",
+      "Value": "M2Y",
+      "Formula": "year(DonationDate) = YEAR(current_date()) - 2",
+      "Comments": "Second Previous Year Data"
+    },
+    {
+      "Code": "A3Y",
+      "Value": "M3Y",
+      "Formula": "year(DonationDate) = YEAR(current_date()) - 3",
+      "Comments": "Third Previous Year Data"
+    }
+  ]
+}

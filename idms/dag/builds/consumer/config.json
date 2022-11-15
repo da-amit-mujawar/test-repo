@@ -1,0 +1,26 @@
+{
+    "email-load-table": "IG_CONSUMER_EMAIL_NEW_LOAD",
+    "s3-key-email": "/neptune/EDB/tblMain_1321_201301.txt",
+    "new-load-table": "IG_CONSUMER_NEW_LOAD",
+    "s3-key-new": "/consumer-core/Cons.IDMSFile",
+    "IG_CONSUMER_NEW_TEMP": "IG_CONSUMER_NEW_TEMP",
+    "s3-key-child1": "/neptune/EDB/tblChild1_1321_201301.txt",
+    "s3-key-child2": "/neptune/EDB/tblChild2_1321_201301_RU.txt",
+    "segcode-load-table": "IG_CONSUMER_NEW_Segcodes_Load",
+    "s3-key-segcode": "/consumer-core/segmentcode.dat",
+    "MailOrderBuyer_ToBeDropped-load-table": "IG_CONSUMER_MailOrderBuyer_ToBeDropped",
+    "s3-key-MailOrderBuyer": "/consumer-core/mailorderbuyerscode.dat",
+    "DonorCode_ToBeDropped-load-table": "IG_CONSUMER_DonorCode_ToBeDropped",
+    "s3-key-DonorCode": "/idms-mmdb/consumer/donor/getIndexData_DonorCode",
+    "ChildrenCode_ToBeDropped-load-table": "IG_CONSUMER_ChildrenCode_ToBeDropped",
+    "s3-key-ChildrenCode": "/idms-mmdb/consumer/childrencode/childrencode.csv",
+    "EXCLUDE_DONOTCALLFLAG-load-table": "EXCLUDE_DONOTCALLFLAG",
+    "PreferredCity-load-table": "IG_CONSUMER_NEW_PreferredCity_Load",
+    "s3-key-PreferredCity_Load": "/FilesExportedFromIQ/lookup/OCVLPRZIP.txt",
+    "reportname1": "/BuildAuditReports/InfogroupConsumer_1267_Sample",
+    "reportname2":"/Reports/DataAxle_Auto_MMDB_Profile_{yyyy}{mm}{dd}_Infutor",
+    "email_subject": "Consumer File in IDMS (1267) Update",
+    "email_message": "Hi All,</br></br> Consumer Database (1267) is ready.</br></br> Please review the attached sample and QC counts via IDMS applicatio.</br></br> Once verified you may activate the build. </br></br> Please open a new support ticket for any questions regarding this update.",
+    "email_business_users" : "idmsadminconsumerpearl@data-axle.com"
+
+}

@@ -1,0 +1,4 @@
+{
+    "email_subject": "Airflow Notification : Apply Optout-HardBounce suppressions",
+    "email_message": "Optout and hardbounce suppressions were applied to Redshift B2B Databases.<br />All Optouts Applied: <<StdOut>>"
+}

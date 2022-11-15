@@ -1,0 +1,7 @@
+{
+    "tablename1": "EXCLUDE_SysOOGlobalEmail",
+    "s3-key1": "/FilesExportedFromIQ/suppressions/SysOOGlobal_IQ.txt",
+    "reportname1": "/Reports/global-email-lookup-audit-report",
+    "email_subject": "AWS - Load Global email suppressions",
+    "email_message": "<h3>Global email for Optout and hardbounce suppressions lookup table (EXCLUDE_SysOOGlobalEmail) is updated in Redshift.</h3>"
+ }

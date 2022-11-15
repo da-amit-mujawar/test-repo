@@ -1,0 +1,2982 @@
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_auth_activityLog; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_auth_activityLog 
+(
+Created TIMESTAMP
+,UserId varchar(64)
+,ActivityId SMALLINT
+,Note VARCHAR(1024)
+,Id INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_auth_activityLog/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_auth_activityLog; 
+CREATE VIEW interna.SMBDWstaging_auth_activityLog AS SELECT * FROM spectrumdb.SMBDWstaging_auth_activityLog WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_auth_activityLog; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_auth_activityLog; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_auth_inactive_users; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_auth_inactive_users 
+(
+id INT
+,UserId INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_auth_inactive_users/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_auth_inactive_users; 
+CREATE VIEW interna.SMBDWstaging_auth_inactive_users AS SELECT * FROM spectrumdb.SMBDWstaging_auth_inactive_users WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_auth_inactive_users; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_auth_inactive_users;
+
+ 
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_auth_membership; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_auth_membership 
+(
+id INT
+,ProviderMembershipId INT
+,EmailVerified int
+,IsAssisted int
+,MigratedFirstTimeLogin int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_auth_membership/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_auth_membership; 
+CREATE VIEW interna.SMBDWstaging_auth_membership AS SELECT * FROM spectrumdb.SMBDWstaging_auth_membership WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_auth_membership; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_auth_membership; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_auth_profiles; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_auth_profiles 
+(
+id INT
+,UserId varchar(64)
+,Email varchar(512)
+,FirstName VARCHAR(128)
+,LastName VARCHAR(128)
+,CompanyName VARCHAR(128)
+,Address1 VARCHAR(64)
+,Address2 VARCHAR(64)
+,City VARCHAR(64)
+,State VARCHAR(32)
+,ZIP VARCHAR(10)
+,Country VARCHAR(64)
+,Phone VARCHAR(32)
+,LastUpdatedDate TIMESTAMP
+,MediaCode VARCHAR(50)
+,HasOptedOutOfEmail int
+,DeviceType VARCHAR(32)
+,DeviceTypeEx Varchar(64)
+,Gclid VARCHAR(512)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_auth_profiles/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_auth_profiles; 
+CREATE VIEW interna.SMBDWstaging_auth_profiles AS SELECT * FROM spectrumdb.SMBDWstaging_auth_profiles WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_auth_profiles; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_auth_profiles; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_auth_provider_membership; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_auth_provider_membership 
+(
+id INT
+,ProviderMembershipId INT
+,UserId varchar(64)
+,Email VARCHAR(512)
+,Username varchar(512)
+,Provider varchar(64)
+,ProviderUserId varchar(128)
+,IsPrimary int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_auth_provider_membership/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_auth_provider_membership; 
+CREATE VIEW interna.SMBDWstaging_auth_provider_membership AS SELECT * FROM spectrumdb.SMBDWstaging_auth_provider_membership WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_auth_provider_membership; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_auth_provider_membership; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_5500_health_and_welfare; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_5500_health_and_welfare 
+(
+UserId INT
+,AccountId INT
+,AccountNumber CHAR(10)
+,Company VARCHAR(80)
+,AccountPhone VARCHAR(25)
+,AccountEmail VARCHAR(256)
+,UserName VARCHAR(256)
+,FirstName VARCHAR(128)
+,LastName VARCHAR(128)
+,UserEmail VARCHAR(256)
+,IsEnterprise int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_5500_health_and_welfare/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_5500_health_and_welfare; 
+CREATE VIEW interna.SMBDWstaging_bart_5500_health_and_welfare AS SELECT * FROM spectrumdb.SMBDWstaging_bart_5500_health_and_welfare WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_5500_health_and_welfare; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_5500_health_and_welfare; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_account_users_order_detail; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_account_users_order_detail 
+(
+UserId INT
+,AccountId INT
+,SalesForceId varchar(20)
+,Contact_ThinkId INT
+,UserName varchar(256)
+,FirstName varchar(256)
+,LastName varchar(256)
+,UserEmail varchar(256)
+,StartDate TIMESTAMP
+,EndDate TIMESTAMP
+,CreatedDate TIMESTAMP
+,account_ThinkId INT
+,AccountNumber CHAR(10)
+,Name VARCHAR(80)
+,"Order Id" INT
+,"OESS Account ID" INT
+,"OESS Customer Number" INT
+,"Division Number" VARCHAR(30)
+,"Oracle Customer Number" INT
+,"Contact Name" varchar(81)
+,"Order Created Date" TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_account_users_order_detail/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_account_users_order_detail; 
+CREATE VIEW interna.SMBDWstaging_bart_account_users_order_detail AS SELECT * FROM spectrumdb.SMBDWstaging_bart_account_users_order_detail WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_account_users_order_detail; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_account_users_order_detail; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_additional_contacts; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_additional_contacts 
+(
+Id INT
+,UserId INT
+,MmdbKey VARCHAR(50)
+,TeamId INT
+,ExecutiveId VARCHAR(20)
+,FirstName VARCHAR(250)
+,LastName VARCHAR(250)
+,JobTitle VARCHAR(500)
+,Phone VARCHAR(15)
+,PhoneExtension VARCHAR(50)
+,PhoneType SMALLINT
+,Email VARCHAR(250)
+,EmailType SMALLINT
+,Details VARCHAR(500)
+,CreatedDate TIMESTAMP
+,UpdatedDate TIMESTAMP
+,IsDeleted int
+,ModuleId SMALLINT
+,EmailIndex INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_additional_contacts/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_additional_contacts; 
+CREATE VIEW interna.SMBDWstaging_bart_additional_contacts AS SELECT * FROM spectrumdb.SMBDWstaging_bart_additional_contacts WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_additional_contacts; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_additional_contacts; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_automobile_credit_schedules; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_automobile_credit_schedules 
+(
+ScheduleId INT
+,UserId INT
+,StartDate TIMESTAMP
+,EndDate TIMESTAMP
+,NumberOfCredits INT
+,Segements INT
+,Frequency SMALLINT
+,FrequencyType SMALLINT
+,TransactionType SMALLINT
+,OrderNumber varchar(36)
+,OrderTotal DECIMAL(18,2)
+,PricePerCredit DECIMAL(18,4)
+,LastRunDate TIMESTAMP
+,NextRunDate TIMESTAMP
+,CreatedDate TIMESTAMP
+,IsActive int
+,IsDeleted int
+,UsersHavingAccessToAutoData INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_automobile_credit_schedules/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_automobile_credit_schedules; 
+CREATE VIEW interna.SMBDWstaging_bart_automobile_credit_schedules AS SELECT * FROM spectrumdb.SMBDWstaging_bart_automobile_credit_schedules WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_automobile_credit_schedules; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_automobile_credit_schedules; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_automobile_credit_transactions; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_automobile_credit_transactions 
+(
+UserId INT
+,CreditAdjustment INT
+,"Time" TIMESTAMP
+,TransactionType SMALLINT
+,PurchaseAmount DECIMAL(18,2)
+,OrderNumber varchar(36)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_automobile_credit_transactions/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_automobile_credit_transactions; 
+CREATE VIEW interna.SMBDWstaging_bart_automobile_credit_transactions AS SELECT * FROM spectrumdb.SMBDWstaging_bart_automobile_credit_transactions WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_automobile_credit_transactions; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_automobile_credit_transactions; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_automobile_data_exported; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_automobile_data_exported 
+(
+Calendar_Year_Month varchar(50)
+,number_of_records_exported INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_automobile_data_exported/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_automobile_data_exported; 
+CREATE VIEW interna.SMBDWstaging_bart_automobile_data_exported AS SELECT * FROM spectrumdb.SMBDWstaging_bart_automobile_data_exported WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_automobile_data_exported; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_automobile_data_exported; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_automobile_schedule_transactions; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_automobile_schedule_transactions 
+(
+ScheduleId INT
+,TransactionId INT
+,CreatedDate TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_automobile_schedule_transactions/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_automobile_schedule_transactions; 
+CREATE VIEW interna.SMBDWstaging_bart_automobile_schedule_transactions AS SELECT * FROM spectrumdb.SMBDWstaging_bart_automobile_schedule_transactions WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_automobile_schedule_transactions; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_automobile_schedule_transactions; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_auto_data_royalty; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_auto_data_royalty 
+(
+UserName VARCHAR(256)
+,FirstName VARCHAR(128)
+,LastName VARCHAR(128)
+,CompanyName VARCHAR(250)
+,DivisionCode VARCHAR(50)
+,SalesRepNo VARCHAR(64)
+,EventDate TIMESTAMP
+,"Count" INT
+,MonetaryValue Decimal(15,4)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_auto_data_royalty/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_auto_data_royalty; 
+CREATE VIEW interna.SMBDWstaging_bart_auto_data_royalty AS SELECT * FROM spectrumdb.SMBDWstaging_bart_auto_data_royalty WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_auto_data_royalty; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_auto_data_royalty; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_contacts; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_contacts 
+(
+id INT
+,UserId INT
+,MmdbKey VARCHAR(50)
+,TeamId INT
+,FirstName VARCHAR(250)
+,LastName VARCHAR(250)
+,JobTitle VARCHAR(500)
+,Phone VARCHAR(15)
+,PhoneExtension VARCHAR(50)
+,PhoneType SMALLINT
+,Email varchar(250)
+,EmailType SMALLINT
+,Details VARCHAR(500)
+,CreatedDate TIMESTAMP
+,UpdatedDate TIMESTAMP
+,IsDeleted int
+,ModuleId SMALLINT
+,EmailIndex INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_contacts/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_contacts; 
+CREATE VIEW interna.SMBDWstaging_bart_contacts AS SELECT * FROM spectrumdb.SMBDWstaging_bart_contacts WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_contacts; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_contacts; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_credit_transactions_email; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_credit_transactions_email 
+(
+id INT
+,UserId INT
+,CreditAdjustment INT
+,"Time" TIMESTAMP
+,IsAdjustment int
+,PurchaseAmount decimal(15,4)
+,VendorKey varchar(6)
+,TransactionType varchar(50)
+,PricePerCredit Decimal(15,4)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_credit_transactions_email/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_credit_transactions_email; 
+CREATE VIEW interna.SMBDWstaging_bart_credit_transactions_email AS SELECT * FROM spectrumdb.SMBDWstaging_bart_credit_transactions_email WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_credit_transactions_email; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_credit_transactions_email; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_custom_field; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_custom_field 
+(
+id INT
+,AccountId INT
+,Title varchar(50)
+,"Type" SMALLINT
+,IsDeleted int
+,CreatedDate TIMESTAMP
+,UpdatedDate TIMESTAMP
+,SortOrder INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_custom_field/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_custom_field; 
+CREATE VIEW interna.SMBDWstaging_bart_custom_field AS SELECT * FROM spectrumdb.SMBDWstaging_bart_custom_field WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_custom_field; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_custom_field; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_dyi_email_campaigns; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_dyi_email_campaigns 
+(
+user_id INT
+,campaign_name VARCHAR(256)
+,email_count INT
+,moduleId INT
+,created_date TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_dyi_email_campaigns/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_dyi_email_campaigns; 
+CREATE VIEW interna.SMBDWstaging_bart_dyi_email_campaigns AS SELECT * FROM spectrumdb.SMBDWstaging_bart_dyi_email_campaigns WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_dyi_email_campaigns; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_dyi_email_campaigns; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_email_credit_transactions; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_email_credit_transactions 
+(
+UserId INT
+,CreditAdjustment INT
+,"Time" TIMESTAMP
+,TransactionType SMALLINT
+,TransactionId VARCHAR(64)
+,PurchaseAmount DECIMAL(18,2)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_email_credit_transactions/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_email_credit_transactions; 
+CREATE VIEW interna.SMBDWstaging_bart_email_credit_transactions AS SELECT * FROM spectrumdb.SMBDWstaging_bart_email_credit_transactions WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_email_credit_transactions; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_email_credit_transactions; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_email_credit_users; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_email_credit_users 
+(
+user_id INT
+,user_name VARCHAR(256)
+,order_id INT
+,sales_rep_id VARCHAR(16)
+,quantity INT
+,amount decimal(15,4)
+,created_date TIMESTAMP
+,updated_date TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_email_credit_users/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_email_credit_users; 
+CREATE VIEW interna.SMBDWstaging_bart_email_credit_users AS SELECT * FROM spectrumdb.SMBDWstaging_bart_email_credit_users WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_email_credit_users; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_email_credit_users; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_EventSummaryByModuleAndUser; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_EventSummaryByModuleAndUser 
+(
+"Date" DATE
+,AccountId INT
+,UserId INT
+,ModuleId SMALLINT
+,EventType SMALLINT
+,EventSubType SMALLINT
+,"Count" INT
+,"Sum" INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_EventSummaryByModuleAndUser/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_EventSummaryByModuleAndUser; 
+CREATE VIEW interna.SMBDWstaging_bart_EventSummaryByModuleAndUser AS SELECT * FROM spectrumdb.SMBDWstaging_bart_EventSummaryByModuleAndUser WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_EventSummaryByModuleAndUser; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_EventSummaryByModuleAndUser; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_leadstatusactivity; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_leadstatusactivity 
+(
+UserId INT
+,CreateDate INT
+,isActive INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_leadstatusactivity/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_leadstatusactivity; 
+CREATE VIEW interna.SMBDWstaging_bart_leadstatusactivity AS SELECT * FROM spectrumdb.SMBDWstaging_bart_leadstatusactivity WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_leadstatusactivity; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_leadstatusactivity; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_lead_status_history; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_lead_status_history 
+(
+Id BIGINT
+,UserId INT
+,CreateDate TIMESTAMP
+,Usage INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_lead_status_history/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_lead_status_history; 
+CREATE VIEW interna.SMBDWstaging_bart_lead_status_history AS SELECT * FROM spectrumdb.SMBDWstaging_bart_lead_status_history WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_lead_status_history; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_lead_status_history; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_notes; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_notes 
+(
+Id BIGINT
+,UserId INT
+,FollowUp TIMESTAMP
+,CreateDate TIMESTAMP
+,UpdateDate TIMESTAMP
+,HasNote int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_notes/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_notes; 
+CREATE VIEW interna.SMBDWstaging_bart_notes AS SELECT * FROM spectrumdb.SMBDWstaging_bart_notes WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_notes; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_notes;
+
+ 
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_requests; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_requests 
+(
+Id BIGINT
+,UserId INT
+,MatchCount INT
+,LastUpdate TIMESTAMP
+,CreateDate TIMESTAMP
+,ModuleId SMALLINT
+,Product VARCHAR(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_requests/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_requests; 
+CREATE VIEW interna.SMBDWstaging_bart_requests AS SELECT * FROM spectrumdb.SMBDWstaging_bart_requests WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_requests; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_requests; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_royalty_event; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_royalty_event 
+(
+Id Varchar(64)
+,MonetaryValue decimal(15,4)
+,Module VARCHAR(20)
+,EventDate TIMESTAMP
+,EventType VARCHAR(200)
+,Username VARCHAR(50)
+,DivisionCode VARCHAR(50)
+,OrderNum VARCHAR(60)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_royalty_event/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_royalty_event; 
+CREATE VIEW interna.SMBDWstaging_bart_royalty_event AS SELECT * FROM spectrumdb.SMBDWstaging_bart_royalty_event WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_royalty_event; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_royalty_event; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_search_api_actions; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_search_api_actions 
+(
+ApiKey VARCHAR(36)
+,Resource VARCHAR(50)
+,Action VARCHAR(400)
+,"Time" INT
+,RequestType VARCHAR(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_search_api_actions/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_search_api_actions; 
+CREATE VIEW interna.SMBDWstaging_bart_search_api_actions AS SELECT * FROM spectrumdb.SMBDWstaging_bart_search_api_actions WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_search_api_actions; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_search_api_actions;
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_search_api_logins; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_search_api_logins 
+(
+ApiKey VARCHAR(36)
+,UserName VARCHAR(100)
+,Application VARCHAR(100)
+,Device VARCHAR(100)
+,"Time" INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_search_api_logins/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_search_api_logins; 
+CREATE VIEW interna.SMBDWstaging_bart_search_api_logins AS SELECT * FROM spectrumdb.SMBDWstaging_bart_search_api_logins WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_search_api_logins; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_search_api_logins; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_site_features; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_site_features 
+(
+id INT
+,FeatureGroup VARCHAR(50)
+,Name VARCHAR(50)
+,Description VARCHAR(256)
+,RoleId INT
+,HasStartEndDates int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_site_features/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_site_features; 
+CREATE VIEW interna.SMBDWstaging_bart_site_features AS SELECT * FROM spectrumdb.SMBDWstaging_bart_site_features WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_site_features; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_site_features; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_tags; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_tags 
+(
+Id INT
+,AccountId INT
+,UserId INT
+,CreateDate TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_tags/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_tags; 
+CREATE VIEW interna.SMBDWstaging_bart_tags AS SELECT * FROM spectrumdb.SMBDWstaging_bart_tags WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_tags; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_tags; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_tag_records_log; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_tag_records_log 
+(
+Id BIGINT
+,TagId INT
+,LogTIMESTAMP TIMESTAMP
+,Action VARCHAR(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_tag_records_log/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_tag_records_log; 
+CREATE VIEW interna.SMBDWstaging_bart_tag_records_log AS SELECT * FROM spectrumdb.SMBDWstaging_bart_tag_records_log WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_tag_records_log; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_tag_records_log; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_transaction_types_email; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_transaction_types_email 
+(
+id SMALLINT
+,Name VARCHAR(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_transaction_types_email/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_transaction_types_email; 
+CREATE VIEW interna.SMBDWstaging_bart_transaction_types_email AS SELECT * FROM spectrumdb.SMBDWstaging_bart_transaction_types_email WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_transaction_types_email; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_transaction_types_email; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_users_event_log; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_users_event_log 
+(
+AccountId INT
+,UserId INT
+,ModuleId INT
+,EventTypeId INT
+,event_type_name VARCHAR(50)
+,event_count INT
+,activity_date TIMESTAMP
+,EventSubTypeId INT
+,event_sub_type_name VARCHAR(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_users_event_log/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_users_event_log; 
+CREATE VIEW interna.SMBDWstaging_bart_users_event_log AS SELECT * FROM spectrumdb.SMBDWstaging_bart_users_event_log WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_users_event_log; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_users_event_log; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_user_audit; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_user_audit 
+(
+id INT
+,UserId INT
+,"Type" varchar(16)
+,Ip varchar(15)
+,Created TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_user_audit/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_user_audit; 
+CREATE VIEW interna.SMBDWstaging_bart_user_audit AS SELECT * FROM spectrumdb.SMBDWstaging_bart_user_audit WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_user_audit; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_user_audit; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_user_dialer_settings; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_user_dialer_settings 
+(
+id INT
+,UserId INT
+,TelephonyAccountId varchar(64)
+,ActiveTelephonyCallerIdId varchar(64)
+,Created TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_user_dialer_settings/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_user_dialer_settings; 
+CREATE VIEW interna.SMBDWstaging_bart_user_dialer_settings AS SELECT * FROM spectrumdb.SMBDWstaging_bart_user_dialer_settings WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_user_dialer_settings; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_user_dialer_settings; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_user_features; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_user_features 
+(
+UserId INT
+,FeatureId INT
+,Value int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_user_features/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_user_features; 
+CREATE VIEW interna.SMBDWstaging_bart_user_features AS SELECT * FROM spectrumdb.SMBDWstaging_bart_user_features WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_user_features; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_user_features; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_user_lead_status; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_user_lead_status 
+(
+Id INT
+,UserId INT
+,LeadStatusId INT
+,TeamId INT
+,DisplayName VARCHAR(50)
+,Icon INT
+,SortOrder INT
+,IsDeleted int
+,CreateDate TIMESTAMP
+,ModifiedDate TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_user_lead_status/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_user_lead_status; 
+CREATE VIEW interna.SMBDWstaging_bart_user_lead_status AS SELECT * FROM spectrumdb.SMBDWstaging_bart_user_lead_status WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_user_lead_status; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_user_lead_status; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_user_modules; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_user_modules 
+(
+Id INT
+,UserId INT
+,ModuleId INT
+,StartDate TIMESTAMP
+,EndDate TIMESTAMP
+,ModifiedDate TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_user_modules/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_user_modules; 
+CREATE VIEW interna.SMBDWstaging_bart_user_modules AS SELECT * FROM spectrumdb.SMBDWstaging_bart_user_modules WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_user_modules; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_user_modules; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_user_module_overrides; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_user_module_overrides 
+(
+UserModuleId INT
+,SettingId INT
+,State int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_user_module_overrides/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_user_module_overrides; 
+CREATE VIEW interna.SMBDWstaging_bart_user_module_overrides AS SELECT * FROM spectrumdb.SMBDWstaging_bart_user_module_overrides WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_user_module_overrides; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_user_module_overrides; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_credit_app_credit_transactions; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_credit_app_credit_transactions 
+(
+Id INT
+,TransactionType INT
+,CreditAdjustment INT
+,"Time" TIMESTAMP
+,SubscriptionId INT
+,IsisNumber varchar(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_credit_app_credit_transactions/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_credit_app_credit_transactions; 
+CREATE VIEW interna.SMBDWstaging_credit_app_credit_transactions AS SELECT * FROM spectrumdb.SMBDWstaging_credit_app_credit_transactions WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_credit_app_credit_transactions; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_credit_app_credit_transactions; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_credit_app_exports; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_credit_app_exports 
+(
+Id INT
+,UserId INT
+,ModuleId INT
+,RecordId varchar(50)
+,DisplayName varchar(256)
+,CreatedDate TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_credit_app_exports/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_credit_app_exports; 
+CREATE VIEW interna.SMBDWstaging_credit_app_exports AS SELECT * FROM spectrumdb.SMBDWstaging_credit_app_exports WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_credit_app_exports; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_credit_app_exports; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_credit_app_notes; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_credit_app_notes 
+(
+Id INT
+,UserId INT
+,ModuleId INT
+,RecordId varchar(50)
+,DisplayName varchar(256)
+,"Date" TIMESTAMP
+,NoteType INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_credit_app_notes/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_credit_app_notes; 
+CREATE VIEW interna.SMBDWstaging_credit_app_notes AS SELECT * FROM spectrumdb.SMBDWstaging_credit_app_notes WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_credit_app_notes; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_credit_app_notes; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_credit_app_orders; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_credit_app_orders 
+(
+Id INT
+,UserId INT
+,AuthId varchar(64)
+,ModuleId INT
+,RecordId varchar(50)
+,Amount decimal(15,4)
+,SalesRepId INT
+,MediaCode varchar(50)
+,OrderState varchar(20)
+,Created TIMESTAMP
+,Updated TIMESTAMP
+,PaymentProfileId varchar(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_credit_app_orders/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_credit_app_orders; 
+CREATE VIEW interna.SMBDWstaging_credit_app_orders AS SELECT * FROM spectrumdb.SMBDWstaging_credit_app_orders WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_credit_app_orders; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_credit_app_orders; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_credit_app_purchases; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_credit_app_purchases 
+(
+Id INT
+,ModuleId INT
+,RecordId varchar(50)
+,DisplayName varchar(256)
+,SubscriptionId INT
+,UserId INT
+,DatePurchased TIMESTAMP
+,DateExpired TIMESTAMP
+,PurchaseType INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_credit_app_purchases/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_credit_app_purchases; 
+CREATE VIEW interna.SMBDWstaging_credit_app_purchases AS SELECT * FROM spectrumdb.SMBDWstaging_credit_app_purchases WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_credit_app_purchases; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_credit_app_purchases; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_credit_app_ratings; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_credit_app_ratings 
+(
+Id INT
+,ModuleId INT
+,RecordId INT
+,UserId INT
+,IndustryId INT
+,Rating INT
+,Created TIMESTAMP
+,FromLegacy int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_credit_app_ratings/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_credit_app_ratings; 
+CREATE VIEW interna.SMBDWstaging_credit_app_ratings AS SELECT * FROM spectrumdb.SMBDWstaging_credit_app_ratings WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_credit_app_ratings; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_credit_app_ratings; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_credit_app_subscriptions; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_credit_app_subscriptions 
+(
+Id INT
+,UserId INT
+,SubscriptionType INT
+,StartDate TIMESTAMP
+,EndDate TIMESTAMP
+,DaysToView INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_credit_app_subscriptions/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_credit_app_subscriptions; 
+CREATE VIEW interna.SMBDWstaging_credit_app_subscriptions AS SELECT * FROM spectrumdb.SMBDWstaging_credit_app_subscriptions WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_credit_app_subscriptions; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_credit_app_subscriptions; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_credit_app_users; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_credit_app_users 
+(
+Id INT
+,AuthId varchar(64)
+,UserName varchar(512)
+,IsActive int
+,DateCreated TIMESTAMP
+,SalesRepNumber INT
+,MediaCode varchar(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_credit_app_users/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_credit_app_users; 
+CREATE VIEW interna.SMBDWstaging_credit_app_users AS SELECT * FROM spectrumdb.SMBDWstaging_credit_app_users WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_credit_app_users; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_credit_app_users; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_datalynx_lead_status; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_datalynx_lead_status 
+(
+Created DATE
+,AccountId INT
+,GroupId INT
+,Event VARCHAR(MAX)
+,Records INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_datalynx_lead_status/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_datalynx_lead_status; 
+CREATE VIEW interna.SMBDWstaging_datalynx_lead_status AS SELECT * FROM spectrumdb.SMBDWstaging_datalynx_lead_status WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_datalynx_lead_status; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_datalynx_lead_status; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_infousa_com_accounts; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_infousa_com_accounts 
+(
+id INT
+,account_id VARCHAR(60)
+,email VARCHAR(60)
+,last_name VARCHAR(50)
+,first_name VARCHAR(50)
+,company VARCHAR(80)
+,address VARCHAR(80)
+,city VARCHAR(50)
+,state VARCHAR(50)
+,zip VARCHAR(50)
+,country VARCHAR(50)
+,phone VARCHAR(50)
+,registration_date TIMESTAMP
+,media_code VARCHAR(50)
+,how_did_you_hear_desc VARCHAR(50)
+,how_did_you_hear_code VARCHAR(50)
+,sales_rep INT
+,vendor_id VARCHAR(50)
+,gclid VARCHAR(100)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_infousa_com_accounts/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_infousa_com_accounts; 
+CREATE VIEW interna.SMBDWstaging_infousa_com_accounts AS SELECT * FROM spectrumdb.SMBDWstaging_infousa_com_accounts WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_infousa_com_accounts; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_infousa_com_accounts; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_infousa_com_orders; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_infousa_com_orders 
+(
+id INT
+,account_id VARCHAR(60)
+,order_number NUMERIC
+,order_description VARCHAR(50)
+,product_desc VARCHAR(80)
+,order_date TIMESTAMP
+,order_count INT
+,retail_price decimal(15,4)
+,final_price decimal(15,4)
+,vendor_id VARCHAR(50)
+,sales_rep INT
+,media_code VARCHAR(50)
+,status_id INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_infousa_com_orders/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_infousa_com_orders; 
+CREATE VIEW interna.SMBDWstaging_infousa_com_orders AS SELECT * FROM spectrumdb.SMBDWstaging_infousa_com_orders WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_infousa_com_orders; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_infousa_com_orders; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_infousa_com_phone_email; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_infousa_com_phone_email 
+(
+phone VARCHAR(50)
+,email VARCHAR(60)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_infousa_com_phone_email/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_infousa_com_phone_email; 
+CREATE VIEW interna.SMBDWstaging_infousa_com_phone_email AS SELECT * FROM spectrumdb.SMBDWstaging_infousa_com_phone_email WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_infousa_com_phone_email; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_infousa_com_phone_email; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_myInfo_Campaigns; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_myInfo_Campaigns 
+(
+Id NUMERIC
+,Description VARCHAR(200)
+,CampaignTypeId NUMERIC
+,CampaignSubCategoryId NUMERIC
+,PhoneNumber VARCHAR(16)
+,DNIS VARCHAR(6)
+,DisplayedSalesforce VARCHAR(30)
+,DivisionId VARCHAR(6)
+,DefaultVendorId VARCHAR(6)
+,VendorCode VARCHAR(6)
+,LandingPageURL CHAR(500)
+,UniqueURL CHAR(255)
+,SaleRepId VARCHAR(6)
+,PromoCode VARCHAR(10)
+,ProductCode VARCHAR(10)
+,ActivationFee decimal(15,4)
+,MonthlyPrice decimal(15,4)
+,YearlyPrice decimal(15,4)
+,"Cost" NUMERIC
+,HDYHAUAvailable CHAR(1)
+,IsDeleted CHAR(1)
+,CreatedBy VARCHAR(50)
+,CreatedTIMESTAMP TIMESTAMP
+,LastModifiedBy VARCHAR(50)
+,LastModifiedTIMESTAMP TIMESTAMP
+,AvailableInMyInfo CHAR(1)
+,LastMyInfoSynch TIMESTAMP
+,AvailableInSFNA5 CHAR(1)
+,LastSFNA5Synch TIMESTAMP
+,SFNA5Id VARCHAR(18)
+,AvailableInSFNA4 CHAR(1)
+,LastSFNA4Synch TIMESTAMP
+,SFNA4Id VARCHAR(18)
+,AvailableInISIS CHAR(1)
+,EmailTemplateId NUMERIC
+,EmailTemplate2Id NUMERIC
+,EmailFromId NUMERIC
+,EmailCCId NUMERIC
+,EmailBCCId NUMERIC
+,SFUserIdEE VARCHAR(18)
+,SFUserIdSG VARCHAR(18)
+,PhoneDescriptionField VARCHAR(16)
+,CampaignSubCategoryDetailId NUMERIC
+,CampaignSubCategoryDetailText VARCHAR(255)
+,CampaignPhoneTypeId NUMERIC
+,Notes VARCHAR(255)
+,SFRecordTypeIdEE VARCHAR(18)
+,SFRecordTypeIdSG VARCHAR(18)
+,MediaCode VARCHAR(40)
+,IsHDYHAU CHAR(1)
+,StartTIMESTAMP TIMESTAMP
+,EndTIMESTAMP TIMESTAMP
+,Display VARCHAR(1)
+,SortOrder INT
+,MediaCodeTypeId NUMERIC
+,OESSSourceCode VARCHAR(50)
+,ParentCampaignId VARCHAR(18)
+,Keyword VARCHAR(80)
+,BatchNumber INT
+,ScreenPop VARCHAR(1)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_myInfo_Campaigns/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_myInfo_Campaigns; 
+CREATE VIEW interna.SMBDWstaging_myInfo_Campaigns AS SELECT * FROM spectrumdb.SMBDWstaging_myInfo_Campaigns WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_myInfo_Campaigns; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_myInfo_Campaigns;
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_bart_users_account_order_details; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_bart_users_account_order_details 
+(
+Id BIGINT
+,UserId INT
+,BartUserAccountId INT
+,BartUserSalesForceId varchar(20)
+,BartUserThinkId INT
+,UserName varchar(256)
+,UserFirstName varchar(128)
+,UserLastName varchar(128)
+,UserEmail varchar(256)
+,UserStartDate TIMESTAMP
+,UserEndDate TIMESTAMP
+,UserCreatedDate TIMESTAMP
+,UserIsActive int
+,BartAccountThinkId INT
+,AccountNumber CHAR(10)
+,BartAccountId INT
+,"OESS Account ID" INT
+,"Order Id" INT
+,"Order Created Date" TIMESTAMP
+,"Order Start Date" TIMESTAMP
+,"Order End Date" TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_bart_users_account_order_details/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_bart_users_account_order_details; 
+CREATE VIEW interna.SMBDWstaging_bart_users_account_order_details AS SELECT * FROM spectrumdb.SMBDWstaging_bart_users_account_order_details WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_bart_users_account_order_details; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_bart_users_account_order_details; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_o2blast_brand; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_o2blast_brand 
+(
+BrandId varchar(64)
+,BrandNo INT
+,Name varchar(64)
+,"Domain" varchar(64)
+,IsDisabled int
+,IsDefault int
+,"Type" varchar(16)
+,ForwardUrl varchar(MAX)
+,PrivacyUrl varchar(MAX)
+,UnsubscribeUrl varchar(MAX)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_o2blast_brand/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_o2blast_brand; 
+CREATE VIEW interna.SMBDWstaging_o2blast_brand AS SELECT * FROM spectrumdb.SMBDWstaging_o2blast_brand WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_o2blast_brand; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_o2blast_brand; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_o2blast_mailing; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_o2blast_mailing 
+(
+MailingId varchar(64)
+,OriginApplication varchar(256)
+,OriginUser varchar(256)
+,Status varchar(64)
+,Name varchar(256)
+,Description varchar(256)
+,RecordCount INT
+,ScheduleDate TIMESTAMP
+,BrandNo VARCHAR(128)
+,FromAddress varchar(128)
+,FromName varchar(256)
+,Subject varchar(256)
+,PreviewUrl varchar(256)
+,Created TIMESTAMP
+,LastUpdated TIMESTAMP
+,YesMailNo INT
+,SegmentNo VARCHAR(126)
+,MonetaryValue decimal(15,4)
+,SalesRepId VARCHAR(32)
+,EmailsUploaded INT
+,EmailsSuppressed INT
+,DomainsUploaded INT
+,DomainsSuppressed INT
+,FinalCount INT
+,SuppressedRecordsByEmails varchar(MAX)
+,SuppressedRecordsByDomains varchar(MAX)
+,YesMailStatisticsUpdateDate TIMESTAMP
+,DivisionId varchar(64)
+,ReplyTo varchar(100)
+,DeliveryPercentage DECIMAL(6,2)
+,UniqueHtmlOpenPercentage DECIMAL(6,2)
+,Type varchar(16)
+,Flow varchar(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_o2blast_mailing/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_o2blast_mailing; 
+CREATE VIEW interna.SMBDWstaging_o2blast_mailing AS SELECT * FROM spectrumdb.SMBDWstaging_o2blast_mailing WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_o2blast_mailing; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_o2blast_mailing; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_o2blast_report_mailing_modules; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_o2blast_report_mailing_modules 
+(
+Id varchar(64)
+,MailingId varchar(64)
+,LinkCount INT
+,MailToCount INT
+,ClickThroughPercentage DECIMAL(18,2)
+,DeliveryPercentage DECIMAL(18,2)
+,HardBounceNumber INT
+,HtmlOpenPercentage DECIMAL(18,2)
+,ReceivedNumber INT
+,SeedRecipientNumber INT
+,SentNumber INT
+,SoftBounceNumber INT
+,UndeliveredNumber INT
+,UniqueClickThroughPercentage DECIMAL(18,2)
+,UniqueHtmlOpenPercentage DECIMAL(18,2)
+,UniqueUnsubscribePercentage DECIMAL(18,2)
+,UnsubscribePercentage DECIMAL(18,2)
+,Created TIMESTAMP
+,Updated TIMESTAMP
+,BrandNo INT
+,Domain varchar(255)
+,SoftBouncePercentage DECIMAL(18,2)
+,HardBouncePercentage DECIMAL(18,2)
+,UndeliveredPercentage DECIMAL(18,2)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_o2blast_report_mailing_modules/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_o2blast_report_mailing_modules; 
+CREATE VIEW interna.SMBDWstaging_o2blast_report_mailing_modules AS SELECT * FROM spectrumdb.SMBDWstaging_o2blast_report_mailing_modules WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_o2blast_report_mailing_modules; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_o2blast_report_mailing_modules; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_o2dirctmail_order; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_o2dirctmail_order 
+(
+OrderId INT
+,CampaignId varchar(64)
+,SessionId varchar(64)
+,CallingApplication VARCHAR(50)
+,CompanyName VARCHAR(128)
+,Name VARCHAR(256)
+,FirstName VARCHAR(128)
+,LastName VARCHAR(128)
+,AddressLine1 VARCHAR(128)
+,AddressLine2 VARCHAR(128)
+,City VARCHAR(50)
+,State VARCHAR(2)
+,Zip VARCHAR(32)
+,Country VARCHAR(32)
+,Phone VARCHAR(32)
+,SalesRepId VARCHAR(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_o2dirctmail_order/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_o2dirctmail_order; 
+CREATE VIEW interna.SMBDWstaging_o2dirctmail_order AS SELECT * FROM spectrumdb.SMBDWstaging_o2dirctmail_order WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_o2dirctmail_order; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_o2dirctmail_order; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_o2dpweb_listdetail; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_o2dpweb_listdetail 
+(
+Id varchar(64)
+,NumOfColumns NUMERIC
+,NumOfMatchedRecords NUMERIC
+,NumOfFieldsAppended NUMERIC
+,FileSizeBytes NUMERIC
+,OpportunityValue NUMERIC
+,FieldMatchCounts varchar(MAX)
+,InitialSubTotal DECIMAL(18,2)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_o2dpweb_listdetail/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_o2dpweb_listdetail; 
+CREATE VIEW interna.SMBDWstaging_o2dpweb_listdetail AS SELECT * FROM spectrumdb.SMBDWstaging_o2dpweb_listdetail WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_o2dpweb_listdetail; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_o2dpweb_listdetail; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_o2dpweb_lists; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_o2dpweb_lists 
+(
+Id varchar(64)
+,ParentListId varchar(64)
+,SessionId varchar(64)
+,UserId VARCHAR(128)
+,Filename VARCHAR(128)
+,RecordCount INT
+,ProcessingStatus VARCHAR(50)
+,Created TIMESTAMP
+,Updated TIMESTAMP
+,"Type" VARCHAR(16)
+,DiscountPercent DECIMAL(8,5)
+,ServiceFee DECIMAL(8,5)
+,IsTrialUser int
+,Appended TIMESTAMP
+,Submitted TIMESTAMP
+,Deleted TIMESTAMP
+,ColumnMappings VARCHAR(MAX)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_o2dpweb_lists/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_o2dpweb_lists; 
+CREATE VIEW interna.SMBDWstaging_o2dpweb_lists AS SELECT * FROM spectrumdb.SMBDWstaging_o2dpweb_lists WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_o2dpweb_lists; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_o2dpweb_lists; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_o2dpweb_orders; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_o2dpweb_orders 
+(
+Id BIGINT
+,ListId varchar(64)
+,SessionId varchar(64)
+,CompanyName VARCHAR(128)
+,Name VARCHAR(256)
+,AddressLine1 VARCHAR(128)
+,AddressLine2 VARCHAR(128)
+,City VARCHAR(50)
+,State VARCHAR(2)
+,Zip VARCHAR(32)
+,Country VARCHAR(32)
+,Phone VARCHAR(32)
+,SalesRepId VARCHAR(50)
+,IsZeroDollarOrder int
+,Created TIMESTAMP
+,Updated TIMESTAMP
+,IsAssistedOrder int
+,IsComplete int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_o2dpweb_orders/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_o2dpweb_orders; 
+CREATE VIEW interna.SMBDWstaging_o2dpweb_orders AS SELECT * FROM spectrumdb.SMBDWstaging_o2dpweb_orders WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_o2dpweb_orders; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_o2dpweb_orders; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_o2dpweb_order_line_items; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_o2dpweb_order_line_items 
+(
+Id varchar(64)
+,OrderId BIGINT
+,Description VARCHAR(256)
+,Quantity INT
+,UnitPrice decimal(15,4)
+,Price decimal(15,4)
+,LineItemType VARCHAR(32)
+,LineItemNumber INT
+,OracleProductNumber VARCHAR(64)
+,RoyaltyType VARCHAR(32)
+,RoyaltyAmount decimal(15,4)
+,Created TIMESTAMP
+,Updated TIMESTAMP
+,Display int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_o2dpweb_order_line_items/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_o2dpweb_order_line_items; 
+CREATE VIEW interna.SMBDWstaging_o2dpweb_order_line_items AS SELECT * FROM spectrumdb.SMBDWstaging_o2dpweb_order_line_items WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_o2dpweb_order_line_items; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_o2dpweb_order_line_items; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_o2templates_categories; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_o2templates_categories 
+(
+Id varchar(64)
+,ParentId varchar(64)
+,Name varchar(255)
+,"Order" INT
+,Created TIMESTAMP
+,Url varchar(255)
+,Updated TIMESTAMP
+,IsActive int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_o2templates_categories/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_o2templates_categories; 
+CREATE VIEW interna.SMBDWstaging_o2templates_categories AS SELECT * FROM spectrumdb.SMBDWstaging_o2templates_categories WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_o2templates_categories; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_o2templates_categories; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_o2templates_content_files; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_o2templates_content_files 
+(
+Id varchar(64)
+,FileName varchar(255)
+,ContentType varchar(50)
+,FriendlyName varchar(50)
+,ContentUri varchar(255)
+,Created TIMESTAMP
+,Updated TIMESTAMP
+,TemplateType varchar(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_o2templates_content_files/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_o2templates_content_files; 
+CREATE VIEW interna.SMBDWstaging_o2templates_content_files AS SELECT * FROM spectrumdb.SMBDWstaging_o2templates_content_files WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_o2templates_content_files; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_o2templates_content_files; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_o2templates_Master_content_files; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_o2templates_Master_content_files 
+(
+Id varchar(64)
+,MasterTemplateId varchar(64)
+,ContentFileId varchar(64)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_o2templates_Master_content_files/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_o2templates_Master_content_files; 
+CREATE VIEW interna.SMBDWstaging_o2templates_Master_content_files AS SELECT * FROM spectrumdb.SMBDWstaging_o2templates_Master_content_files WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_o2templates_Master_content_files; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_o2templates_Master_content_files; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_o2templates_templates; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_o2templates_templates 
+(
+Id varchar(64)
+,MasterTemplateId varchar(64)
+,CategoryId varchar(64)
+,Name varchar(50)
+,"Owner" varchar(255)
+,Color varchar(255)
+,ViewSupport varchar(50)
+,Created TIMESTAMP
+,State varchar(50)
+,Updated TIMESTAMP
+,DefaultCssFilename varchar(255)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_o2templates_templates/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_o2templates_templates; 
+CREATE VIEW interna.SMBDWstaging_o2templates_templates AS SELECT * FROM spectrumdb.SMBDWstaging_o2templates_templates WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_o2templates_templates; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_o2templates_templates; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_origin_modules; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_origin_modules 
+(
+Id SMALLINT
+,Name VARCHAR(50)
+,Label VARCHAR(100)
+,MmdbKeyLength SMALLINT
+,IsActive int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_origin_modules/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_origin_modules; 
+CREATE VIEW interna.SMBDWstaging_origin_modules AS SELECT * FROM spectrumdb.SMBDWstaging_origin_modules WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_origin_modules; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_origin_modules; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_refusa_accountMoudules; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_refusa_accountMoudules 
+(
+Id INT
+,AccountId INT
+,ModuleId SMALLINT
+,IsExternal int
+,IsActive int
+,IsApproved int
+,ExportLimit INT
+,SessionLimit INT
+,StartDate TIMESTAMP
+,EndDate TIMESTAMP
+,CreateDate TIMESTAMP
+,ModifiedDate TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_refusa_accountMoudules/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_refusa_accountMoudules; 
+CREATE VIEW interna.SMBDWstaging_refusa_accountMoudules AS SELECT * FROM spectrumdb.SMBDWstaging_refusa_accountMoudules WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_refusa_accountMoudules; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_refusa_accountMoudules; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_refusa_accounts; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_refusa_accounts 
+(
+AccountId INT
+,ThinkId INT
+,AccountNumber CHAR(10)
+,Name VARCHAR(80)
+,Address1 VARCHAR(50)
+,Address2 VARCHAR(50)
+,City VARCHAR(50)
+,State VARCHAR(20)
+,ZipCode VARCHAR(20)
+,Country VARCHAR(50)
+,Phone VARCHAR(25)
+,Email VARCHAR(256)
+,SalesForceId varchar(20)
+,MediaCode VARCHAR(50)
+,MaxUsers INT
+,IsActive int
+,IsApproved int
+,IsDemo int
+,IsThinkCompleted int
+,AllowScraping int
+,HideInactiveModules int
+,HasJobSearch int
+,StartDate TIMESTAMP
+,EndDate TIMESTAMP
+,CreateDate TIMESTAMP
+,AccountType SMALLINT
+,SiteId INT
+,SalesRepNumber INT
+,Url VARCHAR(255)
+,VerifiedRecord SMALLINT
+,AllowPersonalization int
+,UsAndHistoricalIntegration int
+,RequireCaptchaForDownload int
+,StayOnProxy int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_refusa_accounts/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_refusa_accounts; 
+CREATE VIEW interna.SMBDWstaging_refusa_accounts AS SELECT * FROM spectrumdb.SMBDWstaging_refusa_accounts WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_refusa_accounts; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_refusa_accounts; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_refusa_EventTypes; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_refusa_EventTypes 
+(
+Id SMALLINT
+,Name VARCHAR(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_refusa_EventTypes/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_refusa_EventTypes; 
+CREATE VIEW interna.SMBDWstaging_refusa_EventTypes AS SELECT * FROM spectrumdb.SMBDWstaging_refusa_EventTypes WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_refusa_EventTypes; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_refusa_EventTypes; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_refusa_event_summary_by_modules; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_refusa_event_summary_by_modules 
+(
+"Date" DATE
+,AccountId INT
+,ModuleId INT
+,isExternal int
+,EventType SMALLINT
+,EventSubType SMALLINT
+,"Count" INT
+,"Sum" INT
+,LegacyIsSource int
+,IsAdjustment int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_refusa_event_summary_by_modules/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_refusa_event_summary_by_modules; 
+CREATE VIEW interna.SMBDWstaging_refusa_event_summary_by_modules AS SELECT * FROM spectrumdb.SMBDWstaging_refusa_event_summary_by_modules WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_refusa_event_summary_by_modules; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_refusa_event_summary_by_modules; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_refusa_HistoricalModuleAccessInfo; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_refusa_HistoricalModuleAccessInfo 
+(
+Id INT
+,AccountId INT
+,OriginUserId INT
+,PersonalizationUserId INT
+,"Timestamp" TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_refusa_HistoricalModuleAccessInfo/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_refusa_HistoricalModuleAccessInfo; 
+CREATE VIEW interna.SMBDWstaging_refusa_HistoricalModuleAccessInfo AS SELECT * FROM spectrumdb.SMBDWstaging_refusa_HistoricalModuleAccessInfo WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_refusa_HistoricalModuleAccessInfo; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_refusa_HistoricalModuleAccessInfo; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_refusa_PersonalizationEventSummaryByDate; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_refusa_PersonalizationEventSummaryByDate 
+(
+"Date" DATE
+,AccountId INT
+,EventType SMALLINT
+,EventSubType SMALLINT
+,"Count" INT
+,"Sum" INT
+,LegacyIsSource int
+,IsAdjustment int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_refusa_PersonalizationEventSummaryByDate/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_refusa_PersonalizationEventSummaryByDate; 
+CREATE VIEW interna.SMBDWstaging_refusa_PersonalizationEventSummaryByDate AS SELECT * FROM spectrumdb.SMBDWstaging_refusa_PersonalizationEventSummaryByDate WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_refusa_PersonalizationEventSummaryByDate; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_refusa_PersonalizationEventSummaryByDate; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_refusa_personalization_users; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_refusa_personalization_users 
+(
+PersonalizationId INT
+,AccountId INT
+,UserId INT
+,UserType SMALLINT
+,UserName VARCHAR(256)
+,FirstName VARCHAR(128)
+,LastName VARCHAR(128)
+,Email VARCHAR(256)
+,IsActive int
+,IsApproved int
+,IsDeleted int
+,IsExternal int
+,LastPasswordChangedDate TIMESTAMP
+,CreateDate TIMESTAMP
+,IsActiveInBart int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_refusa_personalization_users/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_refusa_personalization_users; 
+CREATE VIEW interna.SMBDWstaging_refusa_personalization_users AS SELECT * FROM spectrumdb.SMBDWstaging_refusa_personalization_users WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_refusa_personalization_users; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_refusa_personalization_users; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_refusa_sites; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_refusa_sites 
+(
+SiteId INT
+,Name VARCHAR(50)
+,Label VARCHAR(100)
+,Url VARCHAR(256)
+,LegacyUrl varchar(253)
+,Email VARCHAR(256)
+,Phone VARCHAR(20)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_refusa_sites/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_refusa_sites; 
+CREATE VIEW interna.SMBDWstaging_refusa_sites AS SELECT * FROM spectrumdb.SMBDWstaging_refusa_sites WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_refusa_sites; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_refusa_sites; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_refusa_users; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_refusa_users 
+(
+UserId INT
+,AccountId INT
+,ThinkId INT
+,UserType SMALLINT
+,UserName VARCHAR(256)
+,FirstName VARCHAR(128)
+,LastName VARCHAR(128)
+,Email VARCHAR(256)
+,EmailVerifyRequest TIMESTAMP
+,EmailVerified TIMESTAMP
+,IsActive int
+,IsApproved int
+,IsThinkCompleted int
+,IsExternal int
+,IsLockedOut int
+,LastPasswordChangedDate TIMESTAMP
+,LastLockoutDate TIMESTAMP
+,StartDate TIMESTAMP
+,EndDate TIMESTAMP
+,CreateDate TIMESTAMP
+,LocationName VARCHAR(256)
+,LocationRFUId VARCHAR(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_refusa_users/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_refusa_users; 
+CREATE VIEW interna.SMBDWstaging_refusa_users AS SELECT * FROM spectrumdb.SMBDWstaging_refusa_users WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_refusa_users; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_refusa_users; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_refusa_user_activity; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_refusa_user_activity 
+(
+Id INT
+,UserId INT
+,LastActivity TIMESTAMP
+,LastLogin TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_refusa_user_activity/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_refusa_user_activity; 
+CREATE VIEW interna.SMBDWstaging_refusa_user_activity AS SELECT * FROM spectrumdb.SMBDWstaging_refusa_user_activity WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_refusa_user_activity; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_refusa_user_activity; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_SearchApiLog_request_data; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_SearchApiLog_request_data 
+(
+Id BIGINT
+,"Time" TIMESTAMP
+,MachineName VARCHAR(50)
+,ApiKey VARCHAR(36)
+,HttpMethod VARCHAR(20)
+,BaseUri VARCHAR(1024)
+,HttpStatusCode VARCHAR(50)
+,ServiceMethod VARCHAR(128)
+,QueryString VARCHAR(MAX)
+,Headers VARCHAR(MAX)
+,RequestUri VARCHAR(MAX)
+,ExecutionMilliseconds INT
+,RecordCount INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_SearchApiLog_request_data/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_SearchApiLog_request_data; 
+CREATE VIEW interna.SMBDWstaging_SearchApiLog_request_data AS SELECT * FROM spectrumdb.SMBDWstaging_SearchApiLog_request_data WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_SearchApiLog_request_data; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_SearchApiLog_request_data; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_SearchApiLog_request_data_this_month; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_SearchApiLog_request_data_this_month 
+(
+Id BIGINT
+,"Time" INT
+,MachineName VARCHAR(50)
+,ApiKey VARCHAR(36)
+,HttpMethod VARCHAR(20)
+,BaseUri VARCHAR(1024)
+,HttpStatusCode VARCHAR(50)
+,ServiceMethod VARCHAR(128)
+,QueryString VARCHAR(MAX)
+,Headers VARCHAR(MAX)
+,RequestUri VARCHAR(MAX)
+,ExecutionMilliseconds INT
+,RecordCount INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_SearchApiLog_request_data_this_month/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_SearchApiLog_request_data_this_month; 
+CREATE VIEW interna.SMBDWstaging_SearchApiLog_request_data_this_month AS SELECT * FROM spectrumdb.SMBDWstaging_SearchApiLog_request_data_this_month WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_SearchApiLog_request_data_this_month; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_SearchApiLog_request_data_this_month; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_SearchApiLog_search_api_logins; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_SearchApiLog_search_api_logins 
+(
+ApiKey VARCHAR(36)
+,UserName VARCHAR(100)
+,Application VARCHAR(100)
+,Device VARCHAR(100)
+,DeviceVersion VARCHAR(50)
+,OperatingSystem VARCHAR(50)
+,OperatingSystemVersion VARCHAR(20)
+,SalesgenieVersion VARCHAR(50)
+,RequestUri VARCHAR(MAX)
+,CreatedDate TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_SearchApiLog_search_api_logins/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_SearchApiLog_search_api_logins; 
+CREATE VIEW interna.SMBDWstaging_SearchApiLog_search_api_logins AS SELECT * FROM spectrumdb.SMBDWstaging_SearchApiLog_search_api_logins WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_SearchApiLog_search_api_logins; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_SearchApiLog_search_api_logins; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_sf_account_contact; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_sf_account_contact 
+(
+customer_id INT
+,customer_sf_id varchar(19)
+,account_name varchar(250)
+,first_name varchar(250)
+,last_name varchar(250)
+,email varchar(250)
+,phone varchar(50)
+,city varchar(50)
+,state varchar(50)
+,zip varchar(50)
+,sales_rep_id INT
+,customer_sf_owner_id varchar(19)
+,created_date_id INT
+,updated_date_id INT
+,infousa_login_id varchar(250)
+,salesgenie_login_id varchar(250)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_sf_account_contact/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_sf_account_contact; 
+CREATE VIEW interna.SMBDWstaging_sf_account_contact AS SELECT * FROM spectrumdb.SMBDWstaging_sf_account_contact WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_sf_account_contact; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_sf_account_contact; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_sf_media_code; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_sf_media_code 
+(
+media_code_id INT
+,campaign_sf_id varchar(19)
+,contact_sf_id varchar(19)
+,name varchar(200)
+,media_code varchar(20)
+,info_group varchar(50)
+,created_date_id INT
+,updated_date_id INT
+,record_type_id VARCHAR(19)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_sf_media_code/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_sf_media_code; 
+CREATE VIEW interna.SMBDWstaging_sf_media_code AS SELECT * FROM spectrumdb.SMBDWstaging_sf_media_code WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_sf_media_code; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_sf_media_code; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_sf_opportunity; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_sf_opportunity 
+(
+opportunity_id INT
+,sf_opportunity_id varchar(19)
+,sf_contact_id varchar(19)
+,name varchar(250)
+,stage_name varchar(50)
+,product_type varchar(50)
+,sales_rep_id INT
+,owner_name varchar(250)
+,record_type_name varchar(250)
+,think_order_id varchar(25)
+,irn varchar(25)
+,media_code varchar(10)
+,invoice_number varchar(50)
+,amount decimal(15,4)
+,created_date_id INT
+,updated_date_id INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_sf_opportunity/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_sf_opportunity; 
+CREATE VIEW interna.SMBDWstaging_sf_opportunity AS SELECT * FROM spectrumdb.SMBDWstaging_sf_opportunity WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_sf_opportunity; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_sf_opportunity;
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_team_list; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_team_list 
+(
+TeamId INT
+,Name VARCHAR(256)
+,ModuleId INT
+,AssignedintsetCount INT
+,WorkedintsetCount INT
+,intsetCount INT
+,CreatedDate TIMESTAMP
+,IsActive int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_team_list/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_team_list; 
+CREATE VIEW interna.SMBDWstaging_team_list AS SELECT * FROM spectrumdb.SMBDWstaging_team_list WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_team_list; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_team_list; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_team_teams; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_team_teams 
+(
+Id INT
+,AccountId INT
+,Name VARCHAR(50)
+,UnusedLicenseCount INT
+,IsActive int
+,LicenseCount INT
+,LifetimeValue DECIMAL(10,0)
+,DatalynxId INT
+,IsGTEnabled int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_team_teams/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_team_teams; 
+CREATE VIEW interna.SMBDWstaging_team_teams AS SELECT * FROM spectrumdb.SMBDWstaging_team_teams WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_team_teams; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_team_teams; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_team_users; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_team_users 
+(
+id INT
+,TeamId INT
+,UserId INT
+,Role VARCHAR(50)
+,Status VARCHAR(50)
+,AddedOnDate TIMESTAMP
+,LicenseKey VARCHAR(50)
+,IsTrial int
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_team_users/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_team_users; 
+CREATE VIEW interna.SMBDWstaging_team_users AS SELECT * FROM spectrumdb.SMBDWstaging_team_users WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_team_users; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_team_users; 
+
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_telephony_call_log; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_telephony_call_log 
+(
+id INT
+,telephony_call_id varchar(64)
+,telephony_account_id varchar(64)
+,user_name VARCHAR(256)
+,sales_rep_name VARCHAR(101)
+,division_number varchar(64)
+,is_enterprise int
+,to_phone VARCHAR(12)
+,dateUTC DATE
+,created TIMESTAMP
+,connected_date TIMESTAMP
+,DurationRoundedMinutes INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_telephony_call_log/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_telephony_call_log; 
+CREATE VIEW interna.SMBDWstaging_telephony_call_log AS SELECT * FROM spectrumdb.SMBDWstaging_telephony_call_log WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_telephony_call_log; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_telephony_call_log; 
+
+ 
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_telephony_credit_transactions; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_telephony_credit_transactions 
+(
+credit_transactions_id INT
+,telephony_account_id varchar(64)
+,transaction_type SMALLINT
+,transaction_time_minutes INT
+,order_id VARCHAR(256)
+,create_date TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_telephony_credit_transactions/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_telephony_credit_transactions; 
+CREATE VIEW interna.SMBDWstaging_telephony_credit_transactions AS SELECT * FROM spectrumdb.SMBDWstaging_telephony_credit_transactions WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_telephony_credit_transactions; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_telephony_credit_transactions; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_workbench_dbExpress_ApprovalDetails; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_workbench_dbExpress_ApprovalDetails 
+(
+SessionId varchar(64)
+,Isis BIGINT
+,Amount DECIMAL(10,2)
+,TotalForEmail DECIMAL(10,2)
+,EmailId varchar(50)
+,OrderedDate TIMESTAMP
+,IsFreeOrder int
+,Sfdc varchar(1000)
+,short_OrderedDate DATE
+,OrderType SMALLINT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_workbench_dbExpress_ApprovalDetails/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_workbench_dbExpress_ApprovalDetails; 
+CREATE VIEW interna.SMBDWstaging_workbench_dbExpress_ApprovalDetails AS SELECT * FROM spectrumdb.SMBDWstaging_workbench_dbExpress_ApprovalDetails WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_workbench_dbExpress_ApprovalDetails; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_workbench_dbExpress_ApprovalDetails; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDWstaging_workbench_dbSolution_Xlsx; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDWstaging_workbench_dbSolution_Xlsx 
+(
+Client VARCHAR(MAX)
+,"Client Name" VARCHAR(MAX)
+,Division VARCHAR(MAX)
+,"OESS #"  VARCHAR(MAX)
+,"Type of Job" VARCHAR(MAX)
+,"Actual Completion Date" VARCHAR(MAX)
+,"Input Qty" VARCHAR(MAX)
+,"Rerun?" VARCHAR(MAX)
+,"Actual Turn Time" VARCHAR(MAX)
+,"On-Time Delivery" VARCHAR(MAX)
+,"Reason For Late Delivery" VARCHAR(MAX)
+,"Billing (Invoiced) Amount" VARCHAR(MAX)
+,"Account Manager" VARCHAR(MAX)
+,"Account Rep" VARCHAR(MAX)
+,"Referring Rep" VARCHAR(MAX)
+,"Retail Cost (Free Jobs)" VARCHAR(MAX)
+,Status VARCHAR(MAX)
+,"Job Name" VARCHAR(MAX)
+,"Item Type" VARCHAR(MAX)
+,"Path" VARCHAR(MAX)
+,"Start Date" VARCHAR(MAX)
+,DateInserted DATE
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDWstaging_workbench_dbSolution_Xlsx/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDWstaging_workbench_dbSolution_Xlsx; 
+CREATE VIEW interna.SMBDWstaging_workbench_dbSolution_Xlsx AS SELECT * FROM spectrumdb.SMBDWstaging_workbench_dbSolution_Xlsx WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDWstaging_workbench_dbSolution_Xlsx; 
+SELECT TOP 100 * FROM interna.SMBDWstaging_workbench_dbSolution_Xlsx; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_dim_campaign_media_code; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_dim_campaign_media_code 
+(
+media_code_id INT
+,media_code varchar(50)
+,media_code_desc varchar(200)
+,media_code_campaign_type varchar(200)
+,media_code_sub_campaign_type varchar(200)
+,media_code_start_date TIMESTAMP
+,media_code_end_date TIMESTAMP
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_dim_campaign_media_code/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_dim_campaign_media_code; 
+CREATE VIEW interna.SMBDW_dim_campaign_media_code AS SELECT * FROM spectrumdb.SMBDW_dim_campaign_media_code WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_dim_campaign_media_code; 
+SELECT TOP 100 * FROM interna.SMBDW_dim_campaign_media_code; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_dim_demographics; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_dim_demographics 
+(
+demographics_id INT
+,oess_customer_number INT
+,oracle_customer_number INT
+,infousa_com_account varchar(60)
+,email varchar(80)
+,infogroup_id varchar(50)
+,company_name varchar(50)
+,primary_sic_code varchar(50)
+,primary_sic_description varchar(50)
+,secondary_sic_code varchar(50)
+,secondary_sic_description varchar(50)
+,location_employee_size varchar(50)
+,location_sales_volume varchar(50)
+,corporate_employee_size varchar(50)
+,corporate_sales_volume varchar(50)
+,year_first_appeared varchar(4)
+,business_credit_score varchar(50)
+,is_nixie int
+,business_status varchar(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_dim_demographics/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_dim_demographics; 
+CREATE VIEW interna.SMBDW_dim_demographics AS SELECT * FROM spectrumdb.SMBDW_dim_demographics WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_dim_demographics; 
+SELECT TOP 100 * FROM interna.SMBDW_dim_demographics; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_dim_invoice_customers; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_dim_invoice_customers 
+(
+customer_id INT
+,oracle_customer_id INT
+,oracle_customer_number INT
+,phone varchar(10)
+,customer_name varchar(50)
+,contact_name varchar(150)
+,bill_to_address varchar(240)
+,bill_to_address2 varchar(240)
+,bill_to_city varchar(60)
+,bill_to_state varchar(3)
+,bill_to_zip varchar(10)
+,customer_email varchar(100)
+,invoice_email varchar(100)
+,tertiary_email varchar(100)
+,first_invoice_date DATE
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_dim_invoice_customers/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_dim_invoice_customers; 
+CREATE VIEW interna.SMBDW_dim_invoice_customers AS SELECT * FROM spectrumdb.SMBDW_dim_invoice_customers WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_dim_invoice_customers; 
+SELECT TOP 100 * FROM interna.SMBDW_dim_invoice_customers; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_dim_invoice_params; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_dim_invoice_params 
+(
+invoice_params_id INT
+,origin_system varchar(50)
+,terms varchar(50)
+,transaction_type varchar(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_dim_invoice_params/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_dim_invoice_params; 
+CREATE VIEW interna.SMBDW_dim_invoice_params AS SELECT * FROM spectrumdb.SMBDW_dim_invoice_params WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_dim_invoice_params; 
+SELECT TOP 100 * FROM interna.SMBDW_dim_invoice_params; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_dim_invoice_products; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_dim_invoice_products 
+(
+invoice_product_id INT
+,inventory_item_id INT
+,invoice_product varchar(255)
+,item_segment1 varchar(255)
+,item_segment2 varchar(255)
+,item_segment3 varchar(255)
+,item_segment4 varchar(255)
+,short_name varchar(255)
+,line_description varchar(255)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_dim_invoice_products/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_dim_invoice_products; 
+CREATE VIEW interna.SMBDW_dim_invoice_products AS SELECT * FROM spectrumdb.SMBDW_dim_invoice_products WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_dim_invoice_products; 
+SELECT TOP 100 * FROM interna.SMBDW_dim_invoice_products; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_dim_oess_cancel_notes; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_dim_oess_cancel_notes 
+(
+cancel_note_id INT
+,cancel_note varchar(140)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_dim_oess_cancel_notes/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_dim_oess_cancel_notes; 
+CREATE VIEW interna.SMBDW_dim_oess_cancel_notes AS SELECT * FROM spectrumdb.SMBDW_dim_oess_cancel_notes WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_dim_oess_cancel_notes; 
+SELECT TOP 100 * FROM interna.SMBDW_dim_oess_cancel_notes; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_dim_oess_cancel_reasons; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_dim_oess_cancel_reasons 
+(
+cancel_reason_id INT
+,cancel_reason varchar(128)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_dim_oess_cancel_reasons/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_dim_oess_cancel_reasons; 
+CREATE VIEW interna.SMBDW_dim_oess_cancel_reasons AS SELECT * FROM spectrumdb.SMBDW_dim_oess_cancel_reasons WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_dim_oess_cancel_reasons; 
+SELECT TOP 100 * FROM interna.SMBDW_dim_oess_cancel_reasons; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_dim_oess_discount_reasons; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_dim_oess_discount_reasons 
+(
+discount_reason_id INT
+,discount_reason varchar(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_dim_oess_discount_reasons/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_dim_oess_discount_reasons; 
+CREATE VIEW interna.SMBDW_dim_oess_discount_reasons AS SELECT * FROM spectrumdb.SMBDW_dim_oess_discount_reasons WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_dim_oess_discount_reasons; 
+SELECT TOP 100 * FROM interna.SMBDW_dim_oess_discount_reasons; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_dim_oess_payment_params; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_dim_oess_payment_params 
+(
+payment_params_id INT
+,recurring varchar(64)
+,status varchar(50)
+,"mode" varchar(50)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_dim_oess_payment_params/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_dim_oess_payment_params; 
+CREATE VIEW interna.SMBDW_dim_oess_payment_params AS SELECT * FROM spectrumdb.SMBDW_dim_oess_payment_params WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_dim_oess_payment_params; 
+SELECT TOP 100 * FROM interna.SMBDW_dim_oess_payment_params; 
+
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_dim_oess_products; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_dim_oess_products 
+(
+product_id INT
+,product varchar(255)
+,scope varchar(255)
+,"database" varchar(255)
+,product_type varchar(255)
+,mail_class varchar(255)
+,mail_card_material varchar(255)
+,mailer_type varchar(255)
+,mail_size varchar(255)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_dim_oess_products/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_dim_oess_products; 
+CREATE VIEW interna.SMBDW_dim_oess_products AS SELECT * FROM spectrumdb.SMBDW_dim_oess_products WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_dim_oess_products; 
+SELECT TOP 100 * FROM interna.SMBDW_dim_oess_products; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_fact_invoices; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_fact_invoices 
+(
+invoice_id BIGINT
+,invoice_params_id INT
+,customer_id INT
+,date_id INT
+,sales_rep_id INT
+,media_code_id INT
+,demographics_id INT
+,amount decimal(15,4)
+,freight decimal(15,4)
+,tax decimal(15,4)
+,gross decimal(15,4)
+,infousa_order_id INT
+,oess_order_id INT
+,original_sales_order varchar(50)
+,preferred_media_code_id INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_fact_invoices/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_fact_invoices; 
+CREATE VIEW interna.SMBDW_fact_invoices AS SELECT * FROM spectrumdb.SMBDW_fact_invoices WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_fact_invoices; 
+SELECT TOP 100 * FROM interna.SMBDW_fact_invoices; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_fact_invoice_lines; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_fact_invoice_lines 
+(
+invoice_id BIGINT
+,invoice_line_id INT
+,customer_id INT
+,date_id INT
+,invoice_product_id INT
+,sales_rep_id INT
+,media_code_id INT
+,quantity DECIMAL(25,13)
+,amount decimal(15,4)
+,invoice_params_id INT
+,demographics_id INT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_fact_invoice_lines/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_fact_invoice_lines; 
+CREATE VIEW interna.SMBDW_fact_invoice_lines AS SELECT * FROM spectrumdb.SMBDW_fact_invoice_lines WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_fact_invoice_lines; 
+SELECT TOP 100 * FROM interna.SMBDW_fact_invoice_lines; 
+
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_fact_oess_order_lines; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_fact_oess_order_lines 
+(
+oess_order_id INT
+,oess_product_id INT
+,product_id INT
+,original_order_id INT
+,original_subscription_id INT
+,order_params_id INT
+,oess_customer_number INT
+,sales_rep_id INT
+,media_code_id INT
+,retail_price decimal(15,4)
+,final_price decimal(15,4)
+,discount decimal(15,4)
+,created_date_id INT
+,start_date_id INT
+,end_date_id INT
+,demographics_id INT
+,discount_reason_id INT
+,licenses INT
+,credits INT
+,evergreen int
+,is_renewal int
+,is_amendment int
+,IsCurrent int
+,WhiteLabelText VARCHAR(255)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_fact_oess_order_lines/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_fact_oess_order_lines; 
+CREATE VIEW interna.SMBDW_fact_oess_order_lines AS SELECT * FROM spectrumdb.SMBDW_fact_oess_order_lines WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_fact_oess_order_lines; 
+SELECT TOP 100 * FROM interna.SMBDW_fact_oess_order_lines; 
+
+DROP TABLE IF EXISTS spectrumdb.SMBDW_fact_oess_payment_schedule; 
+CREATE EXTERNAL TABLE spectrumdb.SMBDW_fact_oess_payment_schedule 
+(
+oess_order_id INT
+,installment_no INT
+,line_no INT
+,date_id INT
+,inventory_item_id INT
+,quantity DECIMAL(25,13)
+,amount decimal(15,4)
+,payment_params_id INT
+,invoice_id BIGINT
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES ( 
+'separatorChar' = '|', 
+'quoteChar' = '"', 
+'escapeChar' = '\\' 
+) 
+STORED AS textfile 
+LOCATION 's3://axle-internal-sources/raw/smbdwstaging/SMBDW_fact_oess_payment_schedule/' 
+TABLE PROPERTIES ('compression_type'='gzip'); 
+DROP VIEW IF EXISTS interna.SMBDW_fact_oess_payment_schedule; 
+CREATE VIEW interna.SMBDW_fact_oess_payment_schedule AS SELECT * FROM spectrumdb.SMBDW_fact_oess_payment_schedule WITH NO SCHEMA BINDING; 
+SELECT COUNT(*) FROM interna.SMBDW_fact_oess_payment_schedule; 
+SELECT TOP 100 * FROM interna.SMBDW_fact_oess_payment_schedule;  

@@ -1,0 +1,11 @@
+
+{
+    "unload_bucketname": "idms-7933-temp",
+    "report_key": "ehygieneauto/ehyg_{dbid}_report.xlsx",
+    "suppresions_fkey" :"ehygieneauto/ehyg_{dbid}_{yyyy}{mm}{dd}_supressions_",
+    "idms_fkey": "ehygieneauto/ehyg_{dbid}_EmailHygiene_Flags_",
+    "email_address": "mohit.khanwale@data-axle.com",
+    "email_business_users": ["michael.scott@data-axle.com","lisa.fatta@data-axle.com"],
+    "email_subject": "Email Hygiene returned file processed for DBID- {dbid}",
+    "email_message": "<h3>Email Hygiene unloaded file links- <a href={url1}>Suppresions File</a>, <a href={url2}>IDMS file</a>, <a href={url3}>Report Excel file</a> </h3>"
+}

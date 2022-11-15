@@ -1,0 +1,7 @@
+{
+    "tablename1": "EXCLUDE_SysOOGlobalDomain",
+    "s3-key1": "/FilesExportedFromIQ/suppressions/SysOOGlobalDomain_IQ.txt",
+    "reportname1": "/Reports/global-domain-lookup-audit-report",
+    "email_subject": "AWS - Load Global domain suppressions",
+    "email_message": "<h3>Global domains for Optout and hardbounce suppressions lookup table (EXCLUDE_SysOOGlobalDomain) is updated in Redshift.</h3>"
+ }

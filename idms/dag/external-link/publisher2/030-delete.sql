@@ -1,0 +1,1 @@
+DELETE FROM {tablename1} WHERE LTRIM(RTRIM(lems)) = '' OR lems IS NULL;

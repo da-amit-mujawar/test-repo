@@ -1,0 +1,31 @@
+{
+  "Comment": "Recency in Months [12, 24, 48 and Lifetime]",
+  "Records": [
+    {
+      "Code": "A0",
+      "Value": "",
+      "Formula": ""
+    },
+    {
+      "Code": "A1",
+      "Value": "M12",
+      "Formula": "MB_DonationDate BETWEEN 0 AND 12"
+    },
+    {
+      "Code": "A2",
+      "Value": "M48",
+      "Formula": "MB_DonationDate  BETWEEN 0 AND 48"
+    },
+    {
+      "Code": "A3",
+      "Value": "M24",
+      "Formula": "MB_DonationDate  BETWEEN 0 AND 24"
+    },
+    {
+      "Code": "A4",
+      "Value": "LTD",
+      "Formula": "1 = 1"
+    }
+  ]
+}
+

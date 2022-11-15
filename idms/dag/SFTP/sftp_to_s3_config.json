@@ -1,0 +1,7 @@
+{
+    "target_s3_bucket": "idms-2722-internalfiles",
+    "target_s3_key":  "transfomer_dev/fromftp/outfile2.zip",
+    "source_path_at_sftp": "/downloaded/client/2021-02-04_15:40:36_07052.O306EHENEW1.zip",
+    "sftp_conn_id": "sftp_igxfer_conn",
+    "s3_conn_id": "s3_conn_id"
+}

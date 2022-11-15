@@ -1,0 +1,18 @@
+{
+    "tablename1": "EXCLUDE_AircraftTypeCode",
+    "tablename2":  "EXCLUDE_PotentialInvestorConsumer",
+    "tablename3":  "EXCLUDE_PurchasingPowerIncome",
+    "tablename4":  "EXCLUDE_WealthFinder",
+    "tablename5":  "EXCLUDE_InfopersonaCluster",
+    "tablename6":  "EXCLUDE_PoliticalPartyAffiliation",
+    "tablename7":  "EXCLUDE_InfopersonaSupercluster",
+    "tablename8":  "EXCLUDE_PilotLicenseCode",
+    "tablename9":  "EXCLUDE_LastPartyContributed",
+    "tablename10":  "Square_Footage_Descriptions",
+    "tablename11":  "Multi_Tenant_Decode",
+    "tablename12":  "EXCLUDE_DMACode_Descriptions",
+    "tablename13":  "Title_Code_Decode",
+    "s3-key1": "/neptune/DMAs.csv",
+    "email_subject": "External Link -  Lookup update complete",
+    "email_message": "External link - Lookup update is completed successfully."
+}

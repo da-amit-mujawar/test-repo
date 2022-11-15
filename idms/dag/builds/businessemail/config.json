@@ -1,0 +1,15 @@
+{
+    "reportname": "/Reports/businessemail_count_report",
+    "reportname2": "/Reports/businessemail_sample_output",
+    "table-businessemail-new-raw": "businessemailtable_new_raw",
+    "table-businessemail-new": "businessemailtable_new",
+    "s3-2722internal-path": "/internaltransfer/",
+    "s3-businessemail": "BUSINESS_EMAIL.GZ",
+    "view-dba-business-table1": "dba_tblbusiness",
+    "email_subject": "IDMS DATABASE UPDATE NOTIFICATION FOR BUSINESSEMAIL - 846",
+    "email_message": "Hello IDMS-Admin Team,<br/><br/> BUSINESSEMAIL Database is loaded",
+    "email_address": "DL-IDMSAdmin@data-axle.com",
+    "email_business_users": "DL-IDMSAdminInfogroup@data-axle.com"
+}
+
+
