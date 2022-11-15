@@ -1,0 +1,5 @@
+apache-airflow[jdbc]==2.1.0
+apache-airflow-providers-microsoft-mssql==2.1.0
+apache-airflow-providers-databricks==2.2.0
+awswrangler==2.15.1
+xlsxwriter==3.0.3
