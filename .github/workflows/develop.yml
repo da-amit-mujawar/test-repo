@@ -23,8 +23,6 @@ jobs:
     - run: ls
     - name: Install dependencies
       run: pip install --no-cache-dir -r idms-requirements.txt
-    - name: Copy Example Dag to airflow
-      run: cp *.py /home/runner/airflow/dags
     - run: ls /home/runner/airflow/dags
     - name: Run DB Init
       run: airflow db init
@@ -32,6 +30,8 @@ jobs:
       run: sleep 5
     - name: Copy IDMS Dags to airflow
       run: cp -a idms/dag /home/runner/airflow/dags
+    - name: Copy Example Dag to airflow
+      run: cp *.py /home/runner/airflow/dags
     - run: ls
     - name: Sleep
       run: sleep 5
