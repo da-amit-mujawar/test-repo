@@ -41,7 +41,7 @@ jobs:
     - name: Display Module errors
       run: grep ModuleNotFoundError /tmp/reports.txt || echo "No ModuleNotFoundErrors"
     - name: Display Key errors
-      run: grep KeyError /tmp/reports.txt
+      run: grep KeyError /tmp/reports.txt || echo "No KeyError"
     - name: Check report for errors
       run: |
         if grep -Fwq "ERROR" /tmp/reports.txt 
