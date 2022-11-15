@@ -6,3 +6,5 @@ xlsxwriter
 apache-airflow-providers-postgres
 apache-airflow-providers-amazon
 apache-airflow-providers-sftp
+billiard==3.6.4.0
+paramiko==2.7.2
