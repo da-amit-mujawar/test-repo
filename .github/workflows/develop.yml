@@ -46,10 +46,10 @@ jobs:
       run: sleep 5
     - name: Run Dags report
       run: airflow dags report -v > /tmp/reports.txt
-    - name: Run linting
-      run: |
-        pip install pylint-airflow
-        pylint --load-plugins=pylint_airflow --disable=R,C,I,W /home/runner/airflow/dags || true
+#    - name: Run linting (ignore for now)
+#      run: |
+#        pip install pylint-airflow
+#        pylint --load-plugins=pylint_airflow --disable=R,C,I,W /home/runner/airflow/dags || true
     - name: Display report
       run: cat /tmp/reports.txt
     - name: Display ModuleNotFoundError errors
