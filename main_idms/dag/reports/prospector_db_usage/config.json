@@ -1,0 +1,5 @@
+{
+    "email_address" : "var-reports-prospector-notification",
+    "email_subject": "Usage Report for {yyyy}{mm} - Database: Data Axle Prospector Consumer",
+    "email_message": "Please find attached Usage Report for {yyyy}{mm} - database Data Axle Prospector Consumer"
+}

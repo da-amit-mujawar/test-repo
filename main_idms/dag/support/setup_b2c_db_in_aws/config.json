@@ -1,0 +1,7 @@
+{
+    "region": "us-east-1",
+    "ExcludeDbs": "74, 999999",
+    "supportusername": "Admin",
+    "email_subject": "AWS Config for Phase 1 Database",
+    "email_message": "Hi ALL,<br /><p>Database ID: <<databaseid>> - <<StdOut>> is configured for AWS.<br /><br />Thank you<br />IDMS Support Team<br /><br />help-idms@infogroup.com<br />  </p>"
+ }

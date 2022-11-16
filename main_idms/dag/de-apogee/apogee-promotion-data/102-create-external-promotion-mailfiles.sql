@@ -1,0 +1,24 @@
+-- CREATE EXTERNAL TABLE
+--     spectrumdb.apogee_mailfiles_silver
+--     (keycode VARCHAR(1000),
+--     personal_name VARCHAR(1000),
+--     professional_title VARCHAR(1000),
+--     business_name VARCHAR(1000),
+--     auxilliary_address VARCHAR(1000),
+--     secondary_address VARCHAR(1000),
+--     primary_address VARCHAR(1000),
+--     city VARCHAR(1000),
+--     state VARCHAR(1000),
+--     zip VARCHAR(1000),
+--     zip_4 VARCHAR(1000),
+--     package_code VARCHAR(1000),
+--     read_timestamp TIMESTAMP,
+--     client_id VARCHAR(1000),
+--     project_id VARCHAR(1000)
+--     )
+--     ROW FORMAT SERDE 'org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe'
+--     STORED AS INPUTFORMAT 'org.apache.hadoop.hive.ql.io.SymlinkTextInputFormat'
+--     OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+--     LOCATION {mailfiles_manifest};
+-- -- LOCATION 's3://de-2722-promotions-silver/promotions_mailfiles/_symlink_format_manifest/';
+select getdate()

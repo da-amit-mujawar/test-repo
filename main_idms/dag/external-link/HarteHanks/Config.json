@@ -1,0 +1,13 @@
+{
+    "maintable_name": "tblExternal30_191_201206",
+    "HarteHanks-stage-table":"tblExternal30_191_201206_Stage",
+    "HarteHanks-raw-table":"tblExternal30_191_201206_Raw",
+    "s3-key":"/neptune/Sapphire/HarteHanks.txt",
+    "reportname":"/Reports/AuditReport_LinkTable_HarteHanks",
+    "email_subject": "InfoGroup -Harte Hanks US Link Table update for Sapphire Build ",
+    "email_message": "<h3>Airflow DAG: HarteHanks completed successfully.</h3>"
+}
+
+
+
+

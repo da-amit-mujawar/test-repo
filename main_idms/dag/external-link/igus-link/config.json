@@ -1,0 +1,9 @@
+{
+    "maintable_name": "tblExternal13_191_201206",
+    "igus-stage-table":"tblExternal13_191_201206_New_Stage",
+    "igus-raw-table":"tblExternal13_191_201206_New_Raw",
+    "s3-key":"/neptune/Sapphire/IGUS.txt",
+    "reportname":"/Reports/AuditReport_LinkTable_IGUS",
+    "email_subject": "InfoGroup -IGUS Link Table update for Sapphire Build ",
+    "email_message": "<h3>Airflow DAG: IGUS completed successfully.</h3>"
+}

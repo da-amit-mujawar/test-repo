@@ -1,0 +1,15 @@
+{
+    "table_sap_industry": "digital_sap_industry",
+    "table_sap_interestarea": "digital_sap_interestarea",
+    "table_sap_jobfunction": "digital_sap_jobfunction",
+    "table_sap_locationtype": "digital_sap_locationtype",
+    "table_sap_productspecified": "digital_sap_productspecified",
+    "table_sap_specialty": "digital_sap_specialty",
+    "table_sap_hardware": "digital_sap_hardware",
+    "table_sap_software": "digital_sap_software",
+    "table_sap_email": "digital_sap_email",
+    "table_job_stats": "digital_sap_job_stats",
+    "reportname": "/Reports/Export of Sapphire quarterly tables Completed",
+    "email_subject": "SAPPHIRE QUARTERLY EXPORTS",
+    "email_message": " Export of Sapphire quarterly tables Completed. </br></br> You can open up support ticket for any questions regarding this update."
+}

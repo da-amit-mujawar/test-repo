@@ -1,0 +1,5 @@
+{
+  "import_mgen_apg": "s3://{s3-internal}/neptune_apogee/Mgen_apogee_Extract.txt",
+  "email_subject": "APOGEE Build Child Tables Created for Build: {yyyy}{mm}",
+  "email_message": "APOGEE builds-apogee-step2-child-tables completed successfully."
+}

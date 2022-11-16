@@ -1,0 +1,1 @@
+SELECT COUNT(*) nTotalCount, 0 AS nIndividualCount, 0 AS nCompanyCount FROM {0} 

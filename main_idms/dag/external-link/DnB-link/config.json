@@ -1,0 +1,9 @@
+{
+    "maintable_name": "tblExternal29_191_201206_NEW",
+    "DnB-stage-table":"tblExternal29_191_201206_NEW_Stage",
+    "DnB-raw-table":"tblExternal29_191_201206_NEW_Raw",
+    "s3-key":"/neptune/Sapphire/DnB.txt",
+    "reportname":"/Reports/AuditReport_LinkTable_DnB",
+    "email_subject": "InfoGroup -DnB Link Table update for Sapphire Build ",
+    "email_message": "<h3>Airflow DAG: DnB completed successfully.</h3>"
+}

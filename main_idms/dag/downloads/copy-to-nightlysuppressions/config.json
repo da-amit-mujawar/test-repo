@@ -1,0 +1,8 @@
+{
+    "sourcefilename": "WKEDB_Suppressions",
+    "sourcefolder": "\\\\stcsanisln01-idms\\IDMSDevTest\\lrfsdecom",
+    "targetfolder": "\\\\stcsanisln01-idms\\IDMSDevTest\\lrfsdecom\\Temp",
+    "region": "us-east-1",
+    "email_subject": "Copy Nightly Suppressions  Files",
+    "email_message": "<h3>Good Morning,\n\nNightly Suppression File is copied to below location\n.</h3>"
+ }

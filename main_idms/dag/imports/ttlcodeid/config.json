@@ -1,0 +1,9 @@
+{
+    "tablename1": "ttlcodeid_new",
+    "tablename2": "ttlcodeid",
+    "s3-key1": "/monthly_delivery/TTLCODEID",
+    "email_subject": "Testing - Please ignore: imports ttlcodeid job",
+    "email_message": "<h3>testing airflow email</h3>",
+    "email_subject": "AWS - Load ttlcodeid from s3-monthly_delivery on redshift",
+    "email_message": "<h3>Airflow DAG: imports-ttlcodeid completed successfully.</h3>"
+}

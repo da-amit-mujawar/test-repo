@@ -1,0 +1,9 @@
+{
+    "tablename1": "exclude_engagers_new",
+    "tablename2": "exclude_engagers",
+    "tabledistinct1": "exclude_engagers_dist_new",
+    "tabledistinct2": "exclude_engagers_dist",
+    "s3-key1": "/internaltransfer/IDMSeData/Edithroman_Engagers_All.csv",
+    "email_subject": "AWS - Load Engagement data from s3 on redshift",
+    "email_message": "<h3>Airflow DAG: imports-engagers completed successfully.</h3>"
+}

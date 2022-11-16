@@ -1,0 +1,119 @@
+{
+    "secretobjname": "da-airflow-lambda-trigger",
+    "secretname": "airflow-lambda-trigger",
+    "files": {
+      "ram/idms-1454/SanFranData-{yyyy}-{mm}-{dd}.csv": {
+        "dagname": [
+          "builds-apogee-fec-notification"
+        ],
+        "paramters": []
+      },
+      "premovers/premover_{yyyy}{mm}{dd}.txt": {
+        "dagname": [
+          "builds-pre-mover-daily-load"
+        ]
+      },
+      "raw/finance/mothership/FIN_MOTHERSHIP_{mm}{yyyy}VF.csv": {
+        "dagname": [
+          "datalake-internal-finance"
+        ]
+      },
+      "neptune/Sapphire/DnB.txt": {
+        "dagname": [
+          "external-link-DnB"
+        ]
+      },
+      "wireless/IDMS_Wireless": {
+        "dagname": [
+          "imports-wireless"
+        ]
+      },
+      "internaltransfer/3537_INFOUSA_OVERLAY.txt": {
+        "dagname": [
+          "imports-dw-iusa"
+        ]
+      },
+      "FilesExportedFromIQ/tblExternal39_191_201206.txt": {
+        "dagname": [
+          "external-link-apogee-E2"
+        ]
+      },
+      "internaltransfer/PARK/VE_FP_{yyyy}{mm}{dd}.txt": {
+        "dagname": [
+          "pryor-park-email"
+        ]
+      },
+      "Prior\\+LiftEngine\\+Orders/Layout.\\d{6}.txt": {
+        "dagname": [
+          "builds-donorbase-opu"
+        ]
+      },
+      "Prior\\+LiftEngine\\+Orders/\\d{6}.layout.txt": {
+        "dagname": [
+          "builds-donorbase-opu"
+        ]
+      },
+      "^A08": {
+        "dagname": [
+          "donorbase-generate-final-opu"
+        ]
+      },
+      "mzb_signal/READY_.*": {
+        "dagname": [
+          "builds-aetna"
+        ]
+      },
+      "ml-inference/input/sic_code_classification/unprocessed/ds_business_inference_sic_code_classification_input_.*.csv": {
+        "dagname": [
+          "ds-business-inference-sic-code-classification"
+        ]
+      },
+      "ml-inference/input/location_employee_count/unprocessed/ds_business_inference_location_employee_count_input_.*.csv": {
+        "dagname": [
+          "ds-business-inference-location-emp-count"
+        ]
+      },
+      "ml-inference/input/ownership/unprocessed/ds_business_inference_ownership_input_.*.csv": {
+        "dagname": [
+          "ds-business-inference-ownership"
+        ]
+      },
+      "ml-inference/input/square_footage/unprocessed/ds_business_inference_square_footage_input_.*.csv": {
+        "dagname": [
+          "ds-business-inference-square-footage"
+        ]
+      },
+      "ml-inference/input/location_sales_volume_sas_to_python/unprocessed/ds_business_inference_location_sales_volume_.*.csv": {
+        "dagname": [
+          "ds-business-inference-location-sales-volume-stp"
+        ]
+    },
+      "ml-inference/input/cuisine_classification/unprocessed/ds_business_inference_cuisine_classification_input_.*.csv": {
+      "dagname": [
+        "ds-business-inference-cuisine-classification"
+      ]
+    },
+
+    "ml-inference/input/corporate_sales_revenue/unprocessed/ds_business_inference_corporate_sales_revenue_input_.*.csv": {
+      "dagname": [
+        "ds-business-inference-corporate-sales-revenue"
+      ]
+    },
+    
+    "(?i)neptune/ehygiene/ehyg_\\d{3}_EmailHygiene_\\d{8}.*": {
+        "dagname": [
+            "email-hygiene-step1"
+        ]
+      },
+      "(?i)a10_d045000_\\d{3}_.*": {
+        "dagname": [
+          "email-hygiene-step2"
+        ]
+      },
+      "(?i)raw/finance/enterprise/enterprise_commissions.*": {
+        "dagname": [
+          "datalake-internal-sales-variance"
+        ]
+      }
+    }
+  }

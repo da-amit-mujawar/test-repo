@@ -1,0 +1,10 @@
+{
+    "table_job_stats": "exclude_mtm_job_stats",
+    "tablename1": "mtm_cons_strip",
+    "tablename2": "mtm_strip_ids",
+    "coopapg": "exclude_apogee_np_summ_nodedupe",
+    "coopmgen": "NonProfit_MGen_Full",
+    "reportname1": "/Reports/Mtm_extract",
+    "email_subject": "Mtm Extract",
+    "email_message": "<h3>MTM Coop Extract is Done.</h3>"
+}

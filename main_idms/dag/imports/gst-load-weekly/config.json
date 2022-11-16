@@ -1,0 +1,9 @@
+{
+    "tablename1": "exclude_gst_suppressemails",
+    "tablename2": "exclude_gst_suppressemails_new",
+    "s3-key1": "gst",
+    "reportname1": "/Reports/gst_weekly_load_total_count",
+    "reportname2": "/Reports/gst_weekly_load_suppression_type_count",
+    "email_subject": "AWS - Load Weekly Global Email Suppression File",
+    "email_message": "<h3>Weekly GST is loaded.</h3>"
+ }

@@ -1,0 +1,21 @@
+{
+    "new_school": "meyer_school_new",
+    "new_rate_chart": "meyer_rate_chart_new",
+    "new_first_degree": "meyer_first_degree_new",
+    "new_generic_salutation": "meyer_generic_salutation_new",
+    "new_state_availability": "meyer_state_availability_new",
+    "new_title_standardization": "meyer_title_standardization_new",
+    "s3-key1": "/list-conversion/MYA_SCHOOL.csv",
+    "s3-key2": "/list-conversion/MYA_RATE_CHART.csv",
+    "s3-key3": "/list-conversion/MYA_DEGREE_GRADAGE.csv",
+    "s3-key4": "/list-conversion/MYA_GENERIC_SAL.csv",
+    "s3-key5": "/list-conversion/MYA_ST_AVALABILITY.csv",
+    "s3-key6": "/list-conversion/MYA_TITLE.csv",
+    "report_delta": "/campaign-output/MYA_MONTHLY_EMAIL_DELTA_{yyyy}{mm}{dd}",
+    "reportname1": "/Reports/meyer_aggregations_summary_listid_{yyyy}{mm}{dd}",
+    "reportname2": "/Reports/meyer_aggregations_summary_{yyyy}{mm}{dd}",
+    "reportname3": "/Reports/meyer_aggregations_product_summary_{yyyy}{mm}{dd}",
+    "email_subject": "MEYER Aggregations Step 4 Completed",
+    "email_message": "Hello IDMS-Admin Team,</br></br> Meyer Aggregations Step 4 process complete. Please trigger Step 5"
+}
+

@@ -1,0 +1,8 @@
+{
+    "reportname1":"/Reports/Apogee_FinalTransactionCounts",
+    "reportname2":"/Reports/Apogee_FinalTableCounts",
+    "xemail_business_users":"ApogeeUpdateTeam@data-axle.com,IDMSAdminConsumerPearl@data-axle.com,DWOrders@data-axle.com,dl-data-scienceTeamQuast@infogroup.com,MFD-P17-Analytics-Load-Team@data-axle.com,MFDAlterianLoadGroup@data-axle.com",
+    "email_address": "caroline.burch@data-axle.com",
+    "email_subject": "TEST-Apogee Preaudit report",
+    "email_message": "Please find attached preaudit report."
+}

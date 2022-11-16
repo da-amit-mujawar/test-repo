@@ -1,0 +1,15 @@
+{
+   "bucket": "idms-2722-nessy-apogee",
+   "prefix": "test/redshift-silver-tables-load/ddl_tables/",
+   "alter_table_key" :   "ddl_tables/alter_table_statements.sql",
+   "domain"  : "data-axle-idms-dev.cloud.databricks.com",
+   "proddomain"  : "dbc-cacb962d-262b.cloud.databricks.com",
+   "jobid"   : "50",
+   "struct_jobid" : "",
+   "count_file_key" : "redshift-silver-tables-load/databricks_count.csv",
+   "drop_table_key" : "redshift-silver-tables-load/drop_tables.sql",
+   "email_address" : "var-silver-table-load-email",
+   "email_subject" : "Loading of databricks silver tables into Redshift report",
+   "email_message" : "This mail has the attached counts from both the databricks and redshift"
+
+}

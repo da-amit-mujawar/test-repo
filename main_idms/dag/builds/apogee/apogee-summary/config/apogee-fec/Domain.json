@@ -1,0 +1,34 @@
+{
+  "Comment": "Domains or Data Types",
+  "Records": [
+    {
+      "Code": "E0",
+      "Value": ""
+    },
+    {
+      "Code": "E1",
+      "Value": "Integer"
+    },
+    {
+      "Code": "E2",
+      "Value": "String"
+    },
+    {
+      "Code": "E3",
+      "Value": "Long",
+      "Comment": " bigint, "
+    },
+    {
+      "Code": "E4",
+      "Value": "String"
+    },
+    {
+      "Code": "E5",
+      "Value": "String"
+    },
+    {
+      "Code": "E6",
+      "Value": "Short"
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "Records": [
+    {
+      "A": "A0",
+      "B": "B0",
+      "C": "C0",
+      "D": "D999",
+      "E": "E3",
+      "Comments": "To involve Process ID [Company / Individual ID] "
+    },
+    {
+      "A": "A0",
+      "B": "B0",
+      "C": "C0",
+      "D": "D1",
+      "E": "E0"
+    },
+    {
+      "A": "A06",
+      "B": "B0",
+      "C": "C1",
+      "D": "D1",
+      "E": "E1"
+    },
+    {
+      "A": "A12",
+      "B": "B0",
+      "C": "C1",
+      "D": "D1",
+      "E": "E1"
+    },
+    {
+      "A": "A0",
+      "B": "B0",
+      "C": "C0",
+      "D": "D2",
+      "E": "E0"
+    },
+    {
+      "A": "A0",
+      "B": "B0",
+      "C": "C1",
+      "D": "D2",
+      "E": "E1"
+    },
+    {
+      "A": "A03",
+      "B": "B0",
+      "C": "C0",
+      "D": "D2",
+      "E": "E1"
+    },
+    {
+      "A": "A03",
+      "B": "B0",
+      "C": "C1",
+      "D": "D2",
+      "E": "E1"
+    },
+    {
+      "A": "A06",
+      "B": "B0",
+      "C": "C0",
+      "D": "D2",
+      "E": "E1"
+    },
+    {
+      "A": "A06",
+      "B": "B0",
+      "C": "C1",
+      "D": "D2",
+      "E": "E1"
+    },
+    {
+      "A": "A12",
+      "B": "B0",
+      "C": "C0",
+      "D": "D2",
+      "E": "E1"
+    },
+    {
+      "A": "A12",
+      "B": "B0",
+      "C": "C1",
+      "D": "D2",
+      "E": "E1"
+    },
+    {
+      "A": "A0",
+      "B": "B0",
+      "C": "C0",
+      "D": "D3",
+      "E": "E0"
+    },
+    {
+      "A": "A0",
+      "B": "B0",
+      "C": "C1",
+      "D": "D3",
+      "E": "E0"
+    },
+    {
+      "A": "A0",
+      "B": "B0",
+      "C": "C0",
+      "D": "D4",
+      "E": "E0"
+    },
+    {
+      "A": "A0",
+      "B": "B0",
+      "C": "C1",
+      "D": "D4",
+      "E": "E0"
+    },
+    {
+      "A": "A0",
+      "B": "B0",
+      "C": "C0",
+      "D": "D5",
+      "E": "E0"
+    },
+    {
+      "A": "A03",
+      "B": "B0",
+      "C": "C0",
+      "D": "D5",
+      "E": "E0"
+    },
+    {
+      "A": "A06",
+      "B": "B0",
+      "C": "C0",
+      "D": "D5",
+      "E": "E0"
+    },
+    {
+      "A": "A09",
+      "B": "B0",
+      "C": "C0",
+      "D": "D5",
+      "E": "E0"
+    },
+    {
+      "A": "A09",
+      "B": "B0",
+      "C": "C0",
+      "D": "D2",
+      "E": "E1"
+    },
+    {
+      "A": "A12",
+      "B": "B0",
+      "C": "C0",
+      "D": "D5",
+      "E": "E0"
+    },
+    {
+      "A": "A03",
+      "B": "B0",
+      "C": "C1",
+      "D": "D5",
+      "E": "E0"
+    },
+    {
+      "A": "A06",
+      "B": "B0",
+      "C": "C1",
+      "D": "D5",
+      "E": "E0"
+    },
+    {
+      "A": "A12",
+      "B": "B0",
+      "C": "C1",
+      "D": "D5",
+      "E": "E0"
+    },
+    {
+      "A": "A0",
+      "B": "B0",
+      "C": "C1",
+      "D": "D5",
+      "E": "E0"
+    },
+    {
+      "A": "A03",
+      "B": "B0",
+      "C": "C1",
+      "D": "D11",
+      "E": "E0",
+      "Comments": "Latest Gift Date in 0 - 3M - By Category"
+    },
+    {
+      "A": "A06",
+      "B": "B0",
+      "C": "C1",
+      "D": "D12",
+      "E": "E0",
+      "Comments": "Latest Gift Date in 4 - 6M - By Category"
+    },
+    {
+      "A": "A09",
+      "B": "B0",
+      "C": "C1",
+      "D": "D13",
+      "E": "E0",
+      "Comments": "Latest Gift Date in 7 - 9M - By Category"
+    },
+    {
+      "A": "A12",
+      "B": "B0",
+      "C": "C1",
+      "D": "D14",
+      "E": "E0",
+      "Comments": "Latest Gift Date in 10 - 12M - By Category"
+    },
+    {
+      "A": "A24",
+      "B": "B0",
+      "C": "C1",
+      "D": "D15",
+      "E": "E0",
+      "Comments": "Latest Gift Date in 13 - 15M - By Category"
+    },
+    {
+      "A": "A24",
+      "B": "B0",
+      "C": "C1",
+      "D": "D16",
+      "E": "E0",
+      "Comments": "Latest Gift Date in 16 - 18M - By Category"
+    },
+    {
+      "A": "A24",
+      "B": "B0",
+      "C": "C1",
+      "D": "D17",
+      "E": "E0",
+      "Comments": "Latest Gift Date in 19 - 21M - By Category"
+    },
+    {
+      "A": "A24",
+      "B": "B0",
+      "C": "C1",
+      "D": "D18",
+      "E": "E0",
+      "Comments": "Latest Gift Date in 22 - 24M - By Category"
+    },
+    {
+      "A": "A0",
+      "B": "B0",
+      "C": "C1",
+      "D": "D19",
+      "E": "E0",
+      "Comments": "Latest Gift Date Greater than 25M - By Category"
+    },
+    {
+      "A": "A50",
+      "B": "B5",
+      "C": "C2",
+      "D": "D0",
+      "E": "E0",
+      "Comments": "Months since last Donation - By List"
+    },
+    {
+      "A": "A12",
+      "B": "B0",
+      "C": "C2",
+      "D": "D6",
+      "E": "E0",
+      "Comments": "Number of Gifts in last 12 months - By List"
+    },
+    {
+      "A": "A24",
+      "B": "B0",
+      "C": "C2",
+      "D": "D6",
+      "E": "E0",
+      "Comments": "Number of Gifts in last 24 months - By List"
+    },
+    {
+      "A": "A12",
+      "B": "B0",
+      "C": "C2",
+      "D": "D2",
+      "E": "E0",
+      "Comments": "Sum of Gifts in last 12 months - By List"
+    },
+    {
+      "A": "A24",
+      "B": "B0",
+      "C": "C2",
+      "D": "D2",
+      "E": "E0",
+      "Comments": "Sum of Gifts in last 24 months - By List"
+    },
+    {
+      "A": "APY",
+      "B": "B0",
+      "C": "C2",
+      "D": "D1",
+      "E": "E0",
+      "Comments": "Total average amount for previous year"
+    },
+    {
+      "A": "A2Y",
+      "B": "B0",
+      "C": "C2",
+      "D": "D1",
+      "E": "E0",
+      "Comments": "Total average amount for 2nd previous year"
+    },
+    {
+      "A": "A3Y",
+      "B": "B0",
+      "C": "C2",
+      "D": "D1",
+      "E": "E0",
+      "Comments": "Total average amount for 3rd previous year"
+    },
+    {
+      "A": "A0",
+      "B": "B0",
+      "C": "C0",
+      "D": "D52",
+      "E": "E5"
+    }
+  ]
+}
+
+

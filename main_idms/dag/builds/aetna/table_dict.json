@@ -1,0 +1,89 @@
+{"TBMZB_COMM_PROMO_HISTORY":{"tabletype":"append",
+                            "deletemonth":12,
+                            "uniqueidentifier":"promo_history_id"
+                            },
+"TBMZB_EMAIL_INTERACTIONS":{"tabletype":"append",
+                    "deletemonth":12,
+                    "uniqueidentifier":"source_record_id"
+                    },
+"TBMZB_PROMO_HISTORY_IDMS":{"tabletype":"append",
+                    "deletemonth":12,
+                    "uniqueidentifier":"PROMO_HISTORY_ID"
+                    },
+"TBMZB_MODEL_SCORES_IDMS":{"tabletype":"append",
+                    "deletemonth":6,
+                    "uniqueidentifier":"mzb_indiv_id"
+                    },
+"TBMZB_INDIVIDUAL_EMAIL":{"tabletype":"insert_delete",
+                    "deletemonth":0,
+                    "uniqueidentifier":"mzb_indiv_id||email_address||brand_cd"
+                    },
+"TBMZB_MEMBERSHIP":{"tabletype":"insert_delete",
+                    "deletemonth":0,
+                    "uniqueidentifier":"member_id"
+                    },
+"TBMZB_INDIVIDUAL_A":{"tabletype":"insert_delete",
+                    "deletemonth":0,
+                    "uniqueidentifier":"mzb_indiv_id"
+                    },
+"TBMZB_FEDERAL_EMPLOYEES":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":"MZB_INDIV_ID"
+                    },
+"TBMZB_INDIVIDUAL_DEMOG_IDMS":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":"MZB_INDIV_ID"
+                    },
+"TBMZB_INDIV_COMM_PROSPECT_LIST":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":"MZB_INDIV_ID"
+                    },
+"TBMZB_INDIV_EXPERIAN_LIST":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":"MZB_INDIV_ID"
+                    },
+"TBMZB_INDIV_INFOGROUP_LIST":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":"MZB_INDIV_ID"
+                    },
+"TBMZB_INTERACTIONS":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":"INTERACTION_ID"
+                    },
+"TBMZB_MARKET_GEOGRAPHY":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":"FIPS_STATE_COUNTY"
+                    },
+"TBMZB_MODEL_CODES":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":"MODEL_CD"
+                    },
+"TBMZB_PLAN_SPONSORS":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":"PS_UNIQUE_ID"
+                    },
+"TBMZB_SUPPRESSION":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":"MZB_INDIV_ID"
+                    },
+"TBMZB_B2C_COMM_CONSUMERS":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":"MZB_INDIV_ID"
+                    },
+"TBMZB_B2C_DA_CONSUMERS":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":"MZB_INDIV_ID"
+                    },
+"TBMZB_INDIV_ACA_LIST":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":""
+                    },
+"TBMZB_B2C_DA_LIST":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":"BUS_IGID"
+                    },
+"TBMZB_INDIVIDUAL_MERGE_FIX":{"tabletype":"full_refresh",
+                    "deletemonth":0,
+                    "uniqueidentifier":""
+                }
+}

@@ -1,0 +1,20 @@
+{
+    "table_job_stats": "engaged_job_stats",
+    "tablename1": "engaged_db",
+    "gst": "exclude_gst_suppressemails",
+    "tablename2": "exclude_engaged_domain_db",
+    "tablename3": "exclude_engaged_db_md5",
+    "engagedtemp": "engaged_date_temp",
+    "engageddtemp": "engaged_domain_temp",
+    "reportname1": "/Reports/engaged_weekly_open_date_count",
+    "reportname2": "/Reports/engaged_weekly_click_date_count",
+    "reportname3": "/Reports/engaged_weekly_top100domains_count",
+    "reportname4": "/Reports/engaged_weekly_times_opened_count",
+    "reportname5": "/Reports/engaged_weekly_times_clicked_count",
+    "reportname6": "/Reports/engaged_weekly_gst_count",
+    "reportname7": "/Reports/engaged_weekly_optout_count",
+    "reportname8": "/Reports/engaged_weekly_load_count",
+    "s3-key1": "/internaltransfer/IDMSeData/Edithroman_Engagers_All.csv",
+    "email_subject": "AWS - Load Weekly Engaged DB File",
+    "email_message": "<h3>Weekly Engaged DB is loaded.</h3>"
+}

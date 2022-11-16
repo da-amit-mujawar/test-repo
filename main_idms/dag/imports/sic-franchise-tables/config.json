@@ -1,0 +1,4 @@
+{
+    "email_subject": "AWS - Load sic,franchise,industry from s3 monthly-delivery on redshift",
+    "email_message": "<h3>Airflow DAG: imports-sic-franchise-tables completed successfully.</h3>"
+}

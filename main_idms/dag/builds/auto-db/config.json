@@ -1,0 +1,11 @@
+{
+    "auto_tablename1": "autodbtable1025_new",
+    "auto_tablename2": "AutoDB_MaxIDs_ToBeDropped",
+    "auto_tablename3": "sql_tblstate",
+    "auto_tablename4": "autotable1025_stage",
+    "reportname": "/Reports/Auto_DB_1025_count_report",
+    "email_subject": "IDMS DATABASE UPDATE NOTIFICATION FOR AUTO_DB_1025",
+    "email_message": " Database Update completed successfully. Please verify and activate the build. </br></br> You can open up support ticket for any questions regarding this update.",
+    "email_address": "DL-IDMSAdmin@data-axle.com",
+    "email_business_users": "DL-IDMSAdminInfogroup@data-axle.com"
+}

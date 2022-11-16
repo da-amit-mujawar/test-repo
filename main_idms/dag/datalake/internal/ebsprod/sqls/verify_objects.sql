@@ -1,0 +1,30 @@
+select count(*) from interna.ebsprod_ar_collectors;
+select count(*) from interna.ebsprod_datalake_gaap_detail;
+select count(*) from interna.ebsprod_gl_accts_desc_table;
+select count(*) from interna.ebsprod_gl_code_combinations;
+select count(*) from interna.ebsprod_mtl_system_items_b;
+select count(*) from interna.ebsprod_ra_addresses_all;
+select count(*) from interna.ebsprod_ra_cust_trx_line_gl_dist_all;
+select count(*) from interna.ebsprod_ra_cust_trx_line_salesreps_all;
+select count(*) from interna.ebsprod_ra_cust_trx_types_all;
+select count(*) from interna.ebsprod_ra_customer_trx_all;
+select count(*) from interna.ebsprod_ra_customer_trx_lines_all;
+select count(*) from interna.ebsprod_ra_customers;
+select count(*) from interna.ebsprod_ra_salesreps_all;
+select count(*) from interna.ebsprod_ra_site_uses_all;
+
+
+select top 10 * from interna.ebsprod_ar_collectors;
+select top 10 * from interna.ebsprod_datalake_gaap_detail;
+select top 10 * from interna.ebsprod_gl_accts_desc_table;
+select top 10 * from interna.ebsprod_gl_code_combinations;
+select top 10 * from interna.ebsprod_mtl_system_items_b;
+select top 10 * from interna.ebsprod_ra_addresses_all;
+select top 10 * from interna.ebsprod_ra_cust_trx_line_gl_dist_all;
+select top 10 * from interna.ebsprod_ra_cust_trx_line_salesreps_all;
+select top 10 * from interna.ebsprod_ra_cust_trx_types_all;
+select top 10 * from interna.ebsprod_ra_customer_trx_all;
+select top 10 * from interna.ebsprod_ra_customer_trx_lines_all;
+select top 10 * from interna.ebsprod_ra_customers;
+select top 10 * from interna.ebsprod_ra_salesreps_all;
+select top 10 * from interna.ebsprod_ra_site_uses_all;

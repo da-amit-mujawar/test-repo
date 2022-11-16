@@ -1,0 +1,5 @@
+{
+    "email_subject": "DonorBase suppression files unload",
+    "email_message": "Airflow : unload suppression files successfully for each ownerid .",
+    "email_business_users" : "idmsadminconsumerpearl@data-axle.com"
+}

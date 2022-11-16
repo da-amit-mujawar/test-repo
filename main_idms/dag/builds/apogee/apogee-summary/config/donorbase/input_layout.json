@@ -1,0 +1,150 @@
+{
+  "Records": [
+    {
+      "Name": "Table_ID",
+      "Datatype": "Long",
+      "ColNo": 1
+    },
+    {
+      "Name": "ListID",
+      "Datatype": "String",
+      "ColNo": 2
+    },
+    {
+      "Name": "Process_ID",
+      "Datatype": "String",
+      "ColNo": 3,
+      "Original_Column_Name": "Individual_ID",
+      "Comments": "The original name of the column is Individual ID. Renamed as Process ID"
+    },
+    {
+      "Name": "Household_ID",
+      "Datatype": "String",
+      "ColNo": 4,
+      "Original_Column_Name": "HH_ID"
+    },
+    {
+      "Name": "Account_No",
+      "Datatype": "String",
+      "ColNo": 5
+    },
+    {
+      "Name": "ListCategory01",
+      "Datatype": "String",
+      "ColNo": 6
+    },
+    {
+      "Name": "List_TotalNumberDonations",
+      "Datatype": "String",
+      "ColNo": 7
+    },
+    {
+      "Name": "ListCategory02",
+      "Datatype": "String",
+      "ColNo": 8
+    },
+    {
+      "Name": "ListCategory03",
+      "Datatype": "String",
+      "ColNo": 9
+    },
+    {
+      "Name": "ListCategory04",
+      "Datatype": "String",
+      "ColNo": 10
+    },
+    {
+      "Name": "ListCategory05",
+      "Datatype": "String",
+      "ColNo": 11
+    },
+    {
+      "Name": "List_TotalDollarDonations",
+      "Datatype": "String",
+      "ColNo": 12
+    },
+    {
+      "Name": "List_LastDateDonation",
+      "Datatype": "String",
+      "ColNo": 13
+    },
+    {
+      "Name": "List_FirstDateDonation",
+      "Datatype": "String",
+      "ColNo": 14
+    },
+    {
+      "Name": "List_LastPaymentMethod",
+      "Datatype": "String",
+      "ColNo": 15
+    },
+    {
+      "Name": "List_LastChannel",
+      "Datatype": "String",
+      "ColNo": 16
+    },
+    {
+      "Name": "List_LastDollarDonation",
+      "Datatype": "String",
+      "ColNo": 17
+    },
+    {
+      "Name": "List_HighestDollarDonation",
+      "Datatype": "String",
+      "ColNo": 18
+    },
+    {
+      "Name": "List_LowestDollarDonation",
+      "Datatype": "String",
+      "ColNo": 19
+    },
+    {
+      "Name": "List_WeeksSinceLastDonation",
+      "Datatype": "String",
+      "ColNo": 20
+    },
+    {
+      "Name": "List_VolunteerInd",
+      "Datatype": "String",
+      "ColNo": 21
+    },
+    {
+      "Name": "DonationDollar",
+      "Datatype": "Float",
+      "ColNo": 22,
+      "Original_Column_Name": "Detail_DonationDollar"
+    },
+    {
+      "Name": "DonationDate",
+      "Datatype": "Date",
+      "ColNo": 23,
+      "Original_Column_Name": "Detail_DonationDate"
+    },
+    {
+      "Name": "PaymentMethod",
+      "Datatype": "String",
+      "ColNo": 24,
+      "Original_Column_Name": "Detail_PaymentMethod"
+    },
+    {
+      "Name": "DonationChannel",
+      "Datatype": "String",
+      "ColNo": 25,
+      "Original_Column_Name": "Detail_DonationChannel"
+    }
+  ],
+  "Filter": [
+    {
+      "Name": "Dlr_G_0",
+      "Formula": " AND DonationDollar > 0"
+    },
+    {
+      "Name": "Valid_Individual",
+      "Formula": " AND (Process_ID != '0' AND Process_ID IS NOT NULL)"
+    },
+    {
+      "Name": "DtValid",
+      "Formula": " AND ( DonationDate between '1950-01-01' and '{RunDate}')"
+    }
+  ]
+}

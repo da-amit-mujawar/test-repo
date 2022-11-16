@@ -1,0 +1,6 @@
+{
+    "reportname": "/Reports/CCPA_Count_record_donorbase",
+    "email_subject" : "Airflow Notification : NonProfit Daily CCPA Suppressions - Donorbase.",
+    "email_message" : "Successfully Fetch count.<br/><br/> PFA sample output",
+    "email_business_users" : "idmsadminconsumerpearl@data-axle.com"
+}

@@ -1,0 +1,12 @@
+{
+    "table-execureach-new-raw": "execureach_1150_new_raw",
+    "temp-title-description": "ttlcodeid",
+    "s3-2722internal-path": "/internaltransfer/",
+    "s3-execureach": "EXECUREACH_1150.TXT",
+    "reportname1": "/Reports/B2CLink_CapOneRpt_{yyyy}{mm}{dd}.csv",
+    "email_address_prod": "DL-IDMSAdmin@data-axle.com",
+    "email_subject": "IDMS DATABASE UPDATE NOTIFICATION FOR BUILD/B2C-LINK - 1150",
+    "email_message": "<h3>builds-b2clink job complete</h3>",
+    "email_address": "DL-IDMSAdmin@data-axle.com",
+    "email_business_users": "DL-IDMSAdminInfogroup@data-axle.com,Angela.Zaloom@data-axle.com"
+}

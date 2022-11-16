@@ -1,0 +1,8 @@
+{
+    "tablename1": "countystate_decode_new",
+    "tablename2": "countystate_decode",
+    "table_state": "sql_tblstate",
+    "email_subject": "AWS - Load countystate_decode from sql_tblstate on redshift",
+    "email_message": "<h3>Airflow DAG: imports-countystate-decode completed successfully.</h3>"
+}
+

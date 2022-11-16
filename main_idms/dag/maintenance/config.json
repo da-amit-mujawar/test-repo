@@ -1,0 +1,9 @@
+{
+    "deletejobsolderthan": "20",
+    "sleeptime": "5",
+    "sessionprofilename": "",
+    "region": "us-east-1",
+    "Excludejobs": "IDMS_1337, DUmmylist",
+    "email_subject": "AWS - Delete Glue Jobs",
+    "email_message": "<h3>Delete Glue Jobs - Completed. Please check airflow logs.</h3>"
+ }

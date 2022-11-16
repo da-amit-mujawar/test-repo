@@ -1,0 +1,8 @@
+{
+    "table-engaged-input": "igi_engaged_12_mon.txt",
+    "table-engaged": "exclude_engaged_12_mon",
+    "s3-engaged-key20": "neptune",
+    "reportname": "/Reports/engaged_report",
+    "email_subject": "load engaged job",
+    "email_message": "load engaged job completed"
+}

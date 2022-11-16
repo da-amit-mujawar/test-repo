@@ -1,0 +1,9 @@
+{
+    "tablename1":"TablesList_temp",
+    "database_id":"1267",
+    "s3-key1": "/internaltransfer/Temp/RoyaltyOrderIds_1267.txt",
+    "email_subject": "IDMS - IG Consumer royalty report",
+    "email_address" : "abhishek.jangid@data-axle.com,DL-IDMSAdminInfogroup@data-axle.com,DataAcqGroup@data-axle.com,Cory.Pawloski@data-axle.com,DWOrders@data-axle.com",
+    "email_business_users" : "abhishek.jangid@data-axle.com,DL-IDMSAdminInfogroup@data-axle.com,DataAcqGroup@data-axle.com,Cory.Pawloski@data-axle.com,DWOrders@data-axle.com",
+    "email_message": "Please find attached IG Consumer (1267) Royalty Report.<br/><br/>Thank you."
+}

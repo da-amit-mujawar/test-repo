@@ -1,0 +1,5 @@
+{
+    "email_subject": "Alert AMEX missing ids file",
+    "email_message": "Alert AMEX missing IDs file DAG successfully ran",
+    "error_message": "Please be notified the date created/modified for file at {s3_folder_path}amex_ids.txt are not current dates"
+}

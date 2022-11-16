@@ -1,0 +1,16 @@
+{
+    "table_job_stats": "digital.sap_job_stats_mthly",
+    "table_sap_bluekai": "digital.sap_bluekai",
+    "table_sap_email_segmented": "digital.sap_email_segmented",
+    "table_sap_email_fnl": "digital.sap_email_fnl",
+    "table_sap_main": "digital.sap_main",
+    "table_sap_listid": "digital.sap_listid",
+
+
+
+
+
+
+    "email_subject": "business dig sapphire load job",
+    "email_message": "business digital sapphire load is done"
+}

@@ -1,0 +1,255 @@
+--S000000
+--t000_clients
+--S000000_t000_clients
+
+/*
+bit >> Boolean
+smalldatetime >> timestamp
+tinyint >> SMALLINT
+*/
+
+--DROP TABLE IF EXISTS spectrumdb.S000000_t000_clients;
+--
+--CREATE EXTERNAL TABLE spectrumdb.S000000_t000_clients(
+--	client_id smallint ,
+--	client_name nvarchar(100) ,
+--	short_name nvarchar(100) ,
+--	app_ver varchar(50) ,
+--	minor_ver varchar(50) ,
+--	global_administration_server_id int ,
+--	administration_server_id int ,
+--	account_manager varchar(50) ,
+--	application_user_name varchar(50) ,
+--	application_password varchar(50) ,
+--	active_ind char(1) ,
+--	remark nvarchar(100) ,
+--	max_deployment_set_size int ,
+--	max_record_size int ,
+--	deployment_set_batch_size int ,
+--	soft_bounce_threshold int ,
+--	hard_bounce_threshold int ,
+--	reset_bounce_after_days int ,
+--	reset_preference_after_days int ,
+--	client_sql_linked_server_name varchar(50) ,
+--	ip_address varchar(50) ,
+--	ip_address_external varchar(50) ,
+--	port int ,
+--	client_administration_database_name varchar(50) ,
+--	marketer_report_alert_days int ,
+--	gk_data_updated smallint ,
+--	db_rpt_update_date timestamp ,
+--	dpl_priority int ,
+--	dpl_upgrade_done smallint ,
+--	gk_data_updated_date timestamp ,
+--	agent_id smallint ,
+--	ix_upgrade_done smallint ,
+--	can_spam_upgrade_done smallint ,
+--	global_kill_server_id int ,
+--	global_kill_db varchar(50) ,
+--	global_kill_tbl_ea varchar(50) ,
+--	global_kill_tbl_ed varchar(50) ,
+--	client_kill_server_id int ,
+--	client_kill_db varchar(50) ,
+--	client_kill_tbl_ea varchar(50) ,
+--	client_kill_tbl_ed varchar(50) ,
+--	dconx_seed_enabled smallint ,
+--	global_seed_enabled smallint ,
+--	gk_db_server_id int ,
+--	gk_ip_address varchar(50) ,
+--	gk_ip_address_external varchar(50) ,
+--	gk_db_name varchar(50) ,
+--	gk_configured smallint ,
+--	domain_naming_type_id int ,
+--	root_token varchar(255) ,
+--	client_site_url varchar(50) ,
+--	return_path varchar(50) ,
+--	open_rate_tracking_url varchar(50) ,
+--	click_through_tracking_url varchar(50) ,
+--	max_dpl_set_rcd_num int ,
+--	alert_email_address varchar(1000) ,
+--	nanny_enabled char(1) ,
+--	locale_id SMALLINT ,
+--	report_server_id smallint ,
+--	report_database_name varchar(50) ,
+--	primary_list_server_id int ,
+--	cmp_mgr_enabled smallint ,
+--	notification_launches char(1) ,
+--	notification_deployed char(1) ,
+--	notification_before_launched char(1) ,
+--	hours_before_launched numeric(8, 1) ,
+--	notification_error_config char(1) ,
+--	notification_recurring_expiry char(1) ,
+--	notification_triggered_expiration char(1) ,
+--	omnidex_enabled char(1) ,
+--	threshhold int ,
+--	first_free_credit_count int ,
+--	trial_period_days int ,
+--	trial_allowed_upload_images_total_size int ,
+--	spam_threshold int ,
+--	support_email_addresses varchar(255) ,
+--	billing_email_addresses varchar(1000) ,
+--	billing_phone varchar(30) ,
+--	listload_scheduling_typeid int ,
+--	use_response_targeting char(1) ,
+--	email_approval_threshold int ,
+--	sales_notification_email varchar(64))
+--ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+--WITH SERDEPROPERTIES (
+--   'separatorChar' = '|',
+--   'quoteChar' = '"',
+--   'escapeChar' = '\\'
+--   )
+--STORED AS textfile
+--LOCATION 's3://axle-internal-sources/raw/daddy/S000000_t000_clients/';
+----TABLE PROPERTIES ('skip.header.line.count'='1');
+----TABLE PROPERTIES ('compression_type'='gzip');
+-- 
+---------------------------------------------
+---- Create a view in interna schema
+---------------------------------------------
+--DROP VIEW IF EXISTS interna.S000000_t000_clients;
+--
+--CREATE VIEW interna.S000000_t000_clients AS 
+--SELECT * 
+--  FROM spectrumdb.S000000_t000_clients
+--  WITH NO SCHEMA BINDING;
+-- 
+--
+---- Verify Counts
+--SELECT COUNT(*) 
+--  FROM interna.S000000_t000_clients;
+--
+--SELECT TOP 100 * 
+--  FROM interna.S000000_t000_clients;
+--  
+--  
+------------
+----S000000_t001_global_email_kill_list
+--
+------------
+--
+--DROP TABLE IF EXISTS spectrumdb.S000000_t001_global_email_kill_list;
+--
+--CREATE EXTERNAL TABLE spectrumdb.S000000_t001_global_email_kill_list(
+--	client_id smallint ,
+--	list_id smallint ,
+--	email_address varchar(255) ,
+--	create_datetime timestamp ,
+--	division_id int ,
+--	id int)
+--ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+--WITH SERDEPROPERTIES (
+--   'separatorChar' = '|',
+--   'quoteChar' = '"',
+--   'escapeChar' = '\\'
+--   )
+--STORED AS textfile
+--LOCATION 's3://axle-internal-sources/raw/daddy/S000000_t001_global_email_kill_list/';
+----TABLE PROPERTIES ('skip.header.line.count'='1');
+----TABLE PROPERTIES ('compression_type'='gzip');
+-- 
+---------------------------------------------
+---- Create a view in interna schema
+---------------------------------------------
+--DROP VIEW IF EXISTS interna.S000000_t001_global_email_kill_list;
+--
+--CREATE VIEW interna.S000000_t001_global_email_kill_list AS 
+--SELECT * 
+--  FROM spectrumdb.S000000_t001_global_email_kill_list
+--  WITH NO SCHEMA BINDING;
+-- 
+--
+---- Verify Counts
+--SELECT COUNT(*) 
+--  FROM interna.S000000_t001_global_email_kill_list;
+--
+--SELECT TOP 100 * 
+--  FROM interna.S000000_t001_global_email_kill_list;
+--
+----------
+----------S000000_t002_global_email_domain_kill_list
+--
+------------
+--
+--DROP TABLE IF EXISTS spectrumdb.S000000_t002_global_email_domain_kill_list;
+--
+--CREATE EXTERNAL TABLE spectrumdb.S000000_t002_global_email_domain_kill_list(
+--	client_id smallint ,
+--	list_id smallint ,
+--	email_domain_name varchar(255) ,
+--	create_datetime timestamp ,
+--	division_id int ,
+--	id int) 
+--ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+--WITH SERDEPROPERTIES (
+--   'separatorChar' = '|',
+--   'quoteChar' = '"',
+--   'escapeChar' = '\\'
+--   )
+--STORED AS textfile
+--LOCATION 's3://axle-internal-sources/raw/daddy/S000000_t002_global_email_domain_kill_list/';
+----TABLE PROPERTIES ('skip.header.line.count'='1');
+----TABLE PROPERTIES ('compression_type'='gzip');
+-- 
+---------------------------------------------
+---- Create a view in interna schema
+---------------------------------------------
+--DROP VIEW IF EXISTS interna.S000000_t002_global_email_domain_kill_list;
+--
+--CREATE VIEW interna.S000000_t002_global_email_domain_kill_list AS 
+--SELECT * 
+--  FROM spectrumdb.S000000_t002_global_email_domain_kill_list
+--  WITH NO SCHEMA BINDING;
+-- 
+--
+---- Verify Counts
+--SELECT COUNT(*) 
+--  FROM interna.S000000_t002_global_email_domain_kill_list;
+--
+--SELECT TOP 100 * 
+--  FROM interna.S000000_t002_global_email_domain_kill_list;
+--
+------------
+-----S000000_t003_brands
+--
+-----------
+--
+--DROP TABLE IF EXISTS spectrumdb.S000000_t003_brands;
+--
+--CREATE EXTERNAL TABLE spectrumdb.S000000_t003_brands(
+--	brand_id int ,
+--	client_id int ,
+--	brand_domain nvarchar(200) ,
+--	description nvarchar(255) ,
+--	type_id int ,
+--	active_ind smallint ,
+--	daily_volume int)
+--ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+--WITH SERDEPROPERTIES (
+--   'separatorChar' = '|',
+--   'quoteChar' = '"',
+--   'escapeChar' = '\\'
+--   )
+--STORED AS textfile
+--LOCATION 's3://axle-internal-sources/raw/daddy/S000000_t003_brands/';
+----TABLE PROPERTIES ('skip.header.line.count'='1');
+----TABLE PROPERTIES ('compression_type'='gzip');
+-- 
+---------------------------------------------
+---- Create a view in interna schema
+---------------------------------------------
+--DROP VIEW IF EXISTS interna.S000000_t003_brands;
+--
+--CREATE VIEW interna.S000000_t003_brands AS 
+--SELECT * 
+--  FROM spectrumdb.S000000_t003_brands
+--  WITH NO SCHEMA BINDING;
+-- 
+--
+---- Verify Counts
+--SELECT COUNT(*) 
+--  FROM interna.S000000_t003_brands;
+--
+--SELECT TOP 100 * 
+--  FROM interna.S000000_t003_brands;
+

@@ -1,0 +1,7 @@
+{
+    "source_s3_bucket": "kritestbucket",
+    "source_s3_key":  "testfolder/testfile.txt",
+    "target_path_at_sftp": "/kritest_file.txt",
+    "sftp_conn_id": "sftp_igxfer_conn",
+    "s3_conn_id": "s3_conn_id"
+}

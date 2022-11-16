@@ -1,0 +1,15 @@
+{
+    "tablename1": "b2c_link_dd",
+    "table_sic62": "decode_sic6",
+    "table_sic61": "decode_sic6_new",
+    "table_empsz": "decode_employee_size",
+    "table_salesvol": "decode_sales_volume",
+    "table_sqftg": "decode_square_footage",
+    "table_busdept": "decode_bus_department",
+    "table_buslvl": "decode_bus_level",
+    "table_busfuncarea": "decode_bus_functional_area",
+    "table_busrole": "decode_bus_role",
+    "s3-key1": "/ETL_Dropbox/SIC6_ForIQRefresh.txt",
+    "email_subject": "AWS - Load decode tables for Data Axle DB Builds on redshift",
+    "email_message": "<h3>Airflow DAG: imports-decode-tables completed successfully.</h3>"
+}

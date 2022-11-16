@@ -1,0 +1,11 @@
+{
+    "table1-myr": "myr_emailoversight_return",
+    "table-engaged-db": "exclude_engaged_12_mo",
+    "table-gst-db": "exclude_gst_suppressemails",
+    "reportname1": "/Reports/Meyer_EmailScoreFlag_count",
+    "reportname2": "/Reports/Meyer_EOVerifiedEmail_count",
+    "reportname3": "/Reports/Meyer_Email_Suppression_Flag_count",
+    "reportname4": "/Reports/Meyer_Emailable_count",
+    "email_subject": "MEYER EHygiene Return Processing",
+    "email_message": "Hello IDMS-Admin Team,<br/><br/> MEYER EHYGIENE RETURN PROCESSING COMPLETED"
+}

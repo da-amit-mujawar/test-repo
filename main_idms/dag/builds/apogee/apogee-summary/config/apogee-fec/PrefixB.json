@@ -1,0 +1,15 @@
+{
+  "Comment": "Category, and Types",
+  "Records": [
+    {
+      "Code": "B0",
+      "Value": "",
+      "Formula": ""
+    },
+    {
+      "Code": "B1",
+      "Value": "CAT_",
+      "Formula": ""
+    }
+  ]
+}

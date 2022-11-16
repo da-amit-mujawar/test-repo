@@ -1,0 +1,9 @@
+{
+    "viewname1": "vwPub2External31_191_201206",
+    "tablename1":  "tblExternal31_191_201206",
+    "s3-key1": "/neptune/mGen/pub2_link.txt",
+    "reportname1": "/Reports/ExternalLinkTableReport",
+    "email_address": "saarthak.pande@data-axle.com",
+    "email_subject": "TEST-Please Ignore Reports - All DB EXTERNAL update complete",
+    "email_message": "ALl DB External link table report is successfully generated."
+}

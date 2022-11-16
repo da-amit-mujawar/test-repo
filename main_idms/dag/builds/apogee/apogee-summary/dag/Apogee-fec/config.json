@@ -1,0 +1,33 @@
+{
+  "spark_config": {
+    "app_name": "apogee-fec",
+    "code_base": "{s3_code_location}",
+    "input_file_base": "{s3_input_location}",
+    "input_file_name": "[~{s3_input_location}/?????.txt~]",
+    "base_location": "{s3_output_base_location}",
+    "process_location": "{yyyy}{mm}{dd}/process/",
+    "reject_location": "{yyyy}{mm}{dd}/reject/badRecords-{yyyy}-{mm}-{dd}.csv",
+    "discard_location": "{yyyy}{mm}{dd}/discard/rejectRecords-{yyyy}-{mm}-{dd}.csv",
+    "config_location": "config/",
+    "temp_location": "{yyyy}{mm}{dd}/temp/",
+    "output_location": "{yyyy}{mm}{dd}/output/",
+    "tblRaw": "exclude_trans_fec",
+    "tblLTD": "exclude_sum_fec",
+    "tblCategory": "exclude_sum_cat_fec",
+    "tblList-3": "exclude_sum_fec_list3",
+    "tblList-0": "exclude_sum_fec_list0",
+    "tblList-2": "exclude_sum_fec_list2",
+    "tblList-1": "exclude_sum_fec_list1",
+    "tblMonths": "",
+    "tblCustom": "",
+    "ExtraColumns-Trans": "IsBlueFlag",
+    "ExtraColumns-Category": "IsBlueFlag",
+    "ExtraColumns-List": "",
+    "KeyColumnName": "Company_ID",
+    "KeyColumnType": "VARCHAR(25)",
+    "CatColumnList": "ListCategory04",
+    "ColumnPrefix": "pol_",
+    "ColumnSuffix": ""
+  },
+  "email_address": "dl-dataengineering@data-axle.com"
+}

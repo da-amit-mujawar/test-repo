@@ -1,0 +1,23 @@
+{
+    "tablename1": "tblExternal15_191_201206_NEW",
+    "tablename2":  "tblExternal36_191_201206_New",
+    "tablename3":  "tblExternal15_191_201206",
+    "tablename4":  "tblExternal36_191_201206",
+    "s3-key1": "/neptune/mGen/DQI_HHLD_LINK.txt",
+    "s3-key2": "/neptune/DQIFiles/Rollups/tblExternal16_191_201206_RU.txt",
+    "s3-key3": "/neptune/DQIFiles/Rollups/tblExternal17_191_201206_RU.txt",
+    "s3-key4": "/neptune/DQIFiles/Rollups/tblExternal18_191_201206_RU.txt",
+    "s3-key5": "/neptune/DQIFiles/Rollups/tblExternal19_191_201206_RU.txt",
+    "s3-key6": "/neptune/DQIFiles/Rollups/tblExternal20_191_201206_RU.txt",
+    "s3-key7": "/neptune/DQIFiles/Rollups/tblExternal21_191_201206_RU.txt",
+    "s3-key8": "/neptune/DQIFiles/Rollups/tblExternal22_191_201206_RU.txt",
+    "s3-key9": "/neptune/DQIFiles/Rollups/tblExternal27_191_201206_RU.txt",
+    "s3-key10": "/neptune/DQIFiles/Rollups/tblExternal28_191_201206_RU.txt",
+    "s3-key11": "/neptune/mGen/trm_link.txt",
+    "reportname1": "/Reports/AuditReport_LinkTable_DQI_HHLD",
+    "reportname2": "/Reports/AuditReport_LinkTable_DQI_HHLD_TARGETREADY_CMB",
+    "reportname3": "/Reports/AuditReport_LinkTable_DQI_SAMPLE_LEMS",
+    "reportname4": "/Reports/AuditReport_LinkTable_TARGETREADY_SAMPLE_LEMS",
+    "email_subject": "External Link - DQI HOUSE HOLD AND DQI - TARGETREADY- COMBINED Update",
+    "email_message": "Please find attached Audit report for this update. <br><br>  Please review provide your approval so we may proceed."
+}

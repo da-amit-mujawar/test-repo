@@ -1,0 +1,7 @@
+{
+    "tablename1": "CONSUMER_1267_TEMPSUPPRESS_ToBeDropped",
+    "databaseid": "1267",
+    "s3-key":"/idms-mmdb/consumer/dailysuppress.csv",
+    "email_subject": "IG CONSUMER 1267 -  FULLFILMENT FLAG UPDATE",
+    "email_message": "Hi All,</br></br> MMDB fields - Fulfillmentflag is updated in IG Consumer 1267. </br></br> File used: dailysuppress.csv"
+}

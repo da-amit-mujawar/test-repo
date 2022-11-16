@@ -1,0 +1,7 @@
+{
+    "tablename1": "tblExternal39_191_201206_NEW",
+    "tablename2": "tblExternal39_191_201206",
+    "s3-key1": "/FilesExportedFromIQ/tblExternal39_191_201206.txt",
+    "email_subject": "External Link - Apogee update",
+    "email_message": "Please find attached audit report for this update. Please review and activate the Link table."
+}

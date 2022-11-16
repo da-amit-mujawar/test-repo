@@ -1,0 +1,38 @@
+{
+  "Region": "us-east-1",
+  "EmrLabel": "emr-6.4.0",
+  "Application": [
+    "spark",
+    "hadoop",
+    "Livy",
+    "JupyterEnterpriseGateway"
+  ],
+  "ComputeLimits": {
+    "UnitType": "Instances",
+    "MinimumCapacityUnits": 6,
+    "MaximumCapacityUnits": 12,
+    "MaximumOnDemandCapacityUnits": 12,
+    "MaximumCoreCapacityUnits": 12
+  },
+  "Instance": [
+    {
+      "InstanceCount": 1,
+      "InstanceGroupType": "MASTER",
+      "InstanceType": "i3.xlarge",
+      "Name": "Master-1"
+    },
+    {
+      "InstanceCount": 6,
+      "InstanceGroupType": "CORE",
+      "InstanceType": "i3.8xlarge",
+      "Name": "Core-2"
+    }
+  ],
+  "Concurrency": "3",
+  "Tags": [
+    {
+      "Key": "map-migrated",
+      "Value": "d-server-03hdamyixcl5sq"
+    }
+  ]
+}

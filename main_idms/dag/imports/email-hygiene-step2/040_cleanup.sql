@@ -1,0 +1,10 @@
+-- DROP TABLE IF EXISTS ehyg_{dbid};
+DROP TABLE IF EXISTS ehyg_{dbid}_Suppressions;
+DROP TABLE IF EXISTS ehyg_{dbid}_IDMS;
+DROP TABLE IF EXISTS ehyg_{dbid}_report1;
+DROP TABLE IF EXISTS ehyg_{dbid}_report2;
+DROP TABLE IF EXISTS ehyg_{dbid}_report3;
+DROP TABLE IF EXISTS ehyg_{dbid}_report4;
+DROP TABLE IF EXISTS ehyg_{dbid}_report5;
+DROP TABLE IF EXISTS ehyg_{dbid}_report6;
+DROP TABLE IF EXISTS ehyg_{dbid}_EO_Returns;

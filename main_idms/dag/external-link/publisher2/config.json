@@ -1,0 +1,8 @@
+{
+    "tablename1": "tblExternal31_191_201206_NEW",
+    "tablename2":  "tblExternal31_191_201206",
+    "s3-key1": "/neptune/mGen/pub2_link.txt",
+    "reportname1": "/Reports/AuditReport_LinkTable_Publisher2",
+    "email_subject": "External Link - Publisher2 update complete",
+    "email_message": "External link - publisher2 update is completed successfully."
+}

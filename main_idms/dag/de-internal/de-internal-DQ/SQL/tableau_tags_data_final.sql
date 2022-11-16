@@ -1,0 +1,12 @@
+DROP TABLE if exists reports.tableau_tags_data_final;
+select infogroup_id,
+count(distinct infogroup_id_adsize_code) infogroup_id_adsize_code_tags,
+count(distinct infogroup_id_primary_tags) infogroup_id_primary_tags,
+count(distinct infogroup_id_sic_code_id) infogroup_id_sic_code_id_tags,
+count(distinct infogroup_id_naics_code_id) infogroup_id_naics_code_id_tags,
+count(distinct infogroup_id_yellow_page_code) infogroup_id_yellow_page_code_tags,
+count(distinct infogroup_id_yppa_code) infogroup_id_yppa_code_tags
+ INTO reports.tableau_tags_data_final
+from
+reports.tableau_tags_in_business
+group by infogroup_id;

@@ -1,0 +1,12 @@
+{
+    "input_bucket": "idms-2722-internalfiles",
+    "prefix": "transfomer_dev/business/changes/",
+    "suffix": ".txt.gz",
+    "output_bucket": "idms-2722-internalfiles",
+    "output_path": "/Output_DDL/",
+    "modes": "new,changes",
+    "refer_bucket": "idms-2722-internalfiles",
+    "refer_file_name": "transfomer_dev/xfiles/refer_full.csv",
+    "file_types": "{\"benefit_plans\":\"Benefit_plan_id\",\"contacts\":\"contact_id\",\"happy_hours\":\"Happy_hours_id\",\"images\":\"Images_id\",\"intents\":\"Location_intent_id\",\"operating_hours\":\"Operating_hours_id\",\"places\":\"infogroup_id\",\"tags\":\"tags_id\",\"ucc_filings\":\"Ucc_filings_id\"}",
+    "iam_role": "arn:aws:iam::250245842722:role/da-idms-redshift-sts-role,arn:aws:iam::479134617933:role/da-idms-redshift-sts-role"
+}

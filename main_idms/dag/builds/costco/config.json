@@ -1,0 +1,6 @@
+{
+    "costco_tblname1": "costco_new",
+    "reportname1": "/Reports/Costco_count_report",
+    "email_subject": "AWS - IDMS DATABASE UPDATE NOTIFICATION FOR COSTCO_1078",
+    "email_message": "Hi All,</br></br> Costco Database (1078) Build is ready for activation. You may activate the build after testing.</br></br> Please open a new support ticket for any questions regarding this update."
+}

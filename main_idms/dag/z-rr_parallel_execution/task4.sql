@@ -1,0 +1,4 @@
+
+DROP TABLE IF EXISTS "table1_task4";
+SELECT * INTO table1_task4 FROM (SELECT * FROM table1 UNION ALL SELECT * FROM table2 UNION ALL SELECT *
+FROM table3) a;

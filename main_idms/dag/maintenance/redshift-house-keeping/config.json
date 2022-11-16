@@ -1,0 +1,5 @@
+{
+    "email_address" : "var-de-email-dl",
+    "email_subject" : "Airflow Notification: Schema clean up in Redshift",
+    "email_message" : "Redshift Schema Wipe - Completed"
+}

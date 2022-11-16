@@ -1,0 +1,14 @@
+{
+  "sapphire-tbl-main": "sapphire_load_maintbl_abhishek",
+  "sapphire-tbl-ctas1": "sapphire_load_abhishek_ctas",
+  "sapphire-pre-build": "sapphire_prebuild_abhishek_tobedropped",
+  "sapphire-update1-ctas": "sapphire_upd1_ctas_tobedropped",
+  "sapphire-main-ctas": "sapphire_rewrite_abhishek_main",
+  "sapphire-main-tbl-id": "sapphire_load_abhishek_id",
+  "sapphire-ctas-tbl-id": "sapphire_upd1_id_tobedropped",
+  "s3-key-tblmain": "/Sapphire/IQLoadFiles/DW_Final_71_",
+  "s3-key-buildsupportfiles": "/Sapphire/BuildSupportFiles",
+  "email_subject": "Sapphire Build - Postal and Email Counts",
+  "email_message": "Hi All,</br></br> Here are the Postal and Email Counts.  Please review and let us know if any issues.</br></br> If good, please create an order in inactive build for ehygenic export . </br></br> Nicole/Lisa, </br></br> When you get a change, please update Data Dictionary values for NewPostalDate, NewEmailDate and Listid.",
+  "email_address": "abhishek.jangid@data-axle.com,elina.bor@data-axle.com"
+}

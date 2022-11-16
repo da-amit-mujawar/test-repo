@@ -1,0 +1,11 @@
+{
+    "input_bucket": "axle-gold-sources",
+    "input_prefix_full" : "places/full/",
+    "input_prefix_changes" : "places/changes/",
+    "file_extension": ".txt.gz",
+    "full_load_day": "Sunday",
+    "output_bucket": "idms-2722-internalfiles",
+    "output_path": "transfomer_dev/output/",
+    "counts_table": "core_bf.business_counts",
+    "file_types": "benefit_plans,contacts,happy_hours,images,intents,operating_hours,places,tags,ucc_filings"
+}

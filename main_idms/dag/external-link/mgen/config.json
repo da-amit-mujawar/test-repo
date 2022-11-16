@@ -1,0 +1,9 @@
+{
+    "tablename1": "tblExternal1_191_201206_Int",
+    "tablename2":  "tblExternal1_191_201206_VARCHAR",
+    "tablename3":  "tblExternal1_191_201206",
+    "s3-key1": "/neptune/mGen/Mgen_Link.txt",
+    "reportname1": "/Reports/AuditReport_LinkTable_MGEN_LRFS",
+    "email_subject": "External Link - mGen Update Complete",
+    "email_message": "Please find attached Audit report for this update. Please review and activate the Link table. <br><br>  You can open up support ticket for any questions regarding this update."
+}

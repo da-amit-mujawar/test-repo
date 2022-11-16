@@ -1,0 +1,41 @@
+import os
+import airflow
+from airflow import DAG
+from airflow.models import Variable
+from airflow.operators.dummy_operator import DummyOperator
+from operators import RedshiftOperator, DataCheckOperator
+
+
+default_args = {
+    'owner': 'data-axle',
+    'start_date': airflow.utils.dates.days_ago(1),
+    'depends_on_past': False,
+    'currentpath': os.path.abspath(os.path.dirname(__file__)),
+    'databaseid':77,
+    'retries': 0,
+    'email_on_failure': False,
+    'email_on_retry': False
+}
+
+dag = DAG('s3-to-redshift',
+    default_args=default_args,
+    description='Copies parquet files from s3 to redshift',
+    schedule_interval='@once',
+    max_active_runs=1
+    )
+
+start_operator = DummyOperator(task_id='Begin_execution', dag=dag)
+
+# run sql scripts
+data_load = RedshiftOperator(
+    task_id='',
+    dag=dag,
+    sql_file_path=default_args['currentpath'] + '/copytoredshift.sql',
+    config_file_path = default_args['currentpath'] + '/config.json',
+    redshift_conn_id=Variable.get('var-redshift-postgres-conn')
+)
+
+end_operator = DummyOperator(task_id='Stop_execution', dag=dag)
+
+start_operator >> data_load >> end_operator
+

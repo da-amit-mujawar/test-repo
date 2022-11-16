@@ -1,0 +1,7 @@
+{
+    "email_subject": "Nonprofit mail and responder files unload",
+    "email_message": "Airflow: unload mail and responder files successfully for each listid.",
+    "email_business_users" : "dl-apogee-ai-models@data-axle.com",
+    "databaseid_donorbase" : "1438",
+    "databaseid_apogee" : "74"
+}

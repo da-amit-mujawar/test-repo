@@ -1,0 +1,9 @@
+{
+    "maintable_name" : "tblinfoUSA_US",
+    "iusa-stage-table" : "tblinfoUSA_US_stage",
+    "iusa-raw-table" : "tblinfoUSA_US_raw",
+    "reportname" : "/Reports/3537_INFOUSA_OVERLAY",
+    "email_subject": "ILoad IUSA File  -Check the Data",
+    "email_message": "<h3>IUSA DAG: Ingest IUSA Data for USDW completed successfully.</h3>",
+    "s3-key" : "/internaltransfer/3537_INFOUSA_OVERLAY_Processed.txt"
+}

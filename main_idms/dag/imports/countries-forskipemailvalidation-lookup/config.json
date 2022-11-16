@@ -1,0 +1,6 @@
+{
+    "tablename1": "EXCLUDE_CountriesForSkipEmailValidation",
+    "s3-key1": "/FilesExportedFromIQ/suppressions/CountriesForSkipEmailValidation_IQ.txt",
+    "email_subject": "AWS - Load Countries For SkipEmail Validation ",
+    "email_message": "<h3>Countries For SkipEmail Validation lookup table (EXCLUDE_CountriesForSkipEmailValidation) is updated in Redshift.</h3>"
+ }

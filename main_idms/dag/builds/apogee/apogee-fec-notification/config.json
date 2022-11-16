@@ -1,0 +1,7 @@
+{
+    "email_address": "var-email-dworders",
+    "email_business_users": "ApogeeUpdateTeam@data-axle.com",
+    "email_subject": "Apogee FEC Bulk Download Summary - {yyyy}-{mm}-{dd}_summary.txt ",
+    "email_message": "Apogee FEC Bulk Download File Attached: {yyyy}-{mm}-{dd}_summary.txt",
+    "new_report_file_name": "idms/apg_fec_{yyyy}-{mm}-{dd}_summary.txt"
+}

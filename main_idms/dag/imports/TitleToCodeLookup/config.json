@@ -1,0 +1,5 @@
+{
+    "tablename": "EXCLUDE_TitleToCode_lookup",
+    "file": "neptune/TitleToCode_lookup.txt",
+    "report": "xxxx-audit-report"
+ }

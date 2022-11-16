@@ -1,0 +1,4 @@
+{
+    "email_subject": "Airflow Notification : Apply Engagers job successful",
+    "email_message": "Apply Engagers-LastClickOpen flags were applied to RedShift B2B Databases.</br>Databases Updated: <<StdOut>>"
+}

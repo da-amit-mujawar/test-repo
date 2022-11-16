@@ -1,0 +1,4 @@
+{
+    "email_subject": "Airflow Notification : Apply DNC flag to DA Consumer tables job successful",
+    "email_message": "<h3>Airflow DAG: suppress-apply-donotcall completed successfully.</h3>Databases updated: <<StdOut>>"
+}

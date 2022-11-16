@@ -1,5 +1,0 @@
-{
-   "email_address" : "var-de-email-dl",
-   "email_subject" : "Airflow Notification: Report schema tables refresh in Redshift",
-   "email_message" : "Today's Report schema tables refresh in Redshift - Completed" 
-}

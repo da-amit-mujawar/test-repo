@@ -1,0 +1,9 @@
+ {
+    "tablename1": "tblExternal45_191_201206_new",
+    "tablename2": "tblExternal45_191_201206",
+    "filename1": "/FilesExportedFromIQ/tblExternal45_191_201206_new.txt",
+    "exportpath": "/FilesExportedFromIQ/l2/",
+    "email_business_users": "IDMSAdminConsumerPearl@infogroup.com",
+    "email_subject": "IDMS DB UPDATE NOTIFICATION FOR L2 VOTER DATA (1449) & L2 External Link",
+    "email_message": "<h3>L2 Voter Data Database (1449) and external link tables are ready. Please activate the build.</h3>"
+}

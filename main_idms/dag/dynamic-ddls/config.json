@@ -1,0 +1,11 @@
+{
+    "input_bucket": "idms-2722-internalfiles",
+    "prefix": "transfomer_dev/business/changes/",
+    "suffix": ".txt.gz",
+    "output_bucket": "idms-2722-internalfiles",
+    "output_path": "/Output_DDL/",
+    "modes": "new,changes",
+    "refer_bucket": "idms-2722-internalfiles",
+    "refer_file_name": "transfomer_dev/xfiles/refer_full.csv",
+    "file_types": "[\"benefit_plans\", \"contacts\", \"happy_hours\", \"images\", \"intents\", \"operating_hours\", \"places\", \"tags\", \"ucc_filings\"]"
+}

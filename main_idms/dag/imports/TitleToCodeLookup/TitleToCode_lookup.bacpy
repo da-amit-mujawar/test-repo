@@ -1,0 +1,85 @@
+from datetime import datetime, timedelta
+import os
+from airflow import DAG
+from airflow.operators.dummy_operator import DummyOperator
+from airflow.operators.postgres_operator import PostgresOperator
+from airflow.operators.email_operator import EmailOperator
+import logging
+from airflow.models import Variable
+
+iamrole = Variable.get("password_dev_redshift_iamrole")
+kmskey = Variable.get("password_kms_key")
+postgresconnid = Variable.get("postgres_conn_id")
+
+email_sendto = Variable.get("email_sendto_dev12")
+#email_sendto = Variable.get("email_sendto_dworders")
+
+
+tmptablename = 'EXCLUDE_TitleToCode_lookup'
+
+default_args = {
+    'owner': 'data-axle',
+    'start_date': datetime(2020, 11, 10),
+    'depends_on_past': False,
+    'retries': 1,
+    'email_on_retry': False
+}
+
+dag = DAG('TitleToCode_lookup_Load_Data',
+          default_args=default_args,
+          description='EXCLUDE_TitleToCode_lookup',
+          schedule_interval='@once',
+          max_active_runs =1
+        )
+
+start_operator = DummyOperator(task_id='Begin_execution',  dag=dag)
+
+create_table = PostgresOperator(
+    task_id="create_table",
+    dag=dag,
+    postgres_conn_id=postgresconnid,
+    sql="/sql/010-titletocodelookup-createtable.sql",
+    params={
+        'tablename': tmptablename,
+	    'iamrole': iamrole
+        },
+)
+
+load_data = PostgresOperator(
+    task_id="load_data",
+    dag=dag,
+    postgres_conn_id=postgresconnid,
+    sql="/sql/020-titletocodelookup-loadtable.sql",
+    params={
+        'tablename': tmptablename,
+	    'iamrole': iamrole
+        },
+)
+
+create_report = PostgresOperator(
+    task_id="create_report",
+    dag=dag,
+    postgres_conn_id=postgresconnid,
+    sql="/sql/030-titletocodelookup-report.sql",
+    params={
+        'reportdate': str(datetime.now())[:10],
+        'tablename': tmptablename,
+	    'iamrole': iamrole,
+        'kmskey': kmskey
+    },
+)
+
+send_email = EmailOperator(
+        mime_charset='utf-8',
+        task_id='send_email',
+        to= email_sendto,
+        subject='TitleToCodeLookup Complete',
+        html_content=""" <h3>EXCLUDE_TitleToCode_lookup is loaded to redshift </h3> """,
+        dag=dag
+)
+
+
+end_operator = DummyOperator(task_id='Stop_execution',  dag=dag)
+
+
+start_operator >> create_table >> load_data >> create_report >> send_email >> end_operator

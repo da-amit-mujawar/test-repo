@@ -1,0 +1,8 @@
+{
+    "database_id":"1150",
+    "s3-key1": "/internaltransfer/Temp/RoyaltyOrderIds_1150.csv",
+    "s3-key2": "/Reports/RoyaltyUsage/RoyaltyFieldNames_1150.txt",
+    "reportname1": "/Reports/RoyaltyUsage/RoyaltyOutput_1150_{yyyy}{mm}{dd}",
+    "email_subject": "IDMS: ExecuReach (1150) Monthly Royalty Report",
+    "email_message": "Please find attached ExecuReach (1150) Monthly Royalty Report.<br/><br/>Thank you.<br/>- IDMS Support Team<br/>help-idms@infogroup.com"
+}

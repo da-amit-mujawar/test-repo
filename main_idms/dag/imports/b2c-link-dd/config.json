@@ -1,0 +1,7 @@
+{
+    "tablename1": "b2c_link_dd_new",
+    "tablename2": "b2c_link_dd",
+    "s3-key1": "/FilesExportedFromIQ/etl_lookupdata/b2c_link_dd.txt",
+    "email_subject": "AWS - Load b2c-link-dd from sql on redshift",
+    "email_message": "<h3>Airflow DAG: imports-b2c-link-dd completed successfully.</h3>"
+}

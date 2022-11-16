@@ -1,0 +1,5 @@
+{
+    "reportname1": "/Reports/ExternalLinkTableReport_{yyyy}{mm}{dd}",
+    "email_subject": "EXTERNAL LINK TABLE REPORT",
+    "email_message": "Please find attached External Link Database Report.<br/><br/>Thanks,<br/><br/>IDMS Support Team"
+}

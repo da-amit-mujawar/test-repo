@@ -1,0 +1,22 @@
+{
+  "ClusterName": "apogee-rollups-step1",
+  "steps": [
+    {
+      "Args": [
+        "spark-submit",
+        "--deploy-mode",
+        "cluster",
+        "--py-files",
+        "s3://{s3_code_bucket}/not-for-profit/commonlib.py",
+        "s3://{s3_code_bucket}/not-for-profit/Not-For-Profit-1.0-PrepInputData.py",
+        "{spark_config}",
+        "{process_date}"
+      ],
+      "Type": "CUSTOM_JAR",
+      "ActionOnFailure": "CONTINUE",
+      "Jar": "command-runner.jar",
+      "Properties": "",
+      "Name": "Prepare Input Data"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+	"dev2722": [
+		{
+			"bucket": "idms-2722-internalfiles",
+			"prefix": "neptune/",
+			"suffix": ""
+		},
+		{
+			"bucket": "idms-2722-internalfiles",
+			"prefix": "internaltransfer/",
+			"suffix": ""
+		},
+		{
+			"bucket": "idms-2722-aop-output",
+			"prefix": "",
+			"suffix": ""
+		},
+		{
+			"bucket": "idms-2722-playground",
+			"prefix": "",
+			"suffix": ""
+		}
+		
+	    ],
+	"prod7933": [
+		{
+			"bucket": "idms-7933-internalfiles",
+		  	"prefix": "",
+		  	"suffix": ""
+		},
+		{
+			"bucket": "axle-internal-sources",
+			"prefix": "raw/finance/mothership/",
+			"suffix": ""
+		},
+		{
+			"bucket": "axle-donorbase-raw-sources",
+			"prefix": "",
+			"suffix": ""
+		},
+		{
+			"bucket": "axle-gold-sources",
+			"prefix": "wireless",
+			"suffix": ""
+		},
+		{
+			"bucket": "idms-7933-aop-output",
+			"prefix": "",
+			"suffix": ""
+		}
+		
+		]
+	
+	
+}

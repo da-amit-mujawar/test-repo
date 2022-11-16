@@ -1,0 +1,6 @@
+{
+    "email_subject": "IDMS DATABASE UPDATE NOTIFICATION FOR MGEN - 847",
+    "email_message": "Hello IDMS-Admin Team,<br/><br/> MGEN Database is loaded",
+    "reportname1": "/Reports/Mgen_load_total_count",
+    "s3_folder_today": "{today}"
+}

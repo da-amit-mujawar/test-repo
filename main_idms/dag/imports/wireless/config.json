@@ -1,0 +1,8 @@
+{
+    "wireless-tablename": "tblDQI_CellPhone",
+    "wireless-tablename1": "tblDQI_CellPhone_New",
+    "wireless-input-tablename": "IDMS_Wireless",
+    "reportname": "/Reports/Wireless_count_report",
+    "email_subject": "wireless update completed",
+    "email_message": "Imports: Wireless completed successfully"
+}

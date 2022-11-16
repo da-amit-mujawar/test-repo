@@ -1,0 +1,24 @@
+{
+  "Comment": "Category, List ID, or Months",
+  "Records": [
+    {
+      "Code": "C0",
+      "Value": "1"
+    },
+    {
+      "Code": "C1",
+      "Value": "_<CATEGORY>",
+      "Formula": " <CATEGORY> IN (ListCategory01, ListCategory02) "
+    },
+    {
+      "Code": "C2",
+      "Value": "_<LISTID>",
+      "Formula": " ListID = <LISTID> "
+    },
+    {
+      "Code": "C3",
+      "Value": "_<MONTHS>",
+      "Formula": " SUM(CASE WHEN date_format(to_date(DonationDate),'MMMM') = '<MONTHS>' THEN 1 ELSE 0 END)"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+    "email_address": "saravanan.ramalingam@data-axle.com",
+    "email_message": "Apogee FEC Report Summary File Attached: {yyyy}-{mm}-{dd}_summary.txt",
+    "email_subject": "Test Email {var-env}"
+}
