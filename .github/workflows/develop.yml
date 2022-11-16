@@ -8,7 +8,7 @@ on:
       - develop
       - main
 jobs:
-  my_validation_job:
+  develop_pr_checks_v243:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -17,7 +17,7 @@ jobs:
         python-version: '3.8'
     - run: python --version
     - run: pip --version
-    - name: Install Airflow
+    - name: Install Airflow 2.4.3
       run: pip install "apache-airflow==2.4.3" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.4.3/constraints-no-providers-3.8.txt"
     - run: airflow info
     - run: ls
