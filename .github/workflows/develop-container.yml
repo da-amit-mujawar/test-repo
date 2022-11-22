@@ -7,7 +7,17 @@ jobs:
     container:
       image: node:14.15.0-alpine3.12
     steps:
-         - name: Log the node version
+         - name: Log the parent container node version
            run: |
-             node -v
-             cat /etc/os-release
+             node -v 
+         - name: Log the step container node version
+           uses: docker://node:12.14.1-alpine3.10
+           with:
+             entrypoint: usr/local/bin/echo
+             args: -v
+         - name: Step with docker to echo a string
+           uses: docker://node:12.14.1-alpine3.10
+           with:
+             entrypoint: /bin/echo
+             args: Hello Docker !
+
