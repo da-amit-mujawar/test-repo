@@ -5,8 +5,8 @@ on:
     branches: [ main ]
   pull_request:
     branches:
-      - develop
-      - main
+      - developx
+      - mainx
 jobs:
   main_pr_checks_v243:
     runs-on: ubuntu-latest
